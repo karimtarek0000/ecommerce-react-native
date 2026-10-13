@@ -25,5 +25,4 @@ export type TypographyStyle = {
   lineHeight: number
 }
 
-export type Languages = 'en' | 'ar'
 export type TypographyStyles = Record<TypographyVariant, TypographyStyle>
