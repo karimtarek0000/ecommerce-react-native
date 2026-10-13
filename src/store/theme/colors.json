@@ -42,7 +42,7 @@
     }
   },
   "dark": {
-    "fg": {
+    "forground": {
       "primary": "#f5f5f5",
       "secondary": "#d1d5db",
       "tertiary": "#9ca3af",
