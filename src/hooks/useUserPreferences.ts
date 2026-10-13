@@ -6,7 +6,7 @@ import {
 } from '@/store/userPreferences/userPreferencesSlice'
 import { Languages, Theme } from '@/types'
 
-export const useUserPreferences = () => {
+const useUserPreferences = () => {
   const dispatch = useAppDispatch()
   const perferences = useAppSelector(userPerferencesSelector)
 
@@ -16,3 +16,5 @@ export const useUserPreferences = () => {
     setLanguage: (language: Languages) => dispatch(setLangauge(language)),
   }
 }
+
+export default useUserPreferences
