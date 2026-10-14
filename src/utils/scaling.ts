@@ -17,8 +17,8 @@ const [shortDimension, longDimension] = width < height ? [width, height] : [heig
 // ======================= Re-scale =======================
 const scalingMethods = {} as ScalingMethods
 
-scalingMethods.HS = (size: number) => (shortDimension / guideLineBaseWidth) * size
-scalingMethods.VS = (size: number) => (longDimension / guideLineBaseHeight) * size
+scalingMethods.HS = (size: number) => Math.round((shortDimension / guideLineBaseWidth) * size)
+scalingMethods.VS = (size: number) => Math.round((longDimension / guideLineBaseHeight) * size)
 scalingMethods.FS = (size: number, factor = 0.5) =>
   Math.round(size + (scalingMethods.HS(size) - size) * factor)
 
