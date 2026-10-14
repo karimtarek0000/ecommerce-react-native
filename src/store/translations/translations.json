@@ -2,7 +2,7 @@
   "ar": {
     "dir": "rtl",
     "keys": {
-      "hello": "مرحبا",
+      "hello": "مرحبا {{name}}",
       "light": "فاتح",
       "dark": "داكن"
     }
@@ -10,7 +10,7 @@
   "en": {
     "dir": "ltr",
     "keys": {
-      "hello": "Hello",
+      "hello": "welcome {{name}}",
       "light": "Light",
       "dark": "Dark"
     }

@@ -5,3 +5,7 @@ export type Directions = 'ltr' | 'rtl'
 
 export type Translations = typeof translations
 export type TranslationsKeys = keyof typeof translations.en.keys
+export type TranslateKey = (
+  key: TranslationsKeys,
+  params?: Record<string, string | number>,
+) => string

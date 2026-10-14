@@ -9,7 +9,7 @@ type InitialState = {
 
 const initialState: InitialState = {
   language: 'en',
-  theme: 'light',
+  theme: 'system',
 }
 
 const userPerferencesSlice = createSlice({
