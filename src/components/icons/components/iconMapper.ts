@@ -1,9 +1,7 @@
 import Chevron from './Chevron'
-import Lock from './Lock'
-import User from './User'
+import CircleCheck from './CircleCheck'
 
 export const iconMapper = {
-  user: User,
-  lock: Lock,
+  circleCheck: CircleCheck,
   chevron: Chevron,
 }

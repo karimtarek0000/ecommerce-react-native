@@ -49,7 +49,8 @@
     "web": "expo start --web",
     "lint": "npx expo lint --max-warnings=0",
     "type-check": "npx tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "export-icons": "npx @svgr/cli --native --typescript --template svgr-template.js --no-index --expand-props none --svg-props \"width={size},height={size},style={style}\" --replace-attr-values \"currentColor={color}\" --out-dir src/components/icons/components -- src/assets/icons && sed -i.bak '/xmlns=/d;/import \\* as React/d' src/components/icons/components/*.tsx && rm src/components/icons/components/*.bak"
   },
   "private": true
 }

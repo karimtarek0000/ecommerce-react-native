@@ -1,20 +1,17 @@
-import Svg, { Path } from 'react-native-svg'
-import { IconProps } from '../types'
-
-const SVGComponent = ({ size, color = 'currentColor', style }: IconProps) => (
+import Svg, { Path } from "react-native-svg";
+import { type IconProps } from "@/components/icons/types";
+const SvgChevron = ({ size = 24, color = "#000", style }: IconProps) => (
   <Svg
     width={size}
     height={size}
-    viewBox="0 0 24 24"
     fill="none"
     stroke={color}
-    strokeWidth={1.5}
     strokeLinecap="round"
     strokeLinejoin="round"
+    strokeWidth={1.5}
     style={style}
   >
-    <Path d="M15 6l-6 6l6 6" />
+    <Path d="m15 6-6 6 6 6" />
   </Svg>
-)
-
-export default SVGComponent
+);
+export default SvgChevron;

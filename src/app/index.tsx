@@ -14,6 +14,7 @@ export default function Index() {
       <Typography variant="heroBold" color={theme.forground.secondary}>
         Language is {currentLanguage} / Key hello is: {t('hello', { name: 'karim' })}
       </Typography>
+      <Icon name="circleCheck" size={45} color={theme.forground.tertiary} />
       <Icon name="chevron" size={45} color={theme.forground.tertiary} isRTL={isRTL} />
       <Button title="Dark Mode" onPress={() => setTheme('dark')} />
       <Button title="Light Mode" onPress={() => setTheme('light')} />
