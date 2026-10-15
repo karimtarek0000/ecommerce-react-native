@@ -1,6 +1,6 @@
 import { useAppSelector } from '@/store/hook'
 import { translationsSelector } from '@/store/translations/translationsSlice'
-import { TranslateKey } from '@/types'
+import { Directions, TranslateKey } from '@/types'
 import useUserPreferences from './useUserPreferences'
 
 const useTranslations = () => {
@@ -9,8 +9,7 @@ const useTranslations = () => {
 
   const { dir, keys } = translations[selectedLanguage]
 
-  const isRTL = dir === 'rtl'
-  const isLTR = dir === 'ltr'
+  const isRTL = dir === ('rtl' as Directions)
 
   const t: TranslateKey = (key, params) => {
     const text = keys[key] ?? `This ${key} does not exist.`
@@ -25,7 +24,6 @@ const useTranslations = () => {
   return {
     t,
     isRTL,
-    isLTR,
     currentLanguage: selectedLanguage,
   }
 }
