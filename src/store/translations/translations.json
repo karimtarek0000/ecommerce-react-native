@@ -1,0 +1,18 @@
+{
+  "ar": {
+    "dir": "rtl",
+    "keys": {
+      "hello": "مرحبا {{name}}",
+      "light": "فاتح",
+      "dark": "داكن"
+    }
+  },
+  "en": {
+    "dir": "ltr",
+    "keys": {
+      "hello": "welcome {{name}}",
+      "light": "Light",
+      "dark": "Dark"
+    }
+  }
+}
