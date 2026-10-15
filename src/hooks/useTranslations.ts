@@ -7,7 +7,10 @@ const useTranslations = () => {
   const { language: selectedLanguage } = useUserPreferences()
   const translations = useAppSelector(translationsSelector)
 
-  const { dir: direction, keys } = translations[selectedLanguage]
+  const { dir, keys } = translations[selectedLanguage]
+
+  const isRTL = dir === 'rtl'
+  const isLTR = dir === 'ltr'
 
   const t: TranslateKey = (key, params) => {
     const text = keys[key] ?? `This ${key} does not exist.`
@@ -21,7 +24,8 @@ const useTranslations = () => {
 
   return {
     t,
-    direction,
+    isRTL,
+    isLTR,
     currentLanguage: selectedLanguage,
   }
 }

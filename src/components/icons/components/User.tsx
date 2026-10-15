@@ -1,7 +1,7 @@
 import Svg, { Path } from 'react-native-svg'
 import { IconProps } from '../types'
 
-const User = ({ size, color = 'currentColor', style }: IconProps) => (
+const SVGComponent = ({ size, color = 'black', style }: IconProps) => (
   <Svg
     width={size}
     height={size}
@@ -18,4 +18,4 @@ const User = ({ size, color = 'currentColor', style }: IconProps) => (
   </Svg>
 )
 
-export default User
+export default SVGComponent

@@ -1,6 +1,7 @@
 import fonts from '@/constants/fonts'
 import { type Languages, type TypographyStyles } from '@/types'
 import { scalingMethods } from '@/utils'
+import useTranslations from './useTranslations'
 const { FS, VS } = scalingMethods
 
 const fontStyles: Record<Languages, TypographyStyles> = {
@@ -201,9 +202,9 @@ const fontStyles: Record<Languages, TypographyStyles> = {
 } as const
 
 const useFontStyle = () => {
-  const lang: Languages = 'en'
+  const { currentLanguage } = useTranslations()
 
-  return fontStyles[lang]
+  return fontStyles[currentLanguage]
 }
 
 export default useFontStyle

@@ -2,7 +2,7 @@ import { Text, View } from 'react-native'
 import { iconMapper } from './components/iconMapper'
 import { IconRenderProps } from './types'
 
-const Icon = ({ name, size, color, style }: IconRenderProps) => {
+const Icon = ({ name, size, color, style, isRTL }: IconRenderProps) => {
   const RenderIconComponent = iconMapper[name]
 
   if (!RenderIconComponent) {
@@ -13,7 +13,13 @@ const Icon = ({ name, size, color, style }: IconRenderProps) => {
     )
   }
 
-  return <RenderIconComponent size={size} color={color} style={style} />
+  return (
+    <RenderIconComponent
+      size={size}
+      color={color}
+      style={[style, { transform: [{ scaleX: isRTL ? -1 : 1 }] }]}
+    />
+  )
 }
 
 export default Icon
