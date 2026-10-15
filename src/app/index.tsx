@@ -10,11 +10,11 @@ export default function Index() {
   const { setTheme, setLanguage } = useUserPreferences()
 
   return (
-    <View style={{ backgroundColor: theme.background.surfaceRaised }}>
+    <View>
       <Typography variant="heroBold" color={theme.forground.secondary}>
         Language is {currentLanguage} / Key hello is: {t('hello', { name: 'karim' })}
       </Typography>
-      <Icon name="chevron" size={14} color={theme.forground.secondary} isRTL={isRTL} />
+      <Icon name="chevron" size={45} color={theme.forground.tertiary} isRTL={isRTL} />
       <Button title="Dark Mode" onPress={() => setTheme('dark')} />
       <Button title="Light Mode" onPress={() => setTheme('light')} />
       <Button title="EN" onPress={() => setLanguage('en')} />
