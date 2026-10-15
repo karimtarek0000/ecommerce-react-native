@@ -8,8 +8,8 @@ export type IconProps = {
 }
 
 export type IconRenderProps = {
-  name: IconsNames
+  name: IconName
   isRTL?: boolean
 } & IconProps
 
-export type IconsNames = keyof typeof iconMapper
+export type IconName = keyof typeof iconMapper
