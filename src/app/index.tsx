@@ -4,14 +4,13 @@
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
 import { RowNav } from '@/components/ui/navigation'
-import { useUserPreferences } from '@/hooks'
 import { StyleSheet, View } from 'react-native'
 
 export default function Index() {
   // const theme = useTheme()
   // const { currentLanguage, isRTL, t } = useTranslations()
   // const [selected, setSelected] = useState(false)
-  const { setTheme } = useUserPreferences()
+  // const { setTheme } = useUserPreferences()
 
   return (
     <View style={styles.view}>

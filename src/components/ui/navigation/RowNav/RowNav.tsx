@@ -13,7 +13,7 @@ const RowNav = ({
   trilingText,
   onPress,
 }: RowNavProps) => {
-  const { styles, variants } = useStyles(variant)
+  const { styles, variants } = useStyles()
 
   return (
     <View style={[styles.wrapper, style]}>
