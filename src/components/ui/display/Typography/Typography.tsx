@@ -1,19 +1,19 @@
 import useFontStyle from '@/hooks/useFontsStyle'
-import { TypographyVariant } from '@/types'
-import { StyleProp, Text, TextProps, TextStyle } from 'react-native'
+import { Text } from 'react-native'
+import { TypographyProps } from './type'
 
-type TypographyProps = {
-  variant: TypographyVariant
-  children: React.ReactNode
-  color?: string
-  style?: StyleProp<TextStyle>
-} & TextProps
-
-const Typography = ({ variant, children, color, style, ...props }: TypographyProps) => {
+const Typography = ({
+  variant,
+  color,
+  textTransform = 'lowercase',
+  style,
+  children,
+  ...props
+}: TypographyProps) => {
   const typographyStyles = useFontStyle()
 
   return (
-    <Text style={[typographyStyles[variant], { color }, style]} {...props}>
+    <Text style={[typographyStyles[variant], { color, textTransform }, style]} {...props}>
       {children}
     </Text>
   )
