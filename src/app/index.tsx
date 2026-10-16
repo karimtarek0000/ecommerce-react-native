@@ -16,8 +16,8 @@ export default function Index() {
     <View style={styles.view}>
       <RowNav
         title="Edit Profile"
+        iconName="user"
         onPress={() => console.log('Change')}
-        iconName="check"
         trilingType="chevron"
       />
       {/* <Button title="Dark Mode" onPress={() => setTheme('dark')} />
