@@ -18,7 +18,7 @@ export const useStyles = ({ isActive, disbaled }: UseStylesProps) => {
       backgroundColor: isActive ? colors.primary.base : colors.border.default,
       borderRadius: radius.full,
       paddingHorizontal: spacing.space4.width,
-      opacity: disbaled ? 0.4 : 1,
+      opacity: disbaled ? 0.6 : 1,
     },
     indicator: {
       width: HS(16),
