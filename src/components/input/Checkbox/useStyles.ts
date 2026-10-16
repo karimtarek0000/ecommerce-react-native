@@ -30,6 +30,8 @@ export const useStyles = ({ isActive, disbaled }: UseStylesProps) => {
       opacity: disbaled ? 0.6 : 1,
     },
     indicator: {
+      alignItems: 'center',
+      justifyContent: 'center',
       opacity: isActive ? 1 : 0,
     },
   })

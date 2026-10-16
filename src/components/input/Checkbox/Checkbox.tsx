@@ -16,7 +16,9 @@ const CheckBox = ({ isActive, onChange, label, style, disbaled }: CheckBoxProps)
       </Typography>
 
       <Pressable onPress={onChange} style={[styles.wrapper, style]} disabled={disbaled}>
-        <Icon name="check" size={16} color={theme.forground.contrast} style={[styles.indicator]} />
+        <View style={[styles.indicator]}>
+          <Icon name="check" size={16} color={theme.forground.contrast} />
+        </View>
       </Pressable>
     </View>
   )
