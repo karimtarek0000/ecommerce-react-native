@@ -12,6 +12,7 @@ const SvgChevron = ({ size = 24, color = "#000", style }: IconProps) => (
     strokeLinejoin="round"
     strokeWidth={1.5}
     style={style}
+    viewBox="0 0 24 24"
   >
     <Path d="m15 6-6 6 6 6" />
   </Svg>

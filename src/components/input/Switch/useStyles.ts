@@ -9,6 +9,14 @@ export const useStyles = ({ isActive, disbaled }: UseStylesProps) => {
   const colors = useTheme()
 
   const styles = StyleSheet.create({
+    view: {
+      flexDirection: 'row-reverse',
+      gap: 4,
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingHorizontal: HS(2),
+      paddingVertical: VS(2),
+    },
     wrapper: {
       width: HS(36),
       height: VS(20),
@@ -26,7 +34,6 @@ export const useStyles = ({ isActive, disbaled }: UseStylesProps) => {
       borderRadius: radius.full,
       backgroundColor: colors.background.card,
     },
-    view: { flexDirection: 'row-reverse', gap: 4 },
   })
 
   return styles
