@@ -5,7 +5,7 @@ import { TypographyProps } from './type'
 const Typography = ({
   variant,
   color,
-  textTransform = 'lowercase',
+  textTransform = 'capitalize',
   style,
   children,
   ...props

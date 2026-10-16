@@ -1,22 +1,21 @@
 import { Typography } from '@/components/ui/display'
 import { Pressable, View } from 'react-native'
-import { RadioProps } from './type'
+import Animated, { LinearTransition } from 'react-native-reanimated'
+import { SwicthProps } from './type'
 import { useStyles } from './useStyles'
 
-const Radio = ({ isSelected, onChange, label, style, disbaled }: RadioProps) => {
+const Switch = ({ isSelected, onChange, label, style, disbaled }: SwicthProps) => {
   const styles = useStyles({ isSelected, disbaled })
 
   return (
     <View style={styles.view}>
-      <Typography variant="xsmallBold" textTransform="capitalize">
-        {label}
-      </Typography>
+      <Typography variant="xsmallBold">{label}</Typography>
 
       <Pressable onPress={onChange} style={[styles.wrapper, style]} disabled={disbaled}>
-        <View style={[styles.indicator]} />
+        <Animated.View layout={LinearTransition.springify()} style={[styles.indicator]} />
       </Pressable>
     </View>
   )
 }
 
-export default Radio
+export default Switch
