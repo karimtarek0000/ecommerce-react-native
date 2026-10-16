@@ -9,7 +9,7 @@ export type IconProps = {
 
 export type IconRenderProps = {
   name: IconName
-  isRTL?: boolean
+  flip?: boolean
 } & IconProps
 
 export type IconName = keyof typeof iconMapper

@@ -1,9 +1,13 @@
+import useTranslations from '@/hooks/useTranslations'
 import { Text, View } from 'react-native'
 import { iconMapper } from './components/iconMapper'
 import { IconRenderProps } from './types'
 
-const Icon = ({ name, size, color, style, isRTL }: IconRenderProps) => {
+const Icon = ({ name, size, color, style, flip }: IconRenderProps) => {
+  const { isRTL } = useTranslations()
   const RenderIconComponent = iconMapper[name]
+
+  const reverse = flip && isRTL
 
   if (!RenderIconComponent) {
     return (
@@ -17,7 +21,7 @@ const Icon = ({ name, size, color, style, isRTL }: IconRenderProps) => {
     <RenderIconComponent
       size={size}
       color={color}
-      style={[style, { transform: [{ scaleX: isRTL ? -1 : 1 }] }]}
+      style={[style, { transform: [{ scaleX: reverse ? -1 : 1 }] }]}
     />
   )
 }
