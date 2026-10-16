@@ -16,9 +16,10 @@ const RowNav = ({
   const { styles, variants } = useStyles()
 
   return (
-    <View style={[styles.wrapper, style]}>
+    <Pressable onPress={onPress} style={[styles.wrapper, style]}>
       <View style={[styles.mainInfo]}>
         <Icon name={iconName} color={variants[variant]} />
+
         <Typography variant="smallBold" color={variants[variant]}>
           {title}
         </Typography>
@@ -30,13 +31,12 @@ const RowNav = ({
             {trilingText}
           </Typography>
         )}
-        <Pressable onPress={onPress}>
-          {trilingType !== 'noChevron' && (
-            <Icon name="chevron" flip color={styles.trilingInfo.color} />
-          )}
-        </Pressable>
+
+        {trilingType !== 'noChevron' && (
+          <Icon name="chevron" flip color={styles.trilingInfo.color} />
+        )}
       </View>
-    </View>
+    </Pressable>
   )
 }
 
