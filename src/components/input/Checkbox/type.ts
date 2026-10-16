@@ -5,7 +5,7 @@ export type UseStylesProps = {
   disbaled?: boolean
 }
 
-export type CheckboxProps = UseStylesProps & {
+export type CheckBoxProps = UseStylesProps & {
   onChange: () => void
   style?: StyleProp<ViewStyle>
   label?: string

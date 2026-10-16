@@ -2,10 +2,10 @@ import Icon from '@/components/icons/Icon'
 import { Typography } from '@/components/ui/display'
 import { useTheme } from '@/hooks'
 import { Pressable, View } from 'react-native'
-import { CheckboxProps } from './type'
+import { CheckBoxProps } from './type'
 import { useStyles } from './useStyles'
 
-const Checkbox = ({ isActive, onChange, label, style, disbaled }: CheckboxProps) => {
+const CheckBox = ({ isActive, onChange, label, style, disbaled }: CheckBoxProps) => {
   const styles = useStyles({ isActive, disbaled })
   const theme = useTheme()
 
@@ -22,4 +22,4 @@ const Checkbox = ({ isActive, onChange, label, style, disbaled }: CheckboxProps)
   )
 }
 
-export default Checkbox
+export default CheckBox

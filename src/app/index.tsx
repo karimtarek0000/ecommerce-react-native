@@ -3,7 +3,7 @@
 // import { useUserPreferences } from '@/hooks'
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
-import { Checkbox } from '@/components/input'
+import { CheckBox } from '@/components/input'
 import { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 
@@ -15,8 +15,8 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <Checkbox
-        label="Checkbox"
+      <CheckBox
+        label="CheckBox"
         isActive={selected}
         onChange={() => {
           setSelected(!selected)
