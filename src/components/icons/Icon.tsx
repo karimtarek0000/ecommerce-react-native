@@ -12,7 +12,7 @@ const Icon = ({ name, size, color, style, flip }: IconRenderProps) => {
   if (!RenderIconComponent) {
     return (
       <View>
-        <Text>`This icon name ${name} does not exist.`</Text>
+        <Text>This icon {name} does not exist.</Text>
       </View>
     )
   }
