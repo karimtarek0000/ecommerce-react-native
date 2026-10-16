@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native'
 import { UseStylesProps } from './type'
 const { HS, VS } = scalingMethods
 
-export const useStyles = ({ isActive, disbaled }: UseStylesProps) => {
+export const useStyles = ({ isSelected, disbaled }: UseStylesProps) => {
   const colors = useTheme()
 
   const styles = StyleSheet.create({
@@ -22,8 +22,8 @@ export const useStyles = ({ isActive, disbaled }: UseStylesProps) => {
       height: VS(20),
       flexDirection: 'row',
       alignItems: 'center',
-      justifyContent: isActive ? 'flex-end' : 'flex-start',
-      backgroundColor: isActive ? colors.primary.base : colors.border.default,
+      justifyContent: isSelected ? 'flex-end' : 'flex-start',
+      backgroundColor: isSelected ? colors.primary.base : colors.border.default,
       borderRadius: radius.full,
       paddingHorizontal: spacing.space4.width,
       opacity: disbaled ? 0.6 : 1,

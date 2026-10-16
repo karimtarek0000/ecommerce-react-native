@@ -5,8 +5,8 @@ import { Pressable, View } from 'react-native'
 import { CheckBoxProps } from './type'
 import { useStyles } from './useStyles'
 
-const CheckBox = ({ isActive, onChange, label, style, disbaled }: CheckBoxProps) => {
-  const styles = useStyles({ isActive, disbaled })
+const CheckBox = ({ isSelected, onChange, label, style, disbaled }: CheckBoxProps) => {
+  const styles = useStyles({ isSelected, disbaled })
   const theme = useTheme()
 
   return (

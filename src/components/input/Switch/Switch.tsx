@@ -4,8 +4,8 @@ import Animated, { LinearTransition } from 'react-native-reanimated'
 import { SwicthProps } from './type'
 import { useStyles } from './useStyles'
 
-const Switch = ({ isActive, onChange, label, style, disbaled }: SwicthProps) => {
-  const styles = useStyles({ isActive, disbaled })
+const Switch = ({ isSelected, onChange, label, style, disbaled }: SwicthProps) => {
+  const styles = useStyles({ isSelected, disbaled })
 
   return (
     <View style={styles.view}>

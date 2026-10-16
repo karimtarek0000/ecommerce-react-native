@@ -17,7 +17,7 @@ export default function Index() {
     <View style={styles.view}>
       <CheckBox
         label="CheckBox"
-        isActive={selected}
+        isSelected={selected}
         onChange={() => {
           setSelected(!selected)
         }}

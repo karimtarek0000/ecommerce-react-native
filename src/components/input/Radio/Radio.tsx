@@ -3,8 +3,8 @@ import { Pressable, View } from 'react-native'
 import { RadioProps } from './type'
 import { useStyles } from './useStyles'
 
-const Radio = ({ isActive, onChange, label, style, disbaled }: RadioProps) => {
-  const styles = useStyles({ isActive, disbaled })
+const Radio = ({ isSelected, onChange, label, style, disbaled }: RadioProps) => {
+  const styles = useStyles({ isSelected, disbaled })
 
   return (
     <View style={styles.view}>

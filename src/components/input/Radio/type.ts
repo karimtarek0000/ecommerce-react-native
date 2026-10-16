@@ -1,7 +1,7 @@
 import { StyleProp, ViewStyle } from 'react-native'
 
 export type UseStylesProps = {
-  isActive: boolean
+  isSelected: boolean
   disbaled?: boolean
 }
 
