@@ -19,18 +19,14 @@ const RowNav = ({
     <View style={[styles.wrapper, style]}>
       <View style={[styles.mainInfo]}>
         <Icon name={iconName} color={variants[variant]} />
-        <Typography variant="smallBold" textTransform="capitalize" color={variants[variant]}>
+        <Typography variant="smallBold" color={variants[variant]}>
           {title}
         </Typography>
       </View>
 
       <View style={[styles.trilingInfo]}>
         {trilingType === 'chevronWithValue' && (
-          <Typography
-            variant="smallRegular"
-            textTransform="capitalize"
-            color={styles.trilingInfo.color}
-          >
+          <Typography variant="smallRegular" color={styles.trilingInfo.color}>
             {trilingText}
           </Typography>
         )}

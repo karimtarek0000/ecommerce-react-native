@@ -9,9 +9,7 @@ const Switch = ({ isSelected, onChange, label, style, disbaled }: SwicthProps) =
 
   return (
     <View style={styles.view}>
-      <Typography variant="xsmallBold" textTransform="capitalize">
-        {label}
-      </Typography>
+      <Typography variant="xsmallBold">{label}</Typography>
 
       <Pressable onPress={onChange} style={[styles.wrapper, style]} disabled={disbaled}>
         <Animated.View layout={LinearTransition.springify()} style={[styles.indicator]} />

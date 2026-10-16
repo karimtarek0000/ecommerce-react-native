@@ -8,9 +8,7 @@ const Radio = ({ isSelected, onChange, label, style, disbaled }: RadioProps) => 
 
   return (
     <View style={styles.view}>
-      <Typography variant="xsmallBold" textTransform="capitalize">
-        {label}
-      </Typography>
+      <Typography variant="xsmallBold">{label}</Typography>
 
       <Pressable onPress={onChange} style={[styles.wrapper, style]} disabled={disbaled}>
         <View style={[styles.indicator]} />
