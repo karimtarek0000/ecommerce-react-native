@@ -1,9 +1,11 @@
-import Svg, { Path } from "react-native-svg";
 import { type IconProps } from "@/components/icons/types";
+import { scalingMethods } from "@/utils";
+import Svg, { Path } from "react-native-svg";
+const { HS, VS } = scalingMethods;
 const SvgChevron = ({ size = 24, color = "#000", style }: IconProps) => (
   <Svg
-    width={size}
-    height={size}
+    width={HS(size)}
+    height={VS(size)}
     fill="none"
     stroke={color}
     strokeLinecap="round"
