@@ -12,6 +12,7 @@ const SvgCircleCheck = ({ size = 24, color = "#000", style }: IconProps) => (
     strokeLinejoin="round"
     strokeWidth={1.5}
     style={style}
+    viewBox="0 0 24 24"
   >
     <Path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0" />
     <Path d="m9 12 2 2 4-4" />
