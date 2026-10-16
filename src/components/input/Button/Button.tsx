@@ -7,12 +7,12 @@ import { useStyles } from './useStyles'
 const Button = ({
   title,
   variant = 'primary',
-  onPress,
-  iconName,
   size = 'lg',
-  loading,
   block,
   disabled,
+  onPress,
+  iconName,
+  loading,
 }: ButtonProps) => {
   const isDisabled = loading?.indicator || disabled
   const { styles, fontVariant, typographyColorVariant } = useStyles({
