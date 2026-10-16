@@ -3,26 +3,35 @@
 // import { useUserPreferences } from '@/hooks'
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
-import { Button } from '@/components/input'
+import Switch from '@/components/input/Switch/Switch'
+import { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 
 export default function Index() {
+  const [selected, setSelected] = useState(false)
   // const theme = useTheme()
   // const { setTheme, setLanguage } = useUserPreferences()
   // const { currentLanguage, isRTL, t } = useTranslations()
 
   return (
     <View style={styles.view}>
-      <Button
+      <Switch
+        label="check"
+        isActive={selected}
+        onChange={() => {
+          setSelected(!selected)
+        }}
+      />
+      {/* <Button
         title="Submit"
         onPress={() => ''}
         variant="chip"
         iconName="circleCheck"
-        // loading={{
-        //   indicator: true,
-        //   text: 'Loading',
-        // }}
-      />
+        loading={{
+          indicator: true,
+          text: 'Loading',
+        }}
+      /> */}
       {/* <Button title="Dark Mode" onPress={() => setTheme('dark')} /> */}
       {/* <Button title="Light Mode" onPress={() => setTheme('light')} /> */}
       {/* <Typography variant="heroBold" color={theme.forground.secondary}>
