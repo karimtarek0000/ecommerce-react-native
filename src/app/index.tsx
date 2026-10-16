@@ -3,15 +3,16 @@
 // import { useUserPreferences } from '@/hooks'
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
-import { CheckBox } from '@/components/input'
+import { Button, CheckBox } from '@/components/input'
+import { useUserPreferences } from '@/hooks'
 import { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 
 export default function Index() {
-  const [selected, setSelected] = useState(false)
   // const theme = useTheme()
-  // const { setTheme, setLanguage } = useUserPreferences()
   // const { currentLanguage, isRTL, t } = useTranslations()
+  const [selected, setSelected] = useState(false)
+  const { setTheme } = useUserPreferences()
 
   return (
     <View style={styles.view}>
@@ -22,6 +23,8 @@ export default function Index() {
           setSelected(!selected)
         }}
       />
+      <Button title="Dark Mode" onPress={() => setTheme('dark')} />
+      <Button title="Light Mode" onPress={() => setTheme('light')} />
       {/* <Button
         title="Submit"
         onPress={() => ''}
