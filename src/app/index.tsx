@@ -3,7 +3,7 @@
 // import { useUserPreferences } from '@/hooks'
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
-import { Button, FormInput } from '@/components/ui/input'
+import { Button, TextInput } from '@/components/ui/input'
 import { useUserPreferences } from '@/hooks'
 import { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
@@ -17,9 +17,10 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <FormInput
+      <TextInput
         value={title}
-        iconName="user"
+        // type="password"
+        iconName="mail"
         label="Enter you email"
         placeholder="Enter your name"
         onChange={text => setTitle(text)}

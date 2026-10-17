@@ -5,7 +5,7 @@ import { Platform, StyleSheet } from 'react-native'
 import { StatusTypes } from './type'
 const { HS, VS } = scalingMethods
 
-export const useStyles = (currentStatusInput: StatusTypes) => {
+export const useStyles = (currentStatusInput?: StatusTypes) => {
   const colors = useTheme()
   const fontsFamily = useFontStyle()
 
@@ -31,6 +31,7 @@ export const useStyles = (currentStatusInput: StatusTypes) => {
     },
     label: {
       color: colors.forground.primary,
+      marginBottom: spacing.space4.height,
     },
     inputWrapper: {
       height: VS(52),
@@ -39,7 +40,7 @@ export const useStyles = (currentStatusInput: StatusTypes) => {
       borderRadius: radius.sm,
       backgroundColor: colors.background.base,
       borderWidth: HS(1),
-      borderColor: borderVariants[currentStatusInput],
+      borderColor: borderVariants[currentStatusInput || 'default'],
       gap: spacing.space8.width,
       paddingHorizontal: spacing.space12.width,
       paddingVertical: spacing.space12.height,
@@ -58,7 +59,10 @@ export const useStyles = (currentStatusInput: StatusTypes) => {
     },
     //
     icon: {
-      color: iconVariants[currentStatusInput],
+      color: iconVariants[currentStatusInput || 'default'],
+    },
+    iconsClose: {
+      color: colors.forground.tertiary,
     },
     placeholder: {
       color: colors.forground.tertiary,

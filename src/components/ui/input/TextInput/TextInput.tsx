@@ -1,13 +1,15 @@
 import Icon from '@/components/icons/Icon'
 import { IconName } from '@/components/icons/types'
-import { Typography } from '@/components/ui/display'
 import { useState } from 'react'
-import { Pressable, TextInput, View } from 'react-native'
-import { FormInputProps } from './type'
+import { TextInput as TextInputField, View } from 'react-native'
+import TextInputActions from './TextInputActions'
+import TextInputErrorMessage from './TextInputErrorMessage'
+import TextInputLabel from './TextInputLabel'
+import { TextInputProps } from './type'
 import { useStyles } from './useStyles'
 import { getCurrentStatusType } from './util'
 
-const FormInput = ({
+const TextInput = ({
   label,
   placeholder,
   value,
@@ -17,7 +19,7 @@ const FormInput = ({
   onClearInput,
   errorMessage,
   style,
-}: FormInputProps) => {
+}: TextInputProps) => {
   const [isFocused, setFocus] = useState(false)
   const [isPasswordVisible, setVisablePassword] = useState(false)
   const currentStatusInput = getCurrentStatusType(errorMessage, isFocused, value)
@@ -27,15 +29,11 @@ const FormInput = ({
 
   return (
     <View style={[styles.wrapper, style]}>
-      {/* Label */}
-      <Typography variant="normalBold" color={styles.label.color}>
-        {label}
-      </Typography>
+      <TextInputLabel label={label} />
 
-      {/* Input */}
       <View style={styles.inputWrapper}>
         <Icon name={iconInput} size={20} color={styles.icon.color} />
-        <TextInput
+        <TextInputField
           style={styles.textInput}
           value={value}
           onChangeText={onChange}
@@ -46,33 +44,18 @@ const FormInput = ({
           secureTextEntry={type === 'password' && !isPasswordVisible}
         />
 
-        {/* Change password visibility */}
-        {type === 'password' && value && (
-          <Pressable onPress={() => setVisablePassword(!isPasswordVisible)}>
-            <Icon name={isPasswordVisible ? 'eyeOff' : 'eye'} size={20} color={styles.icon.color} />
-          </Pressable>
-        )}
-
-        {/* Clear input */}
-        {type === 'text' && value && (
-          <Pressable onPress={onClearInput}>
-            <Icon name="x" size={20} />
-          </Pressable>
-        )}
+        <TextInputActions
+          type={type}
+          isPasswordVisible={isPasswordVisible}
+          onChangeVisibility={() => setVisablePassword(!isPasswordVisible)}
+          onClearInput={onClearInput}
+          hasValue={!!value}
+        />
       </View>
 
-      {/* Error message */}
-      {errorMessage && (
-        <Typography
-          variant="xsmallRegular"
-          color={styles.errorMessage.color}
-          style={{ marginTop: styles.errorMessage.marginTop }}
-        >
-          {errorMessage}
-        </Typography>
-      )}
+      <TextInputErrorMessage errorMessage={errorMessage} />
     </View>
   )
 }
 
-export default FormInput
+export default TextInput

@@ -1,8 +1,10 @@
 import { IconName } from '@/components/icons/types'
 import { StyleProp, ViewStyle } from 'react-native'
 
-type FormInputBaseProps = {
-  label: string
+export type TextInputType = 'text' | 'password'
+
+type TextInputBaseProps = {
+  label?: string
   placeholder: string
   value: string
   onChange: (text: string) => void
@@ -10,7 +12,7 @@ type FormInputBaseProps = {
   errorMessage?: string
 }
 
-export type FormInputProps = FormInputBaseProps &
+export type TextInputProps = TextInputBaseProps &
   (
     | {
         type?: 'text'
