@@ -5,11 +5,7 @@ const TextInputLabel = ({ label }: { label?: string }) => {
   const styles = useStyles()
 
   return (
-    <Typography
-      variant="normalBold"
-      color={styles.label.color}
-      style={{ marginBottom: styles.label.marginBottom }}
-    >
+    <Typography variant="normalBold" style={{ ...styles.label }}>
       {label}
     </Typography>
   )

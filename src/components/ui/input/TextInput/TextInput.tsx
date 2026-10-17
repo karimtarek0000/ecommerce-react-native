@@ -33,6 +33,7 @@ const TextInput = ({
 
       <View style={styles.inputWrapper}>
         <Icon name={iconInput} size={20} color={styles.icon.color} />
+
         <TextInputField
           style={styles.textInput}
           value={value}
