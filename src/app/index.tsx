@@ -15,7 +15,12 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <FormInput label="Enter you email" placeholder="Enter your name" onChange={() => {}} />
+      <FormInput
+        label="Enter you email"
+        placeholder="Enter your name"
+        onChange={() => {}}
+        iconName="user"
+      />
 
       <View style={styles.sentinel} />
       <Button title="Dark Mode" onPress={() => setTheme('dark')} />

@@ -1,4 +1,5 @@
 import Icon from '@/components/icons/Icon'
+import { IconName } from '@/components/icons/types'
 import { Typography } from '@/components/ui/display'
 import { useState } from 'react'
 import { Pressable, TextInput, View } from 'react-native'
@@ -24,7 +25,9 @@ const FormInput = ({
       : value
         ? 'filled'
         : 'default'
-  const iconInput = type === 'password' ? 'lock' : iconName
+
+  const iconInput: IconName = type === 'password' ? 'lock' : (iconName as IconName)
+
   const styles = useStyles(currentStatusInput)
 
   return (
