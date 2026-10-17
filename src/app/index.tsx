@@ -5,9 +5,11 @@
 // import { Button, View } from 'react-native'
 import { Button, FormInput } from '@/components/ui/input'
 import { useUserPreferences } from '@/hooks'
+import { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 
 export default function Index() {
+  const [title, setTitle] = useState('')
   // const theme = useTheme()
   // const { currentLanguage, isRTL, t } = useTranslations()
   // const [selected, setSelected] = useState(false)
@@ -16,10 +18,12 @@ export default function Index() {
   return (
     <View style={styles.view}>
       <FormInput
+        value={title}
+        iconName="user"
         label="Enter you email"
         placeholder="Enter your name"
-        onChange={() => {}}
-        iconName="user"
+        onChange={text => setTitle(text as string)}
+        onClearInput={() => setTitle('')}
       />
 
       <View style={styles.sentinel} />

@@ -3,8 +3,9 @@ import { IconName } from '@/components/icons/types'
 import { Typography } from '@/components/ui/display'
 import { useState } from 'react'
 import { Pressable, TextInput, View } from 'react-native'
-import { FormInputProps, StatusTypes } from './type'
+import { FormInputProps } from './type'
 import { useStyles } from './useStyles'
+import { getCurrentStatusType } from './util'
 
 const FormInput = ({
   label,
@@ -13,19 +14,13 @@ const FormInput = ({
   type = 'text',
   iconName,
   onChange,
+  onClearInput,
   errorMessage,
   style,
 }: FormInputProps) => {
   const [isFocused, setFocus] = useState(false)
   const [isPasswordVisible, setVisablePassword] = useState(false)
-  const currentStatusInput: StatusTypes = errorMessage
-    ? 'error'
-    : isFocused
-      ? 'focused'
-      : value
-        ? 'filled'
-        : 'default'
-
+  const currentStatusInput = getCurrentStatusType(errorMessage, isFocused, value)
   const iconInput: IconName = type === 'password' ? 'lock' : (iconName as IconName)
 
   const styles = useStyles(currentStatusInput)
@@ -51,13 +46,22 @@ const FormInput = ({
           secureTextEntry={type === 'password' && !isPasswordVisible}
         />
 
-        {type === 'password' && (
+        {/* Change password visibility */}
+        {type === 'password' && value && (
           <Pressable onPress={() => setVisablePassword(!isPasswordVisible)}>
             <Icon name={isPasswordVisible ? 'eyeOff' : 'eye'} size={20} color={styles.icon.color} />
           </Pressable>
         )}
+
+        {/* Clear input */}
+        {type === 'text' && value && (
+          <Pressable onPress={onClearInput}>
+            <Icon name="x" size={20} color={styles.icon.color} />
+          </Pressable>
+        )}
       </View>
 
+      {/* Error message */}
       {errorMessage && (
         <Typography
           variant="xsmallRegular"
