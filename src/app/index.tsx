@@ -17,7 +17,6 @@ export default function Index() {
     <View style={styles.view}>
       <FormInput
         label="Enter you email"
-        errorMessage="sdsd"
         placeholder="Enter your name"
         iconName="user"
         onChange={() => {}}

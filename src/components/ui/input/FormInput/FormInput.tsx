@@ -45,6 +45,7 @@ const FormInput = ({
           placeholderTextColor={styles.placeholder.color}
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
+          secureTextEntry={type === 'password'}
         />
       </View>
 
