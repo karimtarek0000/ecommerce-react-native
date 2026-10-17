@@ -1,11 +1,11 @@
 import { IconName } from '@/components/icons/types'
-import { StyleProp, TextInputChangeEvent, ViewStyle } from 'react-native'
+import { StyleProp, ViewStyle } from 'react-native'
 
 type FormInputBaseProps = {
   label: string
   placeholder: string
   value: string
-  onChange: (text: TextInputChangeEvent | string) => void
+  onChange: (text: string) => void
   style?: StyleProp<ViewStyle>
   errorMessage?: string
 }

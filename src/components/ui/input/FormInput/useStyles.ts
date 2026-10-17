@@ -1,13 +1,15 @@
 import { radius, spacing } from '@/constants'
 import { useFontStyle, useTheme } from '@/hooks'
 import { scalingMethods } from '@/utils'
-import { StyleSheet } from 'react-native'
+import { Platform, StyleSheet } from 'react-native'
 import { StatusTypes } from './type'
 const { HS, VS } = scalingMethods
 
 export const useStyles = (currentStatusInput: StatusTypes) => {
   const colors = useTheme()
   const fontsFamily = useFontStyle()
+
+  const andriod = Platform.OS === 'android'
 
   const borderVariants = {
     default: colors.border.default,
@@ -44,9 +46,15 @@ export const useStyles = (currentStatusInput: StatusTypes) => {
     },
     textInput: {
       ...fontsFamily.smallRegular,
+      color: colors.forground.primary,
       alignSelf: 'stretch',
       flex: 1,
-      lineHeight: 0,
+      lineHeight: andriod ? fontsFamily.smallRegular.lineHeight : 0,
+      textAlign: 'left',
+      textAlignVertical: 'center',
+      paddingVertical: 0,
+      writingDirection: 'ltr',
+      includeFontPadding: false,
     },
     //
     icon: {

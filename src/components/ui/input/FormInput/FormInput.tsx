@@ -38,11 +38,11 @@ const FormInput = ({
         <TextInput
           style={styles.textInput}
           value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          placeholderTextColor={styles.placeholder.color}
+          onChangeText={onChange}
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
+          placeholder={placeholder}
+          placeholderTextColor={styles.placeholder.color}
           secureTextEntry={type === 'password' && !isPasswordVisible}
         />
 
@@ -56,7 +56,7 @@ const FormInput = ({
         {/* Clear input */}
         {type === 'text' && value && (
           <Pressable onPress={onClearInput}>
-            <Icon name="x" size={20} color={styles.icon.color} />
+            <Icon name="x" size={20} />
           </Pressable>
         )}
       </View>

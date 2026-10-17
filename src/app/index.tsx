@@ -22,7 +22,7 @@ export default function Index() {
         iconName="user"
         label="Enter you email"
         placeholder="Enter your name"
-        onChange={text => setTitle(text as string)}
+        onChange={text => setTitle(text)}
         onClearInput={() => setTitle('')}
       />
 
