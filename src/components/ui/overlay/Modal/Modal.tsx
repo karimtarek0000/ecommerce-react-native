@@ -1,15 +1,8 @@
 import Icon from '@/components/icons/Icon'
 import { Typography } from '@/components/ui/display'
 import { Modal as ModalNative, Pressable, View } from 'react-native'
+import { ModalProps } from './type'
 import { useStyles } from './useStyles'
-
-type ModalProps = {
-  visible: boolean
-  headTitle: string
-  description: string
-  modalBody: React.JSX.Element
-  closeModal: VoidFunction
-}
 
 const Modal = ({ headTitle, visible, description, modalBody, closeModal }: ModalProps) => {
   const styles = useStyles()
