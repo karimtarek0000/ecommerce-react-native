@@ -6,11 +6,10 @@
 import { Button } from '@/components/ui/input'
 import { TopBar } from '@/components/ui/navigation'
 import { useUserPreferences } from '@/hooks'
-import { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 
 export default function Index() {
-  const [title, setTitle] = useState('')
+  // const [title, setTitle] = useState('')
   // const theme = useTheme()
   // const { currentLanguage, isRTL, t } = useTranslations()
   // const [selected, setSelected] = useState(false)
