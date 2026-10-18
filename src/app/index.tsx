@@ -3,13 +3,13 @@
 // import { useUserPreferences } from '@/hooks'
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
-import { Button, TextInput } from '@/components/ui/input'
+import { Button } from '@/components/ui/input'
+import { TopBar } from '@/components/ui/navigation'
 import { useUserPreferences } from '@/hooks'
-import { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 
 export default function Index() {
-  const [title, setTitle] = useState('')
+  // const [title, setTitle] = useState('')
   // const theme = useTheme()
   // const { currentLanguage, isRTL, t } = useTranslations()
   // const [selected, setSelected] = useState(false)
@@ -17,14 +17,14 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <TextInput
-        value={title}
-        // type="password"
-        iconName="mail"
-        label="Enter you email"
-        placeholder="Enter your name"
-        onChange={text => setTitle(text)}
-        onClearInput={() => setTitle('')}
+      <TopBar
+        title="my order"
+        goTo="back"
+        // actionButton={{
+        //   iconName: 'shoppingBag',
+        //   onPress: () => console.log('clicked'),
+        //   // flip:true
+        // }}
       />
 
       <View style={styles.sentinel} />
