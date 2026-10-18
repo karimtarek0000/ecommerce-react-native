@@ -4,15 +4,15 @@ import { StyleProp, ViewStyle } from 'react-native'
 
 export type ActionButtonProps = { iconName: IconName; onPress: VoidFunction; flip?: boolean }
 
+export type GoToActionProps = {
+  goTo: 'none' | 'back' | 'specific'
+  toPage?: Href
+}
+
 export type TopBarBaseProps = {
   title: string
   actionButton?: ActionButtonProps
   style?: StyleProp<ViewStyle>
-}
-
-export type GoToActionProps = {
-  goTo: 'none' | 'back' | 'specific'
-  toPage?: Href
 }
 
 export type TopBarProps = TopBarBaseProps &

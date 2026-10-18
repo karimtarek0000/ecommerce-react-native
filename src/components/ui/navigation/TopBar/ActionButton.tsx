@@ -3,16 +3,16 @@ import { Pressable, View } from 'react-native'
 import { ActionButtonProps } from './type'
 import { useStyles } from './useStyle'
 
-const ActionButton = ({ iconName, onPress, flip }: ActionButtonProps) => {
+const ActionButton = ({ actionButton }: { actionButton: ActionButtonProps }) => {
   const styles = useStyles()
 
-  if (iconName) {
+  if (!actionButton) {
     return <View />
   }
 
   return (
-    <Pressable onPress={onPress}>
-      <Icon name={iconName} color={styles.icon.color} flip={flip} />
+    <Pressable onPress={actionButton.onPress}>
+      <Icon name={actionButton.iconName} color={styles.icon.color} flip={actionButton.flip} />
     </Pressable>
   )
 }

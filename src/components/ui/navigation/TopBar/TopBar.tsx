@@ -1,8 +1,8 @@
-import Icon from '@/components/icons/Icon'
 import { Typography } from '@/components/ui/display'
-import { Pressable, View } from 'react-native'
+import { View } from 'react-native'
+import ActionButton from './ActionButton'
 import GoToAction from './GoToAction'
-import { TopBarProps } from './type'
+import { ActionButtonProps, TopBarProps } from './type'
 import { useStyles } from './useStyle'
 
 const TopBar = ({ title, actionButton, style, goTo = 'none', toPage }: TopBarProps) => {
@@ -16,13 +16,7 @@ const TopBar = ({ title, actionButton, style, goTo = 'none', toPage }: TopBarPro
         {title}
       </Typography>
 
-      {actionButton ? (
-        <Pressable onPress={actionButton.onPress}>
-          <Icon name={actionButton?.iconName} color={styles.icon.color} flip={actionButton.flip} />
-        </Pressable>
-      ) : (
-        <View />
-      )}
+      <ActionButton actionButton={{ ...(actionButton as ActionButtonProps) }} />
     </View>
   )
 }
