@@ -1,9 +1,13 @@
-export type sizes = 'sm' | 'md' | 'lg'
+import { ImageProps } from 'expo-image'
 
-type AvatarBaseProps = {}
+export type Sizes = 'sm' | 'md' | 'lg'
+
+type AvatarBaseProps = {
+  imageProps?: ImageProps
+}
 
 export type AvatarProps = AvatarBaseProps &
   (
-    | { size?: Exclude<sizes, 'lg'>; uploaderImage?: boolean }
-    | { size?: Exclude<sizes, 'sm' | 'md'>; uploaderImage?: never }
+    | { size?: Exclude<Sizes, 'lg'>; enableUploader?: boolean }
+    | { size?: Exclude<Sizes, 'sm' | 'md'>; enableUploader?: never }
   )

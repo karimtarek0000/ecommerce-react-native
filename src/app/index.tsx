@@ -20,7 +20,12 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <Avatar size="lg" />
+      <Avatar
+        size="lg"
+        imageProps={{
+          source: 'https://picsum.photos/seed/696/3000/2000',
+        }}
+      />
 
       <Button title="Bottom Sheet 1" onPress={() => ref.current?.snapToIndex(0)} />
       <Button title="Bottom Sheet" onPress={() => ref.current?.expand()} />

@@ -5,7 +5,7 @@ import { Pressable, View } from 'react-native'
 import { AvatarProps } from './type'
 import { useStyles } from './useStyles'
 
-const Avatar = ({ size = 'md' }: AvatarProps) => {
+const Avatar = ({ size = 'md', imageProps, enableUploader }: AvatarProps) => {
   const styles = useStyles(size)
 
   return (
@@ -17,10 +17,10 @@ const Avatar = ({ size = 'md' }: AvatarProps) => {
         placeholderContentFit="fill"
         contentFit="fill"
         transition={1000}
-        // source="https://picsum.photos/seed/696/3000/2000"
+        {...imageProps}
       />
 
-      {size === 'lg' && (
+      {enableUploader && size === 'lg' && (
         <Pressable style={styles.uploader}>
           <Icon name="camera" size={20} color={styles.icon.color} />
         </Pressable>
