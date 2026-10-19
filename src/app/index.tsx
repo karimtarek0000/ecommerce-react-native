@@ -4,13 +4,14 @@
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
 import { Button } from '@/components/ui/input'
-import { Modal } from '@/components/ui/overlay'
+import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
-import { useState } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { useRef } from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 
 export default function Index() {
-  const [toggleModal, setToggleModal] = useState(false)
+  const ref = useRef<BottomSheetRef>(null)
+  // const [toggleModal, setToggleModal] = useState(false)
   // const [title, setTitle] = useState('')
   // const theme = useTheme()
   // const { currentLanguage, isRTL, t } = useTranslations()
@@ -19,23 +20,20 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <Modal
-        visible={toggleModal}
-        headTitle="modal title"
-        description="This is a description"
-        closeModal={() => setToggleModal(false)}
-        modalBody={() => (
-          <View>
-            <Button title="Dark Mode" onPress={() => setTheme('dark')} />
-            <Button title="Light Mode" onPress={() => setTheme('light')} />
-          </View>
-        )}
-      />
-
+      <Button title="Bottom Sheet" onPress={() => ref.current?.expand()} />
       <View style={styles.sentinel} />
-      <Button title="Open Modal" onPress={() => setToggleModal(true)} />
       <Button title="Dark Mode" onPress={() => setTheme('dark')} />
       <Button title="Light Mode" onPress={() => setTheme('light')} />
+
+      <BottomSheet
+        ref={ref}
+        headTitle=" Bottom Sheet Title"
+        description="Optional secondary description below the title"
+        bottomSheetProps={{
+          snapPoints: ['19%', '60%'],
+          children: <Text>Testing</Text>,
+        }}
+      />
     </View>
   )
 }
@@ -44,7 +42,7 @@ const styles = StyleSheet.create({
   view: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: '80%',
+    height: '100%',
     paddingHorizontal: 10,
   },
   sentinel: {
