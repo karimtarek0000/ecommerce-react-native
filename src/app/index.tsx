@@ -22,9 +22,9 @@ export default function Index() {
     <View style={styles.view}>
       <Avatar
         size="lg"
-        imageProps={{
-          source: 'https://picsum.photos/seed/696/3000/2000',
-        }}
+        // imageProps={{
+        //   source: 'https://picsum.photos/seed/696/3000/2000',
+        // }}
       />
 
       <Button title="Bottom Sheet 1" onPress={() => ref.current?.snapToIndex(0)} />
