@@ -20,6 +20,7 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
+      <Button title="Bottom Sheet 1" onPress={() => ref.current?.snapToIndex(0)} />
       <Button title="Bottom Sheet" onPress={() => ref.current?.expand()} />
       <View style={styles.sentinel} />
       <Button title="Dark Mode" onPress={() => setTheme('dark')} />
