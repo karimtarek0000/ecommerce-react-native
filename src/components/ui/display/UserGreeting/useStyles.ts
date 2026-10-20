@@ -12,12 +12,12 @@ export const useStyles = (size: Sizes) => {
   const fontsSizes: Record<Sizes, TypographyVariant> = {
     sm: 'normalBold',
     md: 'mediumBold',
-  }
+  } as const
 
   const metaColors = {
     sm: colors.forground.secondary,
     md: colors.forground.tertiary,
-  }
+  } as const
 
   const styles = StyleSheet.create({
     wrapper: {
