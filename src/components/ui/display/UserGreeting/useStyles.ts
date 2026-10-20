@@ -1,4 +1,3 @@
-import { radius, spacing } from '@/constants'
 import { useTheme } from '@/hooks'
 import { TypographyVariant } from '@/types'
 import { scalingMethods } from '@/utils'
@@ -26,9 +25,6 @@ export const useStyles = (size: Sizes) => {
       justifyContent: 'center',
       alignSelf: 'stretch',
       gap: HS(12),
-      backgroundColor: colors.background.base,
-      borderRadius: radius.sm,
-      paddingVertical: spacing.space4.height,
     },
     body: {
       alignSelf: 'flex-start',
