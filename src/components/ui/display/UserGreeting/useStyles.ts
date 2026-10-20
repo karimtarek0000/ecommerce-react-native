@@ -14,7 +14,7 @@ export const useStyles = (size: Sizes) => {
     md: 'mediumBold',
   }
 
-  const emailColors = {
+  const metaColors = {
     sm: colors.forground.secondary,
     md: colors.forground.tertiary,
   }
@@ -38,7 +38,7 @@ export const useStyles = (size: Sizes) => {
       color: colors.forground.primary,
     },
     meta: {
-      color: emailColors[size],
+      color: metaColors[size],
       lineHeight: 0,
     },
   })
