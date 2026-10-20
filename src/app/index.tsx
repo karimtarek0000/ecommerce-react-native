@@ -3,7 +3,7 @@
 // import { useUserPreferences } from '@/hooks'
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
-import { Avatar } from '@/components/ui/display'
+import { UserGreeting } from '@/components/ui/display'
 import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
 import { useRef } from 'react'
@@ -20,11 +20,13 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <Avatar
-        size="lg"
-        // imageProps={{
-        //   source: 'https://picsum.photos/seed/696/3000/2000',
-        // }}
+      <UserGreeting userName="jonathan" />
+      <View style={styles.sentinel} />
+      <UserGreeting
+        type="email"
+        size="md"
+        userName="jonathan smith"
+        email="jonathan@kimzshop.com"
       />
 
       <Button title="Bottom Sheet 1" onPress={() => ref.current?.snapToIndex(0)} />
