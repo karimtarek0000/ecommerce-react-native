@@ -4,6 +4,7 @@ export type Sizes = 'sm' | 'md'
 
 type UserGreetingBaseProps = {
   userName: string
+  imgSrc: string
   imageOptions?: ImageProps
 }
 

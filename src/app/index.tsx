@@ -3,6 +3,7 @@
 // import { useUserPreferences } from '@/hooks'
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
+import { personImage } from '@/assets/images'
 import { UserGreeting } from '@/components/ui/display'
 import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
@@ -20,9 +21,24 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <UserGreeting userName="jonathan" />
+      <UserGreeting
+        imgSrc={personImage}
+        userName="jonathan"
+        // imageOptions={{
+        //   transition: 2000,
+        // }}
+      />
       <View style={styles.sentinel} />
-      <UserGreeting type="meta" size="md" userName="jonathan smith" meta="jonathan@kimzshop.com" />
+      <UserGreeting
+        imgSrc={personImage}
+        type="meta"
+        size="md"
+        userName="jonathan smith"
+        meta="jonathan@kimzshop.com"
+        // imageOptions={{
+        //   transition: 2000,
+        // }}
+      />
 
       <Button title="Bottom Sheet 1" onPress={() => ref.current?.snapToIndex(0)} />
       <Button title="Bottom Sheet" onPress={() => ref.current?.expand()} />

@@ -6,6 +6,7 @@ import { useStyles } from './useStyles'
 const UserGreeting = ({
   type = 'welcome',
   userName,
+  imgSrc,
   meta,
   imageOptions,
   size = 'sm',
@@ -14,7 +15,7 @@ const UserGreeting = ({
 
   return (
     <View style={styles.wrapper}>
-      <Avatar size={size} imageOptions={imageOptions} />
+      <Avatar imgSrc={imgSrc} size={size} imageOptions={imageOptions} />
 
       <View style={styles.body}>
         <Typography variant={fontsSizes[size]} color={styles.userName.color}>
