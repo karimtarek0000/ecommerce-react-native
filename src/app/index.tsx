@@ -3,7 +3,7 @@
 // import { useUserPreferences } from '@/hooks'
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
-import { IconBadge } from '@/components/ui/display'
+import { StatusBill } from '@/components/ui/display'
 import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
 import { useRef } from 'react'
@@ -20,7 +20,14 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <IconBadge iconName="mapPin" />
+      {/* <IconBadge iconName="mapPin" /> */}
+      <StatusBill
+        status="onProgress"
+        iconName="truck"
+        size="lg"
+        label="On Progress"
+        variant="fill"
+      />
 
       <View style={styles.sentinel} />
       <Button title="Bottom Sheet" onPress={() => ref.current?.expand()} />
