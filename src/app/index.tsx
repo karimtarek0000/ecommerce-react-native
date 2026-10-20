@@ -28,6 +28,8 @@ export default function Index() {
         label="On Progress"
         variant="fill"
       />
+      <View style={styles.sentinel} />
+      <StatusBill status="onProgress" size="lg" label="On Progress" variant="fill" />
 
       <View style={styles.sentinel} />
       <Button title="Bottom Sheet" onPress={() => ref.current?.expand()} />
