@@ -3,8 +3,7 @@
 // import { useUserPreferences } from '@/hooks'
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
-import { personImage } from '@/assets/images'
-import { UserGreeting } from '@/components/ui/display'
+import { IconBadge } from '@/components/ui/display'
 import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
 import { useRef } from 'react'
@@ -21,29 +20,10 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <UserGreeting
-        imgSrc={personImage}
-        userName="jonathan"
-        // imageOptions={{
-        //   transition: 2000,
-        // }}
-      />
-      <View style={styles.sentinel} />
-      <UserGreeting
-        imgSrc={personImage}
-        type="meta"
-        size="md"
-        userName="jonathan smith"
-        meta="jonathan@kimzshop.com"
-        // imageOptions={{
-        //   transition: 2000,
-        // }}
-      />
+      <IconBadge iconName="mapPin" />
 
-      <Button title="Bottom Sheet 1" onPress={() => ref.current?.snapToIndex(0)} />
+      <View style={styles.sentinel} />
       <Button title="Bottom Sheet" onPress={() => ref.current?.expand()} />
-
-      <View style={styles.sentinel} />
       <Button title="Dark Mode" onPress={() => setTheme('dark')} />
       <Button title="Light Mode" onPress={() => setTheme('light')} />
 
