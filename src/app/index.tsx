@@ -22,12 +22,7 @@ export default function Index() {
     <View style={styles.view}>
       <UserGreeting userName="jonathan" />
       <View style={styles.sentinel} />
-      <UserGreeting
-        type="email"
-        size="md"
-        userName="jonathan smith"
-        email="jonathan@kimzshop.com"
-      />
+      <UserGreeting type="meta" size="md" userName="jonathan smith" meta="jonathan@kimzshop.com" />
 
       <Button title="Bottom Sheet 1" onPress={() => ref.current?.snapToIndex(0)} />
       <Button title="Bottom Sheet" onPress={() => ref.current?.expand()} />

@@ -4,21 +4,10 @@ import { TypographyVariant } from '@/types'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
 import { Sizes } from './type'
-const { HS, VS } = scalingMethods
+const { HS } = scalingMethods
 
 export const useStyles = (size: Sizes) => {
   const colors = useTheme()
-
-  const sizes = {
-    sm: {
-      width: HS(44),
-      height: VS(44),
-    },
-    md: {
-      width: HS(60),
-      height: VS(60),
-    },
-  }
 
   const fontsSizes: Record<Sizes, TypographyVariant> = {
     sm: 'normalBold',
@@ -41,11 +30,6 @@ export const useStyles = (size: Sizes) => {
       borderRadius: radius.sm,
       paddingVertical: spacing.space4.height,
     },
-    image: {
-      width: sizes[size].width,
-      height: sizes[size].height,
-      borderRadius: radius.full,
-    },
     body: {
       alignSelf: 'flex-start',
     },
@@ -53,7 +37,7 @@ export const useStyles = (size: Sizes) => {
     userName: {
       color: colors.forground.primary,
     },
-    email: {
+    meta: {
       color: emailColors[size],
       lineHeight: 0,
     },

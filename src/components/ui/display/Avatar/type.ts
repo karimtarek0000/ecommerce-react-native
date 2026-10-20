@@ -3,7 +3,7 @@ import { ImageProps } from 'expo-image'
 export type Sizes = 'sm' | 'md' | 'lg'
 
 type AvatarBaseProps = {
-  imageProps?: ImageProps
+  imageOptions?: ImageProps
 }
 
 export type AvatarProps = AvatarBaseProps &

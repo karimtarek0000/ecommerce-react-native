@@ -4,7 +4,7 @@ export type Sizes = 'sm' | 'md'
 
 type UserGreetingBaseProps = {
   userName: string
-  imageProps?: ImageProps
+  imageOptions?: ImageProps
 }
 
 export type UserGreetingProps = UserGreetingBaseProps &
@@ -12,11 +12,11 @@ export type UserGreetingProps = UserGreetingBaseProps &
     | {
         size?: Exclude<Sizes, 'md'>
         type?: 'welcome'
-        email?: never
+        meta?: never
       }
     | {
-        type?: 'email'
+        type?: 'meta'
         size: Exclude<Sizes, 'sm'>
-        email: string
+        meta: string
       }
   )

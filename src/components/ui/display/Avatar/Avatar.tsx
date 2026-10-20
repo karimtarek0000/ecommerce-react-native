@@ -5,7 +5,7 @@ import { Pressable, View } from 'react-native'
 import { AvatarProps } from './type'
 import { useStyles } from './useStyles'
 
-const Avatar = ({ size = 'md', imageProps, enableUploader }: AvatarProps) => {
+const Avatar = ({ size = 'md', imageOptions, enableUploader }: AvatarProps) => {
   const styles = useStyles(size)
 
   return (
@@ -17,7 +17,7 @@ const Avatar = ({ size = 'md', imageProps, enableUploader }: AvatarProps) => {
         placeholderContentFit="fill"
         contentFit="fill"
         transition={1000}
-        {...imageProps}
+        {...imageOptions}
       />
 
       {enableUploader && size === 'lg' && (
