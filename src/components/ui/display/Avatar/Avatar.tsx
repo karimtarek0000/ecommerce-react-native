@@ -1,23 +1,23 @@
-import { avatarIcon, personImage } from '@/assets/images'
+import { avatarIcon } from '@/assets/images'
 import Icon from '@/components/icons/Icon'
 import { Image } from 'expo-image'
 import { Pressable, View } from 'react-native'
 import { AvatarProps } from './type'
 import { useStyles } from './useStyles'
 
-const Avatar = ({ size = 'md', imageProps, enableUploader }: AvatarProps) => {
+const Avatar = ({ size = 'md', imgSrc, imageOptions, enableUploader, style }: AvatarProps) => {
   const styles = useStyles(size)
 
   return (
-    <View style={styles.wrapper}>
+    <View style={[styles.wrapper, style]}>
       <Image
         style={styles.image}
-        source={personImage}
+        source={imgSrc}
         placeholder={avatarIcon}
         placeholderContentFit="fill"
         contentFit="fill"
         transition={1000}
-        {...imageProps}
+        {...imageOptions}
       />
 
       {enableUploader && size === 'lg' && (

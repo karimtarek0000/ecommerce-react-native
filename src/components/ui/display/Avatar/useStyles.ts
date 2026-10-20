@@ -11,15 +11,15 @@ export const useStyles = (size: Sizes) => {
   const sizes = {
     sm: {
       width: HS(44),
-      height: HS(44),
+      height: VS(44),
     },
     md: {
       width: HS(60),
-      height: HS(60),
+      height: VS(60),
     },
     lg: {
       width: HS(120),
-      height: HS(120),
+      height: VS(120),
     },
   }
 
@@ -29,7 +29,7 @@ export const useStyles = (size: Sizes) => {
     },
     image: {
       width: sizes[size].width,
-      height: sizes[size].width,
+      height: sizes[size].height,
       borderRadius: radius.full,
     },
     uploader: {

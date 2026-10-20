@@ -3,7 +3,8 @@
 // import { useUserPreferences } from '@/hooks'
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
-import { Avatar } from '@/components/ui/display'
+import { personImage } from '@/assets/images'
+import { UserGreeting } from '@/components/ui/display'
 import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
 import { useRef } from 'react'
@@ -20,10 +21,22 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <Avatar
-        size="lg"
-        // imageProps={{
-        //   source: 'https://picsum.photos/seed/696/3000/2000',
+      <UserGreeting
+        imgSrc={personImage}
+        userName="jonathan"
+        // imageOptions={{
+        //   transition: 2000,
+        // }}
+      />
+      <View style={styles.sentinel} />
+      <UserGreeting
+        imgSrc={personImage}
+        type="meta"
+        size="md"
+        userName="jonathan smith"
+        meta="jonathan@kimzshop.com"
+        // imageOptions={{
+        //   transition: 2000,
         // }}
       />
 
