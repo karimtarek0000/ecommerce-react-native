@@ -20,11 +20,11 @@ const UserGreeting = ({
 
       <View style={styles.body}>
         <Typography variant={fontsSizes[size]} color={styles.userName.color}>
-          {type === 'default' ? `Hi ${userName}` : userName}
+          {type === 'default' ? `hi ${userName}` : userName}
         </Typography>
 
         <Typography variant="smallRegular" style={styles.meta}>
-          {type === 'default' ? 'Let``s go shopping' : meta}
+          {type === 'default' ? 'let``s go shopping' : meta}
         </Typography>
       </View>
     </View>
