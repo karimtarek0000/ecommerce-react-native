@@ -14,7 +14,7 @@ export type UserGreetingProps = UserGreetingBaseProps &
   (
     | {
         size?: Exclude<Sizes, 'md'>
-        type?: 'welcome'
+        type?: 'default'
         meta?: never
       }
     | {

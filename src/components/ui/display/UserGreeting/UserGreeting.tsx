@@ -4,7 +4,7 @@ import { UserGreetingProps } from './type'
 import { useStyles } from './useStyles'
 
 const UserGreeting = ({
-  type = 'welcome',
+  type = 'default',
   userName,
   imgSrc,
   meta,
@@ -20,11 +20,11 @@ const UserGreeting = ({
 
       <View style={styles.body}>
         <Typography variant={fontsSizes[size]} color={styles.userName.color}>
-          {type === 'welcome' ? `Hi ${userName}` : userName}
+          {type === 'default' ? `Hi ${userName}` : userName}
         </Typography>
 
         <Typography variant="smallRegular" style={styles.meta}>
-          {type === 'welcome' ? 'Let``s go shopping' : meta}
+          {type === 'default' ? 'Let``s go shopping' : meta}
         </Typography>
       </View>
     </View>
