@@ -5,11 +5,11 @@ import { Pressable, View } from 'react-native'
 import { AvatarProps } from './type'
 import { useStyles } from './useStyles'
 
-const Avatar = ({ size = 'md', imgSrc, imageOptions, enableUploader }: AvatarProps) => {
+const Avatar = ({ size = 'md', imgSrc, imageOptions, enableUploader, style }: AvatarProps) => {
   const styles = useStyles(size)
 
   return (
-    <View style={styles.wrapper}>
+    <View style={[styles.wrapper, style]}>
       <Image
         style={styles.image}
         source={imgSrc}

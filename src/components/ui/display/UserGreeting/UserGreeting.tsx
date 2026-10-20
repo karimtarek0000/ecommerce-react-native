@@ -10,11 +10,12 @@ const UserGreeting = ({
   meta,
   imageOptions,
   size = 'sm',
+  style,
 }: UserGreetingProps) => {
   const { styles, fontsSizes } = useStyles(size)
 
   return (
-    <View style={styles.wrapper}>
+    <View style={[styles.wrapper, style]}>
       <Avatar imgSrc={imgSrc} size={size} imageOptions={imageOptions} />
 
       <View style={styles.body}>
