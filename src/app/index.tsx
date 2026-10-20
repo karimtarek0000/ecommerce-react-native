@@ -3,11 +3,11 @@
 // import { useUserPreferences } from '@/hooks'
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
-import { Button } from '@/components/ui/input'
+import { Avatar } from '@/components/ui/display'
 import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
 import { useRef } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 
 export default function Index() {
   const ref = useRef<BottomSheetRef>(null)
@@ -20,8 +20,16 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
+      <Avatar
+        size="lg"
+        // imageProps={{
+        //   source: 'https://picsum.photos/seed/696/3000/2000',
+        // }}
+      />
+
       <Button title="Bottom Sheet 1" onPress={() => ref.current?.snapToIndex(0)} />
       <Button title="Bottom Sheet" onPress={() => ref.current?.expand()} />
+
       <View style={styles.sentinel} />
       <Button title="Dark Mode" onPress={() => setTheme('dark')} />
       <Button title="Light Mode" onPress={() => setTheme('light')} />
