@@ -1,4 +1,5 @@
-import { Avatar, Typography } from '@/components/ui/display'
+import Avatar from '@/components/ui/display/Avatar/Avatar'
+import Typography from '@/components/ui/display/Typography/Typography'
 import { View } from 'react-native'
 import { UserGreetingProps } from './type'
 import { useStyles } from './useStyles'
