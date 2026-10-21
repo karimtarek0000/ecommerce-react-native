@@ -19,7 +19,9 @@ const PaymentCard = ({
       <InfoCard.Leading title={cardNumberFormat} description={cardExpiryFormat} />
       <InfoCard.Trailing>
         <IconBadge iconName="creditCard" status={isSelected ? 'default' : 'warning'} />
-        {isSelected && <StatusBill label="default" size="sm" status="onProgress" />}
+        {isSelected && (
+          <StatusBill label="default" iconName="check" size="sm" status="onProgress" />
+        )}
       </InfoCard.Trailing>
     </InfoCard>
   )
