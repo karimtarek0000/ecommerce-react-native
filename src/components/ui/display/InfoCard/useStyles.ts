@@ -32,6 +32,7 @@ export const useStyles = (isSelected?: boolean) => {
     },
     infoCardTrailing: {
       alignItems: 'flex-end',
+      gap: VS(3),
     },
   })
 

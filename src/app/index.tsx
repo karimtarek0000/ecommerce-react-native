@@ -3,7 +3,7 @@
 // import { useUserPreferences } from '@/hooks'
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
-import { InfoCard } from '@/components/ui/display'
+import { PaymentCard } from '@/components/ui/display'
 import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
 import { useRef } from 'react'
@@ -20,13 +20,13 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <InfoCard onPress={() => {}} isSelected>
-        <InfoCard.Leading title="Los Angeles" description="Los Angeles, United States" />
-        <InfoCard.Trailing>
-          <Text>default</Text>
-          <Text>defaultsdsdsddddd</Text>
-        </InfoCard.Trailing>
-      </InfoCard>
+      <PaymentCard
+        isSelected
+        onPress={() => {}}
+        cardType="visa"
+        cardNumber="4242"
+        expiryDate="04/27"
+      />
       <View style={styles.sentinel} />
       <View style={styles.sentinel} />
       <View style={styles.sentinel} />
