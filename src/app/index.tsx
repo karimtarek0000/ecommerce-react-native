@@ -3,6 +3,7 @@
 // import { useUserPreferences } from '@/hooks'
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
+import { InfoCard } from '@/components/ui/display'
 import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
 import { useRef } from 'react'
@@ -19,6 +20,9 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
+      <InfoCard />
+      <View style={styles.sentinel} />
+      <View style={styles.sentinel} />
       <View style={styles.sentinel} />
       <Button title="Bottom Sheet" onPress={() => ref.current?.expand()} />
       <Button title="Dark Mode" onPress={() => setTheme('dark')} />

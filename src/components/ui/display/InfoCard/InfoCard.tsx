@@ -1,0 +1,38 @@
+import { Pressable, View } from 'react-native'
+import Typography from '../Typography/Typography'
+import { InfoCardProps, InforCardLeadingProps, InforCardTrailingProps } from './type'
+import { useStyles } from './useStyles'
+
+const InforCardLeading = ({ title, description }: InforCardLeadingProps) => {
+  const styles = useStyles()
+
+  return (
+    <View style={styles.inforCardLeading}>
+      <Typography variant="smallBold" style={styles.inforCardLeadingLabel}>
+        {title}
+      </Typography>
+      <Typography variant="xsmallRegular" style={styles.inforCardLeadingDesc}>
+        {description}
+      </Typography>
+    </View>
+  )
+}
+
+const InforCardTrailing = ({ children }: InforCardTrailingProps) => {
+  return <View>{children}</View>
+}
+
+const InfoCard = ({ onPress, isSelected = false, style, children }: InfoCardProps) => {
+  const styles = useStyles(isSelected)
+
+  return (
+    <Pressable onPress={onPress} style={[styles.wrapper, style]}>
+      {children}
+    </Pressable>
+  )
+}
+
+InfoCard.Leading = InforCardLeading
+InfoCard.Trailing = InforCardTrailing
+
+export default InfoCard
