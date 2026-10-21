@@ -18,6 +18,8 @@ export const useStyles = (status: Status) => {
     wrapper: {
       width: HS(45),
       height: VS(45),
+      justifyContent: 'center',
+      alignItems: 'center',
       borderRadius: radius.full,
       backgroundColor: colors.background.surface,
     },
