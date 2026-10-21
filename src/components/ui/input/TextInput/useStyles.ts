@@ -2,7 +2,7 @@ import { radius, spacing } from '@/constants'
 import { useFontStyle, useTheme } from '@/hooks'
 import { scalingMethods } from '@/utils'
 import { Platform, StyleSheet } from 'react-native'
-import { StatusTypes } from './type'
+import { StatusTypes } from './types'
 const { HS, VS } = scalingMethods
 
 export const useStyles = (currentStatusInput?: StatusTypes) => {

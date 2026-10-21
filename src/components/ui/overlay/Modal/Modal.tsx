@@ -1,7 +1,7 @@
 import Icon from '@/components/icons/Icon'
 import { Typography } from '@/components/ui/display'
 import { Modal as ModalNative, Pressable, View } from 'react-native'
-import { ModalProps } from './type'
+import { ModalProps } from './types'
 import { useStyles } from './useStyles'
 
 const Modal = ({ headTitle, visible, description, modalBody, closeModal }: ModalProps) => {

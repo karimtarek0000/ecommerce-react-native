@@ -2,7 +2,7 @@ import { useTheme } from '@/hooks'
 import { TypographyVariant } from '@/types'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
-import { Sizes } from './type'
+import { Sizes } from './types'
 const { HS } = scalingMethods
 
 export const useStyles = (size: Sizes) => {

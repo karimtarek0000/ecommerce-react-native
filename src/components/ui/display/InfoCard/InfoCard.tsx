@@ -1,6 +1,6 @@
 import { Pressable, View } from 'react-native'
 import Typography from '../Typography/Typography'
-import { InfoCardProps, InforCardLeadingProps, InforCardTrailingProps } from './type'
+import { InfoCardProps, InforCardLeadingProps, InforCardTrailingProps } from './types'
 import { useStyles } from './useStyles'
 
 const InforCardLeading = ({ title, description }: InforCardLeadingProps) => {

@@ -1,7 +1,7 @@
 import Icon from '@/components/icons/Icon'
 import { Typography } from '@/components/ui/display'
 import { ActivityIndicator, Pressable } from 'react-native'
-import { type ButtonProps } from './type'
+import { type ButtonProps } from './types'
 import { useStyles } from './useStyles'
 
 const Button = ({

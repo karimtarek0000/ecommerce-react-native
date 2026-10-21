@@ -1,7 +1,7 @@
 import IconBadge from '../IconBadge/IconBadge'
 import InfoCard from '../InfoCard/InfoCard'
 import StatusBill from '../StatusBill/StatusBill'
-import { PaymentCardProps } from './type'
+import { PaymentCardProps } from './types'
 
 const PaymentCard = ({
   onPress,

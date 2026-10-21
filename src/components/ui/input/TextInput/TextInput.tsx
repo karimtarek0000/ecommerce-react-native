@@ -5,7 +5,7 @@ import { TextInput as TextInputField, View } from 'react-native'
 import TextInputActions from './TextInputActions'
 import TextInputErrorMessage from './TextInputErrorMessage'
 import TextInputLabel from './TextInputLabel'
-import { TextInputProps } from './type'
+import { TextInputProps } from './types'
 import { useStyles } from './useStyles'
 import { getCurrentStatusType } from './util'
 

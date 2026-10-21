@@ -2,7 +2,7 @@ import Icon from '@/components/icons/Icon'
 import { Typography } from '@/components/ui/display'
 import { useTheme } from '@/hooks'
 import { Pressable, View } from 'react-native'
-import { CheckBoxProps } from './type'
+import { CheckBoxProps } from './types'
 import { useStyles } from './useStyles'
 
 const CheckBox = ({ isSelected, onChange, label, style, disbaled }: CheckBoxProps) => {

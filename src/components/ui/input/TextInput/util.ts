@@ -1,4 +1,4 @@
-import { StatusTypes } from './type'
+import { StatusTypes } from './types'
 
 export const getCurrentStatusType = (
   errorMessage: string | undefined,

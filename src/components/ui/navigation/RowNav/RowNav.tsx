@@ -1,7 +1,7 @@
 import Icon from '@/components/icons/Icon'
 import { Typography } from '@/components/ui/display'
 import { Pressable, View } from 'react-native'
-import { RowNavProps } from './type'
+import { RowNavProps } from './types'
 import { useStyles } from './useStyles'
 
 const RowNav = ({

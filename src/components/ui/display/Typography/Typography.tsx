@@ -1,6 +1,6 @@
 import useFontStyle from '@/hooks/useFontsStyle'
 import { Text } from 'react-native'
-import { TypographyProps } from './type'
+import { TypographyProps } from './types'
 
 const Typography = ({
   variant,

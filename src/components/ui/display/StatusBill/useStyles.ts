@@ -3,8 +3,8 @@ import { useTheme } from '@/hooks'
 import { TypographyVariant } from '@/types'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
-import { Sizes } from '../Avatar/type'
-import { StatusBillProps } from './type'
+import { Sizes } from '../Avatar/types'
+import { StatusBillProps } from './types'
 const { HS } = scalingMethods
 
 export const useStyles = ({

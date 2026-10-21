@@ -2,7 +2,7 @@ import { radius, spacing } from '@/constants'
 import { useTheme } from '@/hooks'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
-import { UseStylesProps } from './type'
+import { UseStylesProps } from './types'
 const { HS, VS } = scalingMethods
 
 export const useStyles = ({ isSelected, disbaled }: UseStylesProps) => {

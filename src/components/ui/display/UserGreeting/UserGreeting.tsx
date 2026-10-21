@@ -1,7 +1,7 @@
 import Avatar from '@/components/ui/display/Avatar/Avatar'
 import Typography from '@/components/ui/display/Typography/Typography'
 import { View } from 'react-native'
-import { UserGreetingProps } from './type'
+import { UserGreetingProps } from './types'
 import { useStyles } from './useStyles'
 
 const UserGreeting = ({

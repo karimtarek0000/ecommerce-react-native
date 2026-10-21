@@ -1,6 +1,6 @@
 import { StyleProp, ViewProps } from 'react-native'
-import { Status } from '../IconBadge/type'
-import { StatusBillStatus } from '../StatusBill/type'
+import { Status } from '../IconBadge/types'
+import { StatusBillStatus } from '../StatusBill/types'
 
 export type AddressCardProps = {
   isSelected?: boolean

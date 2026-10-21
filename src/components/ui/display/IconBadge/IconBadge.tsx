@@ -1,6 +1,6 @@
 import Icon from '@/components/icons/Icon'
 import { View } from 'react-native'
-import { IconBadgeProps } from './type'
+import { IconBadgeProps } from './types'
 import { useStyles } from './useStyles'
 
 const IconBadge = ({ status = 'default', iconName, style }: IconBadgeProps) => {

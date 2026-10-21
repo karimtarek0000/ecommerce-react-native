@@ -1,7 +1,7 @@
 import { Typography } from '@/components/ui/display'
 import { Pressable, View } from 'react-native'
 import Animated, { LinearTransition } from 'react-native-reanimated'
-import { SwicthProps } from './type'
+import { SwicthProps } from './types'
 import { useStyles } from './useStyles'
 
 const Switch = ({ isSelected, onChange, label, style, disbaled }: SwicthProps) => {

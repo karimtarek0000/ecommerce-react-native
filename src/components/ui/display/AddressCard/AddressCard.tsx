@@ -1,7 +1,7 @@
 import IconBadge from '../IconBadge/IconBadge'
 import InfoCard from '../InfoCard/InfoCard'
 import StatusBill from '../StatusBill/StatusBill'
-import { AddressCardProps } from './type'
+import { AddressCardProps } from './types'
 
 const AddressCard = ({
   isSelected,
