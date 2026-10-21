@@ -20,10 +20,11 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <InfoCard onPress={() => {}}>
+      <InfoCard onPress={() => {}} isSelected>
         <InfoCard.Leading title="Los Angeles" description="Los Angeles, United States" />
         <InfoCard.Trailing>
           <Text>default</Text>
+          <Text>defaultsdsdsddddd</Text>
         </InfoCard.Trailing>
       </InfoCard>
       <View style={styles.sentinel} />

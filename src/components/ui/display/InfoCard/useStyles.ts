@@ -20,12 +20,17 @@ export const useStyles = (isSelected?: boolean) => {
       borderWidth: HS(1),
       borderColor: isSelected ? colors.primary.base : colors.border.default,
     },
-    inforCardLeading: {},
-    inforCardLeadingLabel: {
+    infoCardLeading: {
+      alignItems: 'flex-start',
+    },
+    infoCardLeadingLabel: {
       color: colors.forground.primary,
     },
-    inforCardLeadingDesc: {
+    infoCardLeadingDesc: {
       color: colors.forground.tertiary,
+    },
+    infoCardTrailing: {
+      alignItems: 'flex-end',
     },
   })
 

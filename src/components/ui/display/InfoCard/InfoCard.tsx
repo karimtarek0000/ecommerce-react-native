@@ -7,11 +7,11 @@ const InforCardLeading = ({ title, description }: InforCardLeadingProps) => {
   const styles = useStyles()
 
   return (
-    <View style={styles.inforCardLeading}>
-      <Typography variant="smallBold" style={styles.inforCardLeadingLabel}>
+    <View style={styles.infoCardLeading}>
+      <Typography variant="smallBold" style={styles.infoCardLeadingLabel}>
         {title}
       </Typography>
-      <Typography variant="xsmallRegular" style={styles.inforCardLeadingDesc}>
+      <Typography variant="xsmallRegular" style={styles.infoCardLeadingDesc}>
         {description}
       </Typography>
     </View>
@@ -19,7 +19,9 @@ const InforCardLeading = ({ title, description }: InforCardLeadingProps) => {
 }
 
 const InforCardTrailing = ({ children }: InforCardTrailingProps) => {
-  return <View>{children}</View>
+  const styles = useStyles()
+
+  return <View style={styles.infoCardTrailing}>{children}</View>
 }
 
 const InfoCard = ({ onPress, isSelected = false, style, children }: InfoCardProps) => {
