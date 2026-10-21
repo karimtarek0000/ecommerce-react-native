@@ -3,11 +3,11 @@ import { View } from 'react-native'
 import { IconBadgeProps } from './type'
 import { useStyles } from './useStyles'
 
-const IconBadge = ({ status = 'default', iconName }: IconBadgeProps) => {
+const IconBadge = ({ status = 'default', iconName, style }: IconBadgeProps) => {
   const styles = useStyles(status)
 
   return (
-    <View style={styles.wrapper}>
+    <View style={[styles.wrapper, style]}>
       <Icon name={iconName} color={styles.icon.color} />
     </View>
   )
