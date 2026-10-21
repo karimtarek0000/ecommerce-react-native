@@ -20,7 +20,12 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <InfoCard />
+      <InfoCard onPress={() => {}}>
+        <InfoCard.Leading title="Los Angeles" description="Los Angeles, United States" />
+        <InfoCard.Trailing>
+          <Text>default</Text>
+        </InfoCard.Trailing>
+      </InfoCard>
       <View style={styles.sentinel} />
       <View style={styles.sentinel} />
       <View style={styles.sentinel} />

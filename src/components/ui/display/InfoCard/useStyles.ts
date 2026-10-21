@@ -1,4 +1,4 @@
-import { spacing } from '@/constants'
+import { radius, spacing } from '@/constants'
 import { useTheme } from '@/hooks'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
@@ -16,6 +16,7 @@ export const useStyles = (isSelected?: boolean) => {
       paddingHorizontal: spacing.space12.width,
       paddingVertical: spacing.space12.height,
       backgroundColor: colors.background.base,
+      borderRadius: radius.lg,
       borderWidth: HS(1),
       borderColor: isSelected ? colors.primary.base : colors.border.default,
     },
