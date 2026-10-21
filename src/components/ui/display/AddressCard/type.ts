@@ -7,7 +7,7 @@ export type AddressCardProps = {
   title: string
   description: string
   statusLabel: string
-  iconVariant: Status
+  iconVariant?: Status
   statusVariant: StatusBillStatus
   onPress: VoidFunction
   style?: StyleProp<ViewProps>

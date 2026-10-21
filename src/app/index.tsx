@@ -3,7 +3,7 @@
 // import { useUserPreferences } from '@/hooks'
 // import useTranslations from '@/hooks/useTranslations'
 // import { Button, View } from 'react-native'
-import { PaymentCard } from '@/components/ui/display'
+import { AddressCard } from '@/components/ui/display'
 import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
 import { useRef } from 'react'
@@ -20,13 +20,16 @@ export default function Index() {
 
   return (
     <View style={styles.view}>
-      <PaymentCard
-        isSelected
+      <AddressCard
         onPress={() => {}}
-        cardType="visa"
-        cardNumber="4242"
-        expiryDate="04/27"
+        isSelected
+        title="Los Angeles"
+        description="Los Angeles, United States"
+        iconVariant="success"
+        statusVariant="onProgress"
+        statusLabel="office"
       />
+
       <View style={styles.sentinel} />
       <View style={styles.sentinel} />
       <View style={styles.sentinel} />
