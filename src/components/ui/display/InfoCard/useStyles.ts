@@ -2,7 +2,7 @@ import { radius, spacing } from '@/constants'
 import { useTheme } from '@/hooks'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
-const { HS } = scalingMethods
+const { HS, VS } = scalingMethods
 
 export const useStyles = (isSelected?: boolean) => {
   const colors = useTheme()
@@ -10,6 +10,7 @@ export const useStyles = (isSelected?: boolean) => {
   const styles = StyleSheet.create({
     wrapper: {
       flexDirection: 'row',
+      height: VS(96),
       alignSelf: 'stretch',
       justifyContent: 'space-between',
       alignItems: 'center',
