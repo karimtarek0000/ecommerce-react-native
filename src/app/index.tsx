@@ -21,13 +21,11 @@ export default function Index() {
   return (
     <View style={styles.view}>
       <AddressCard
-        onPress={() => {}}
         isSelected
-        title="Los Angeles"
-        description="Los Angeles, United States"
-        iconVariant="success"
-        statusVariant="onProgress"
-        statusLabel="office"
+        onPress={() => {}}
+        city="Los Angeles"
+        address="United States"
+        labelType="apartment"
       />
 
       <View style={styles.sentinel} />

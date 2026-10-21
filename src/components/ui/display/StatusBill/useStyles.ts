@@ -29,7 +29,7 @@ export const useStyles = ({
     pending: colors.warning.base,
     onProgress: colors.primary.base,
     cancelled: colors.danger.base,
-    complete: colors.success.strong,
+    completed: colors.success.strong,
   }
 
   const fontsSizes: Record<Exclude<Sizes, 'md'>, TypographyVariant> = {

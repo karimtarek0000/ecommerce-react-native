@@ -8,10 +8,20 @@ const InforCardLeading = ({ title, description }: InforCardLeadingProps) => {
 
   return (
     <View style={styles.infoCardLeading}>
-      <Typography variant="smallBold" style={styles.infoCardLeadingLabel}>
+      <Typography
+        variant="smallBold"
+        style={styles.infoCardLeadingLabel}
+        numberOfLines={1}
+        ellipsizeMode="tail"
+      >
         {title}
       </Typography>
-      <Typography variant="xsmallRegular" style={styles.infoCardLeadingDesc}>
+      <Typography
+        variant="xsmallRegular"
+        style={styles.infoCardLeadingDesc}
+        numberOfLines={1}
+        ellipsizeMode="tail"
+      >
         {description}
       </Typography>
     </View>

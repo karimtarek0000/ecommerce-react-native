@@ -20,9 +20,11 @@ export const useStyles = (isSelected?: boolean) => {
       borderRadius: radius.lg,
       borderWidth: HS(1),
       borderColor: isSelected ? colors.primary.base : colors.border.default,
+      gap: HS(20),
     },
     infoCardLeading: {
       alignItems: 'flex-start',
+      flexShrink: 1,
     },
     infoCardLeadingLabel: {
       color: colors.forground.primary,
