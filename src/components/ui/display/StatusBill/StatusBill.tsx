@@ -1,7 +1,7 @@
 import Icon from '@/components/icons/Icon'
 import { View } from 'react-native'
 import Typography from '../Typography/Typography'
-import { StatusBillProps } from './type'
+import { StatusBillProps } from './types'
 import { useStyles } from './useStyles'
 
 const StatusBill = ({

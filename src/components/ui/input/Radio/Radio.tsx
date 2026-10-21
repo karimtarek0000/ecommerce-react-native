@@ -1,6 +1,6 @@
 import { Typography } from '@/components/ui/display'
 import { Pressable, View } from 'react-native'
-import { RadioProps } from './type'
+import { RadioProps } from './types'
 import { useStyles } from './useStyles'
 
 const Radio = ({ isSelected, onChange, label, style, disbaled }: RadioProps) => {

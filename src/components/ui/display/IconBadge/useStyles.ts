@@ -2,13 +2,13 @@ import { radius } from '@/constants'
 import { useTheme } from '@/hooks'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
-import { Status } from './type'
+import { IconBadgeStatus } from './types'
 const { HS, VS } = scalingMethods
 
-export const useStyles = (status: Status) => {
+export const useStyles = (status: IconBadgeStatus) => {
   const colors = useTheme()
 
-  const statusColors: Record<Status, string> = {
+  const statusColors: Record<IconBadgeStatus, string> = {
     default: colors.primary.pressed,
     warning: colors.warning.base,
     success: colors.success.strong,

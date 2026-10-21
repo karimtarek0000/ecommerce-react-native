@@ -1,7 +1,7 @@
 import Icon from '@/components/icons/Icon'
 import { useRouter } from 'expo-router'
 import { Pressable, View } from 'react-native'
-import { GoToActionProps } from './type'
+import { GoToActionProps } from './types'
 import { useStyles } from './useStyle'
 
 const GoToAction = ({ goTo, toPage }: GoToActionProps) => {

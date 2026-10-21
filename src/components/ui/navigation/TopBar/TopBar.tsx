@@ -2,7 +2,7 @@ import { Typography } from '@/components/ui/display'
 import { View } from 'react-native'
 import ActionButton from './ActionButton'
 import GoToAction from './GoToAction'
-import { ActionButtonProps, TopBarProps } from './type'
+import { ActionButtonProps, TopBarProps } from './types'
 import { useStyles } from './useStyle'
 
 const TopBar = ({ title, actionButton, style, goTo = 'none', toPage }: TopBarProps) => {

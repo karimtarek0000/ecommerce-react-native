@@ -1,6 +1,6 @@
 import Icon from '@/components/icons/Icon'
 import { Pressable } from 'react-native'
-import { TextInputType } from './type'
+import { TextInputType } from './types'
 import { useStyles } from './useStyles'
 
 type TextInputActionsProps = {

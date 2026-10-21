@@ -3,8 +3,8 @@ import { useTheme } from '@/hooks'
 import { TypographyVariant } from '@/types'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
-import { Sizes } from '../Avatar/type'
-import { StatusBillProps } from './type'
+import { Sizes } from '../Avatar/types'
+import { StatusBillProps } from './types'
 const { HS } = scalingMethods
 
 export const useStyles = ({
@@ -29,7 +29,7 @@ export const useStyles = ({
     pending: colors.warning.base,
     onProgress: colors.primary.base,
     cancelled: colors.danger.base,
-    complete: colors.success.strong,
+    completed: colors.success.strong,
   }
 
   const fontsSizes: Record<Exclude<Sizes, 'md'>, TypographyVariant> = {

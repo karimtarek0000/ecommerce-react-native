@@ -1,6 +1,6 @@
 import Icon from '@/components/icons/Icon'
 import { Pressable, View } from 'react-native'
-import { ActionButtonProps } from './type'
+import { ActionButtonProps } from './types'
 import { useStyles } from './useStyle'
 
 const ActionButton = ({ actionButton }: { actionButton: ActionButtonProps }) => {

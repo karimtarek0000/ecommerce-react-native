@@ -2,7 +2,7 @@ import { radius } from '@/constants'
 import { useTheme } from '@/hooks'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
-import { Sizes } from './type'
+import { Sizes } from './types'
 const { HS, VS } = scalingMethods
 
 export const useStyles = (size: Sizes) => {
