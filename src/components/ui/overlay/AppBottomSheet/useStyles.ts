@@ -42,7 +42,8 @@ export const useStyles = () => {
     bottomSheetDesc: {
       color: colors.forground.secondary,
     },
-    bottomSheetBodyWrapper: {
+    //
+    content: {
       flex: 1,
     },
   })

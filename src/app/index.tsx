@@ -35,7 +35,9 @@ export default function Index() {
           snapPoints: ['19%', '60%'],
         }}
       >
-        <Text>Testing</Text>
+        <BottomSheet.Content>
+          <Text>Testing</Text>
+        </BottomSheet.Content>
       </BottomSheet>
     </DismissKeyboard>
   )

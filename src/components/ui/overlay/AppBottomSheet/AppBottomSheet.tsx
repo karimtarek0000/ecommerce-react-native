@@ -1,8 +1,15 @@
 import { Typography } from '@/components/ui/display'
-import BottomSheet, { BottomSheetBackdrop, BottomSheetView } from '@gorhom/bottom-sheet'
+import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet'
+import { ComponentProps } from 'react'
 import { View } from 'react-native'
 import { AppBottomSheetProps } from './types'
 import { useStyles } from './useStyles'
+
+const AppBottomSheetContent = ({ style, children }: ComponentProps<typeof View>) => {
+  const styles = useStyles()
+
+  return <View style={[styles.content, style]}>{children}</View>
+}
 
 const AppBottomSheet = ({
   headTitle,
@@ -35,7 +42,7 @@ const AppBottomSheet = ({
       backgroundStyle={styles.bottomSheet}
       {...bottomSheetProps}
     >
-      <BottomSheetView style={styles.wrapper}>
+      <View style={styles.wrapper}>
         <View style={styles.bottomSheetHeadWrapper}>
           <Typography
             variant="mediumBold"
@@ -56,10 +63,12 @@ const AppBottomSheet = ({
           )}
         </View>
 
-        <View style={styles.bottomSheetBodyWrapper}>{children}</View>
-      </BottomSheetView>
+        {children}
+      </View>
     </BottomSheet>
   )
 }
+
+AppBottomSheet.Content = AppBottomSheetContent
 
 export default AppBottomSheet
