@@ -10,17 +10,15 @@ export default function Index() {
   const { setTheme } = useUserPreferences()
 
   return (
-    <View style={styles.view}>
-      <DismissKeyboard>
-        <TextInput
-          label="Label"
-          placeholder="Placeholder"
-          value="sdsd"
-          onChange={() => console.log('change')}
-          onClearInput={() => {}}
-          iconName="user"
-        />
-      </DismissKeyboard>
+    <DismissKeyboard style={styles.view}>
+      <TextInput
+        label="Label"
+        placeholder="Placeholder"
+        value=""
+        onChange={() => console.log('change')}
+        onClearInput={() => {}}
+        iconName="user"
+      />
 
       <View style={styles.sentinel} />
       <View style={styles.sentinel} />
@@ -38,7 +36,7 @@ export default function Index() {
           children: <Text>Testing</Text>,
         }}
       />
-    </View>
+    </DismissKeyboard>
   )
 }
 

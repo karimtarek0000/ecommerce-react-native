@@ -12,7 +12,7 @@ export type TextInputActionsProps = {
 }
 
 type TextInputBaseProps = {
-  label?: string
+  label: string
   placeholder: string
   value: string
   onChange: (text: string) => void
