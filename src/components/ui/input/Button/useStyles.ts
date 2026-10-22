@@ -9,48 +9,52 @@ const { HS, VS } = scalingMethods
 export const useStyles = ({ variant, size = 'lg', block, disabled }: UseStyles) => {
   const colors = useTheme()
 
-  const fontVariant: Record<string, TypographyVariant> = {
-    sm: 'smallBold',
-    lg: 'normalBold',
+  const colorsVariant = {
+    primary: {
+      typography: colors.forground.contrast,
+      background: colors.primary.base,
+      border: colors.primary.base,
+    },
+    link: {
+      typography: colors.primary.base,
+      background: colors.background.base,
+      border: colors.background.base,
+    },
+    danger: {
+      typography: colors.danger.base,
+      background: colors.danger.tint,
+      border: colors.danger.base,
+    },
+    ghost: {
+      typography: colors.forground.primary,
+      background: colors.background.base,
+      border: colors.border.default,
+    },
+    chip: {
+      typography: colors.primary.base,
+      background: colors.background.base,
+      border: colors.primary.base,
+    },
   }
 
-  const heightButton = {
-    sm: VS(40),
-    lg: VS(50),
-  }
-
-  const paddingHorizontalButton = {
-    sm: spacing.space16.width,
-    lg: spacing.space24.width,
-  }
-
-  const typographyColorVariant = {
-    primary: colors.forground.contrast,
-    link: colors.primary.base,
-    chip: colors.primary.base,
-    ghost: colors.forground.primary,
-    danger: colors.danger.base,
-  }
-
-  const backgroundColorVariant = {
-    primary: colors.primary.base,
-    link: colors.background.base,
-    chip: colors.background.base,
-    ghost: colors.background.base,
-    danger: colors.danger.tint,
-  }
-
-  const borderColorVariant = {
-    primary: colors.primary.base,
-    link: colors.background.base,
-    chip: colors.primary.base,
-    ghost: colors.border.default,
-    danger: colors.danger.base,
+  const sizes = {
+    height: {
+      sm: VS(40),
+      lg: VS(50),
+    },
+    paddingHorizontal: {
+      sm: spacing.space16.width,
+      lg: spacing.space24.width,
+    },
+    font: {
+      sm: 'smallBold',
+      lg: 'normalBold',
+    },
   }
 
   const styles = StyleSheet.create({
     button: {
-      height: heightButton[size],
+      height: sizes.height[size],
       alignSelf: block ? 'stretch' : 'auto',
       justifyContent: 'center',
       flexDirection: 'row',
@@ -58,12 +62,16 @@ export const useStyles = ({ variant, size = 'lg', block, disabled }: UseStyles) 
       gap: spacing.space8.width,
       borderWidth: HS(1),
       borderRadius: variant === 'chip' ? radius.full : radius.sm,
-      paddingHorizontal: paddingHorizontalButton[size],
-      backgroundColor: backgroundColorVariant[variant],
-      borderColor: borderColorVariant[variant],
+      paddingHorizontal: sizes.paddingHorizontal[size],
+      backgroundColor: colorsVariant[variant].background,
+      borderColor: colorsVariant[variant].border,
       opacity: disabled ? 0.7 : 1,
     },
   })
 
-  return { styles, fontVariant: fontVariant[size], typographyColorVariant }
+  return {
+    styles,
+    fontSize: sizes.font[size] as TypographyVariant,
+    typographyColor: colorsVariant[variant].typography,
+  }
 }
