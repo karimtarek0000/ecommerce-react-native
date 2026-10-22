@@ -1,15 +1,7 @@
 import Icon from '@/components/icons/Icon'
 import { Pressable } from 'react-native'
-import { TextInputType } from './types'
+import { type TextInputActionsProps } from './types'
 import { useStyles } from './useStyles'
-
-type TextInputActionsProps = {
-  type: TextInputType
-  isPasswordVisible: boolean
-  onChangeVisibility: VoidFunction
-  onClearInput?: VoidFunction
-  hasValue: boolean
-}
 
 const TextInputActions = ({
   type,

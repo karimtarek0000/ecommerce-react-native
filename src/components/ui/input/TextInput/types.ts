@@ -3,6 +3,14 @@ import { StyleProp, ViewStyle } from 'react-native'
 
 export type TextInputType = 'text' | 'password'
 
+export type TextInputActionsProps = {
+  type: TextInputType
+  isPasswordVisible: boolean
+  onChangeVisibility: VoidFunction
+  onClearInput?: VoidFunction
+  hasValue: boolean
+}
+
 type TextInputBaseProps = {
   label?: string
   placeholder: string

@@ -1,4 +1,4 @@
-import { radius, spacing } from '@/constants'
+import { opacity, radius, spacing } from '@/constants'
 import { useTheme } from '@/hooks'
 import { type TypographyVariant } from '@/types'
 import { scalingMethods } from '@/utils'
@@ -65,7 +65,7 @@ export const useStyles = ({ variant, size = 'lg', block, disabled }: UseStyles) 
       paddingHorizontal: sizes.paddingHorizontal[size],
       backgroundColor: colorsVariant[variant].background,
       borderColor: colorsVariant[variant].border,
-      opacity: disabled ? 0.7 : 1,
+      opacity: disabled ? opacity.buttonDisabled : opacity.full,
     },
   })
 

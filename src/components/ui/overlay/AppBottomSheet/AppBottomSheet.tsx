@@ -1,21 +1,11 @@
 import { Typography } from '@/components/ui/display'
 import BottomSheet, {
   BottomSheetBackdrop,
-  BottomSheetProps,
   BottomSheetView,
 } from '@gorhom/bottom-sheet'
-import { Ref } from 'react'
 import { View } from 'react-native'
+import { type AppBottomSheetProps } from './types'
 import { useStyles } from './useStyles'
-
-export type BottomSheetRef = BottomSheet
-
-type AppBottomSheetProps = {
-  headTitle: string
-  description: string
-  ref: Ref<BottomSheet>
-  bottomSheetProps?: BottomSheetProps
-}
 
 const AppBottomSheet = ({ headTitle, description, bottomSheetProps, ref }: AppBottomSheetProps) => {
   const styles = useStyles()

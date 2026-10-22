@@ -1,9 +1,6 @@
-import { Keyboard, Pressable, StyleProp, ViewStyle } from 'react-native'
+import { Keyboard, Pressable } from 'react-native'
+import { type DismissKeyboardProps } from './types'
 
-type DismissKeyboardProps = {
-  style?: StyleProp<ViewStyle>
-  children: React.ReactNode
-}
 const DismissKeyboard = ({ style, children }: DismissKeyboardProps) => {
   return (
     <Pressable onPress={Keyboard.dismiss} style={style}>
