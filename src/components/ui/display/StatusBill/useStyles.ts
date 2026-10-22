@@ -14,6 +14,13 @@ export const useStyles = ({
 }: Omit<StatusBillProps, 'iconName' | 'label'>) => {
   const colors = useTheme()
 
+  const statusVariant: Record<typeof status, string> = {
+    pending: colors.warning.base,
+    onProgress: colors.primary.base,
+    cancelled: colors.danger.base,
+    completed: colors.success.strong,
+  } as const
+
   const statusSizes = {
     sm: {
       paddingHorizontal: spacing.space12.width,
@@ -23,13 +30,6 @@ export const useStyles = ({
       paddingHorizontal: spacing.space16.width,
       paddingVertical: spacing.space8.height,
     },
-  }
-
-  const statusVariant: Record<typeof status, string> = {
-    pending: colors.warning.base,
-    onProgress: colors.primary.base,
-    cancelled: colors.danger.base,
-    completed: colors.success.strong,
   }
 
   const fontsSizes: Record<Exclude<Sizes, 'md'>, TypographyVariant> = {
