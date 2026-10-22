@@ -35,7 +35,7 @@ export const useStyles = ({ variant, size = 'lg', block, disabled }: UseStyles) 
       background: colors.background.base,
       border: colors.primary.base,
     },
-  }
+  } as const
 
   const sizes = {
     height: {
@@ -50,7 +50,7 @@ export const useStyles = ({ variant, size = 'lg', block, disabled }: UseStyles) 
       sm: 'smallBold',
       lg: 'normalBold',
     },
-  }
+  } as const
 
   const styles = StyleSheet.create({
     button: {
