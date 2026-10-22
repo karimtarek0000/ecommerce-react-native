@@ -1,4 +1,4 @@
-import { radius, spacing } from '@/constants'
+import { opacity, radius, spacing } from '@/constants'
 import { useTheme } from '@/hooks'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
@@ -24,6 +24,14 @@ export const useStyles = () => {
       backgroundColor: colors.background.base,
       borderRadius: radius.sheet,
       paddingHorizontal: spacing.space24.width,
+      shadowColor: colors.misc.shadow,
+      shadowOffset: {
+        width: 0,
+        height: -VS(4),
+      },
+      shadowOpacity: opacity.overlay,
+      shadowRadius: HS(16),
+      elevation: 8,
     },
     //
     wrapper: {
@@ -42,7 +50,8 @@ export const useStyles = () => {
     bottomSheetDesc: {
       color: colors.forground.secondary,
     },
-    bottomSheetBodyWrapper: {
+    //
+    content: {
       flex: 1,
     },
   })

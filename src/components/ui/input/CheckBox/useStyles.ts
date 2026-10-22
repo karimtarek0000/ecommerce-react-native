@@ -1,4 +1,4 @@
-import { radius } from '@/constants'
+import { opacity, radius } from '@/constants'
 import { useTheme } from '@/hooks'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
@@ -27,12 +27,12 @@ export const useStyles = ({ isSelected, disbaled }: UseStylesProps) => {
       borderRadius: radius.xs,
       backgroundColor: isSelected ? colors.primary.base : colors.background.base,
       borderColor: isSelected ? colors.primary.base : colors.border.default,
-      opacity: disbaled ? 0.6 : 1,
+      opacity: disbaled ? opacity.disabled : opacity.full,
     },
     indicator: {
       alignItems: 'center',
       justifyContent: 'center',
-      opacity: isSelected ? 1 : 0,
+      opacity: isSelected ? opacity.full : opacity.none,
     },
   })
 

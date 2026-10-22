@@ -1,7 +1,7 @@
 import { Typography } from '@/components/ui/display'
 import { useStyles } from './useStyles'
 
-const TextInputLabel = ({ label }: { label?: string }) => {
+const TextInputLabel = ({ label }: { label: string }) => {
   const styles = useStyles()
 
   return (

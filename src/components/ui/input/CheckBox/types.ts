@@ -6,7 +6,7 @@ export type UseStylesProps = {
 }
 
 export type CheckBoxProps = UseStylesProps & {
+  label: string
   onChange: () => void
   style?: StyleProp<ViewStyle>
-  label?: string
 }

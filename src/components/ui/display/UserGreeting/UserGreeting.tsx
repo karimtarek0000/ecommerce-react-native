@@ -14,6 +14,8 @@ const UserGreeting = ({
   style,
 }: UserGreetingProps) => {
   const { styles, fontsSizes } = useStyles(size)
+  const userGreeting = (type === 'default' ? `hi ${userName}` : userName) as string
+  const userMeta = (type === 'default' ? 'let``s go shopping' : meta) as string
 
   return (
     <View style={[styles.wrapper, style]}>
@@ -21,11 +23,11 @@ const UserGreeting = ({
 
       <View style={styles.body}>
         <Typography variant={fontsSizes[size]} color={styles.userName.color}>
-          {type === 'default' ? `hi ${userName}` : userName}
+          {userGreeting}
         </Typography>
 
         <Typography variant="smallRegular" style={styles.meta}>
-          {type === 'default' ? 'let``s go shopping' : meta}
+          {userMeta}
         </Typography>
       </View>
     </View>

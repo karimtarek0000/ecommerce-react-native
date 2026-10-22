@@ -1,4 +1,4 @@
-import { radius, spacing } from '@/constants'
+import { opacity, radius, spacing } from '@/constants'
 import { useTheme } from '@/hooks'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
@@ -27,7 +27,7 @@ export const useStyles = () => {
         width: 0,
         height: VS(8),
       },
-      shadowOpacity: 0.15,
+      shadowOpacity: opacity.overlay,
       elevation: 8,
     },
     contentHeader: {

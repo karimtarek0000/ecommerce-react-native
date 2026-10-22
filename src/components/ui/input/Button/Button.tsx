@@ -15,7 +15,7 @@ const Button = ({
   loading,
 }: ButtonProps) => {
   const isDisabled = loading?.indicator || disabled
-  const { styles, fontVariant, typographyColorVariant } = useStyles({
+  const { styles, fontSize, typographyColor } = useStyles({
     variant,
     size,
     block,
@@ -24,15 +24,11 @@ const Button = ({
 
   return (
     <Pressable onPress={onPress} style={styles.button} disabled={isDisabled}>
-      {!loading?.indicator && iconName && (
-        <Icon name={iconName} color={typographyColorVariant[variant]} />
-      )}
+      {!loading?.indicator && iconName && <Icon name={iconName} color={typographyColor} />}
 
-      {loading?.indicator && (
-        <ActivityIndicator color={typographyColorVariant[variant]} size="small" />
-      )}
+      {loading?.indicator && <ActivityIndicator color={typographyColor} size="small" />}
 
-      <Typography variant={fontVariant} color={typographyColorVariant[variant]}>
+      <Typography variant={fontSize} color={typographyColor}>
         {loading?.indicator ? loading.text || title : title}
       </Typography>
     </Pressable>

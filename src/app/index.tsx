@@ -1,9 +1,5 @@
-// import Icon from '@/components/icons/Icon'
-// import Typography from '@/components/ui/display/Typography/Typography'
-// import { useUserPreferences } from '@/hooks'
-// import useTranslations from '@/hooks/useTranslations'
-// import { Button, View } from 'react-native'
-import { AddressCard } from '@/components/ui/display'
+import { TextInput } from '@/components/ui/input'
+import { DismissKeyboard } from '@/components/ui/layout'
 import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
 import { useRef } from 'react'
@@ -11,21 +7,17 @@ import { Button, StyleSheet, Text, View } from 'react-native'
 
 export default function Index() {
   const ref = useRef<BottomSheetRef>(null)
-  // const [toggleModal, setToggleModal] = useState(false)
-  // const [title, setTitle] = useState('')
-  // const theme = useTheme()
-  // const { currentLanguage, isRTL, t } = useTranslations()
-  // const [selected, setSelected] = useState(false)
   const { setTheme } = useUserPreferences()
 
   return (
-    <View style={styles.view}>
-      <AddressCard
-        isSelected
-        onPress={() => {}}
-        city="Los Angeles"
-        address="United States"
-        labelType="apartment"
+    <DismissKeyboard style={styles.view}>
+      <TextInput
+        label="Label"
+        placeholder="Placeholder"
+        value=""
+        onChange={() => console.log('change')}
+        onClearInput={() => {}}
+        iconName="user"
       />
 
       <View style={styles.sentinel} />
@@ -40,11 +32,14 @@ export default function Index() {
         headTitle=" Bottom Sheet Title"
         description="Optional secondary description below the title"
         bottomSheetProps={{
-          snapPoints: ['19%', '60%'],
-          children: <Text>Testing</Text>,
+          snapPoints: ['15%', '60%'],
         }}
-      />
-    </View>
+      >
+        <BottomSheet.Content>
+          <Text>Testing</Text>
+        </BottomSheet.Content>
+      </BottomSheet>
+    </DismissKeyboard>
   )
 }
 
