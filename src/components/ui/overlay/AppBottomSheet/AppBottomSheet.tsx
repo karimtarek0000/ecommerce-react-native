@@ -1,10 +1,7 @@
 import { Typography } from '@/components/ui/display'
-import BottomSheet, {
-  BottomSheetBackdrop,
-  BottomSheetView,
-} from '@gorhom/bottom-sheet'
+import BottomSheet, { BottomSheetBackdrop, BottomSheetView } from '@gorhom/bottom-sheet'
 import { View } from 'react-native'
-import { type AppBottomSheetProps } from './types'
+import { AppBottomSheetProps } from './types'
 import { useStyles } from './useStyles'
 
 const AppBottomSheet = ({ headTitle, description, bottomSheetProps, ref }: AppBottomSheetProps) => {

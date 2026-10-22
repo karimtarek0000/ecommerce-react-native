@@ -1,11 +1,10 @@
-type BottomSheetComponent = typeof import('@gorhom/bottom-sheet').default
-type BottomSheetProps = React.ComponentProps<BottomSheetComponent>
+import BottomSheet, { BottomSheetProps } from '@gorhom/bottom-sheet'
 
-export type BottomSheetRef = React.ComponentRef<BottomSheetComponent>
+export type BottomSheetRef = BottomSheet
 
 export type AppBottomSheetProps = {
   headTitle: string
   description: string
-  ref: React.Ref<BottomSheetRef>
+  ref: React.Ref<BottomSheet>
   bottomSheetProps?: BottomSheetProps
 }
