@@ -33,9 +33,10 @@ export default function Index() {
         description="Optional secondary description below the title"
         bottomSheetProps={{
           snapPoints: ['19%', '60%'],
-          children: <Text>Testing</Text>,
         }}
-      />
+      >
+        <Text>Testing</Text>
+      </BottomSheet>
     </DismissKeyboard>
   )
 }

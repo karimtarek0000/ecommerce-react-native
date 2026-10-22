@@ -4,10 +4,16 @@ import { View } from 'react-native'
 import { AppBottomSheetProps } from './types'
 import { useStyles } from './useStyles'
 
-const AppBottomSheet = ({ headTitle, description, bottomSheetProps, ref }: AppBottomSheetProps) => {
+const AppBottomSheet = ({
+  headTitle,
+  description,
+  bottomSheetProps,
+  ref,
+  children,
+}: AppBottomSheetProps) => {
   const styles = useStyles()
 
-  const renderBackdrop = (props: any) => (
+  const RenderBackdrop = (props: any) => (
     <BottomSheetBackdrop
       disappearsOnIndex={-1}
       appearsOnIndex={1}
@@ -23,7 +29,7 @@ const AppBottomSheet = ({ headTitle, description, bottomSheetProps, ref }: AppBo
       index={bottomSheetProps?.index ?? -1}
       enableDynamicSizing={false}
       enablePanDownToClose={true}
-      backdropComponent={renderBackdrop}
+      backdropComponent={RenderBackdrop}
       handleIndicatorStyle={styles.indicator}
       handleStyle={styles.bottomSheetHead}
       backgroundStyle={styles.bottomSheet}
@@ -39,16 +45,18 @@ const AppBottomSheet = ({ headTitle, description, bottomSheetProps, ref }: AppBo
             {headTitle}
           </Typography>
 
-          <Typography
-            variant="smallRegular"
-            color={styles.bottomSheetDesc.color}
-            textTransform="capitalize"
-          >
-            {description}
-          </Typography>
+          {description && (
+            <Typography
+              variant="smallRegular"
+              color={styles.bottomSheetDesc.color}
+              textTransform="capitalize"
+            >
+              {description}
+            </Typography>
+          )}
         </View>
 
-        <View style={styles.bottomSheetBodyWrapper}>{bottomSheetProps?.children}</View>
+        <View style={styles.bottomSheetBodyWrapper}>{children}</View>
       </BottomSheetView>
     </BottomSheet>
   )
