@@ -32,7 +32,7 @@ export default function Index() {
         headTitle=" Bottom Sheet Title"
         description="Optional secondary description below the title"
         bottomSheetProps={{
-          snapPoints: ['19%', '60%'],
+          snapPoints: ['15%', '60%'],
         }}
       >
         <BottomSheet.Content>

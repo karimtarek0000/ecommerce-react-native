@@ -1,5 +1,6 @@
 import { Typography } from '@/components/ui/display'
 import BottomSheet, { BottomSheetBackdrop } from '@gorhom/bottom-sheet'
+import { Portal } from '@gorhom/portal'
 import { ComponentProps } from 'react'
 import { View } from 'react-native'
 import { AppBottomSheetProps } from './types'
@@ -30,42 +31,42 @@ const AppBottomSheet = ({
   )
 
   return (
-    <BottomSheet
-      ref={ref}
-      snapPoints={bottomSheetProps?.snapPoints ?? ['50%', '90%']}
-      index={bottomSheetProps?.index ?? -1}
-      enableDynamicSizing={false}
-      enablePanDownToClose={true}
-      backdropComponent={RenderBackdrop}
-      handleIndicatorStyle={styles.indicator}
-      handleStyle={styles.bottomSheetHead}
-      backgroundStyle={styles.bottomSheet}
-      {...bottomSheetProps}
-    >
-      <View style={styles.wrapper}>
-        <View style={styles.bottomSheetHeadWrapper}>
-          <Typography
-            variant="mediumBold"
-            color={styles.bottomSheetLabel.color}
-            textTransform="capitalize"
-          >
-            {headTitle}
-          </Typography>
-
-          {description && (
+    <Portal>
+      <BottomSheet
+        ref={ref}
+        snapPoints={bottomSheetProps?.snapPoints ?? ['50%', '90%']}
+        index={bottomSheetProps?.index ?? -1}
+        enableDynamicSizing={false}
+        enablePanDownToClose={true}
+        backdropComponent={RenderBackdrop}
+        handleIndicatorStyle={styles.indicator}
+        handleStyle={styles.bottomSheetHead}
+        backgroundStyle={styles.bottomSheet}
+        {...bottomSheetProps}
+      >
+        <View style={styles.wrapper}>
+          <View style={styles.bottomSheetHeadWrapper}>
             <Typography
-              variant="smallRegular"
-              color={styles.bottomSheetDesc.color}
+              variant="mediumBold"
+              color={styles.bottomSheetLabel.color}
               textTransform="capitalize"
             >
-              {description}
+              {headTitle}
             </Typography>
-          )}
+            {description && (
+              <Typography
+                variant="smallRegular"
+                color={styles.bottomSheetDesc.color}
+                textTransform="capitalize"
+              >
+                {description}
+              </Typography>
+            )}
+          </View>
+          {children}
         </View>
-
-        {children}
-      </View>
-    </BottomSheet>
+      </BottomSheet>
+    </Portal>
   )
 }
 
