@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { TextInput as TextInputField } from 'react-native'
 import FieldWrapper from '../shared/FieldWrapper'
 import { useSharedStyles } from '../shared/useSharedStyles'
+import { getCurrentStatusType } from '../shared/utils'
 import TextInputActions from './TextInputActions'
 import { TextInputProps } from './types'
 
@@ -22,6 +23,8 @@ const TextInput = ({
   const [isFocused, setFocus] = useState(false)
   const [isPasswordVisible, setVisablePassword] = useState(false)
 
+  const currentStatusInput = getCurrentStatusType(value, isFocused, errorMessage)
+
   const inputIcon: IconName = type === 'password' ? 'lock' : (iconName as IconName)
 
   return (
@@ -29,8 +32,7 @@ const TextInput = ({
       label={label}
       errorMessage={errorMessage}
       iconName={inputIcon}
-      isFocused={isFocused}
-      value={value}
+      currentStatusInput={currentStatusInput}
       style={style}
     >
       <TextInputField

@@ -4,19 +4,15 @@ import FieldErrorMessage from './FieldErrorMessage'
 import FieldLabel from './FieldLabel'
 import { FieldWrapperProps } from './sharedTypes'
 import { useSharedStyles } from './useSharedStyles'
-import { getCurrentStatusType } from './utils'
 
 const FieldWrapper = ({
   label,
   iconName,
   errorMessage,
-  isFocused,
-  value,
+  currentStatusInput,
   children,
   style,
 }: FieldWrapperProps) => {
-  const currentStatusInput = getCurrentStatusType(value, isFocused, errorMessage)
-
   const styles = useSharedStyles(currentStatusInput)
 
   return (

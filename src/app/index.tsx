@@ -1,46 +1,38 @@
-import { TextInput } from '@/components/ui/input'
+import { Dropdown } from '@/components/ui/input'
 import { DismissKeyboard } from '@/components/ui/layout'
-import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
-import { useRef, useState } from 'react'
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { useState } from 'react'
+import { Button, StyleSheet, View } from 'react-native'
 
 export default function Index() {
-  const [value, setValue] = useState('')
-  const ref = useRef<BottomSheetRef>(null)
-  const { setTheme } = useUserPreferences()
+  const [city, setCity] = useState('')
+  const { setTheme, setLanguage } = useUserPreferences()
 
   return (
     <DismissKeyboard style={styles.view}>
-      <TextInput
-        // type="password"
-        label="user name"
-        placeholder="Placeholder"
-        value={value}
-        onChange={text => setValue(text)}
-        onClearInput={() => setValue('')}
-        iconName="user"
+      <Dropdown
+        label="city"
+        options={[
+          { label: 'london', value: 'london' },
+          { label: 'paris', value: 'paris' },
+          { label: 'new york', value: 'new york' },
+          { label: 'tokyo', value: 'tokyo' },
+          { label: 'berlin', value: 'berlin' },
+        ]}
+        value={city}
+        onSelect={text => setCity(text)}
+        placeholder="Select Type"
+        iconName="home"
       />
 
       <View style={styles.sentinel} />
       <View style={styles.sentinel} />
       <View style={styles.sentinel} />
-      <Button title="Bottom Sheet" onPress={() => ref.current?.expand()} />
+
       <Button title="Dark Mode" onPress={() => setTheme('dark')} />
       <Button title="Light Mode" onPress={() => setTheme('light')} />
-
-      <BottomSheet
-        ref={ref}
-        headTitle=" Bottom Sheet Title"
-        description="Optional secondary description below the title"
-        bottomSheetProps={{
-          snapPoints: ['15%', '60%'],
-        }}
-      >
-        <BottomSheet.Content>
-          <Text>Testing</Text>
-        </BottomSheet.Content>
-      </BottomSheet>
+      <Button title="Arabic" onPress={() => setLanguage('ar')} />
+      <Button title="English" onPress={() => setLanguage('en')} />
     </DismissKeyboard>
   )
 }

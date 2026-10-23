@@ -66,11 +66,46 @@ export const useSharedStyles = (currentStatusInput?: StatusTypes) => {
       writingDirection: 'ltr',
       includeFontPadding: false,
     },
-    iconClose: {
+    iconAction: {
       color: colors.forground.tertiary,
     },
     placeholder: {
       color: colors.forground.tertiary,
+    },
+    // Select Input
+    selectWrapper: {
+      alignSelf: 'stretch',
+    },
+    selectText: {
+      flex: 1,
+    },
+    selectTextEmpty: {
+      color: colors.forground.tertiary,
+    },
+    selectTextValue: {
+      color: colors.forground.primary,
+    },
+    // Options for select input
+    optionSelectItem: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      height: HS(47),
+      borderWidth: HS(1),
+      borderColor: 'transparent',
+    },
+    optionSelectItemSelected: {
+      borderBottomColor: colors.primary.base,
+      borderTopColor: colors.primary.base,
+    },
+    optionText: {
+      color: colors.forground.primary,
+    },
+    optionTextSelected: {
+      color: colors.primary.base,
+    },
+    optionCheckIcon: {
+      color: colors.primary.base,
     },
   })
 

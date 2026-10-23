@@ -7,9 +7,8 @@ export type StatusTypes = 'default' | 'focused' | 'filled' | 'error'
 export type FieldWrapperProps = {
   label: string
   iconName: IconName
-  value: string
-  isFocused: boolean
   errorMessage?: string
+  currentStatusInput: StatusTypes
   children: React.ReactNode
   style?: StyleProp<ViewStyle>
 }
