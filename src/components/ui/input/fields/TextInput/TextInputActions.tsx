@@ -1,16 +1,16 @@
 import Icon from '@/components/icons/Icon'
 import { Pressable } from 'react-native'
-import { type TextInputActionsProps } from './types'
-import { useStyles } from './useStyles'
+import { useSharedStyles } from '../shared/useSharedStyles'
+import { TextInputActionsProps } from './types'
 
 const TextInputActions = ({
   type,
   isPasswordVisible,
+  hasValue,
   onChangeVisibility,
   onClearInput,
-  hasValue,
 }: TextInputActionsProps) => {
-  const styles = useStyles()
+  const styles = useSharedStyles()
 
   return (
     <>
@@ -19,7 +19,7 @@ const TextInputActions = ({
           <Icon
             name={isPasswordVisible ? 'eyeOff' : 'eye'}
             size={20}
-            color={styles.iconsClose.color}
+            color={styles.iconClose.color}
           />
         </Pressable>
       )}

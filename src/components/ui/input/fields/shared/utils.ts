@@ -1,9 +1,9 @@
-import { StatusTypes } from './types'
+import { StatusTypes } from './sharedTypes'
 
 export const getCurrentStatusType = (
-  errorMessage: string | undefined,
-  isFocused: boolean,
   value: string,
+  isFocused: boolean,
+  errorMessage: string | undefined,
 ): StatusTypes => {
   return errorMessage ? 'error' : isFocused ? 'focused' : value ? 'filled' : 'default'
 }

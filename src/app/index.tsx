@@ -2,21 +2,23 @@ import { TextInput } from '@/components/ui/input'
 import { DismissKeyboard } from '@/components/ui/layout'
 import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Button, StyleSheet, Text, View } from 'react-native'
 
 export default function Index() {
+  const [value, setValue] = useState('')
   const ref = useRef<BottomSheetRef>(null)
   const { setTheme } = useUserPreferences()
 
   return (
     <DismissKeyboard style={styles.view}>
       <TextInput
-        label="Label"
+        // type="password"
+        label="user name"
         placeholder="Placeholder"
-        value=""
-        onChange={() => console.log('change')}
-        onClearInput={() => {}}
+        value={value}
+        onChange={text => setValue(text)}
+        onClearInput={() => setValue('')}
         iconName="user"
       />
 
