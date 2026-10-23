@@ -33,9 +33,9 @@ const Dropdown = ({
   }
 
   const selectHandler = (val: string) => {
-    onSelect(val)
-    setIsOpen(false)
     bottomSheetRef.current?.close()
+    setIsOpen(false)
+    onSelect(val)
   }
 
   return (
