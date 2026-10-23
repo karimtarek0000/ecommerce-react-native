@@ -1,8 +1,9 @@
 import { IconName } from '@/components/icons/types'
 import { FieldProps, TextInputType } from '../shared/sharedTypes'
 
-export type TextInputProps = FieldProps &
-  (
+export type TextInputProps = FieldProps & {
+  onChange: (text: string) => void
+} & (
     | {
         type?: 'text'
         iconName: IconName

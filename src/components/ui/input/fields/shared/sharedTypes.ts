@@ -28,5 +28,4 @@ export type FieldProps = {
   errorMessage?: string
   value: string
   style?: StyleProp<ViewStyle>
-  onChange: (text: string) => void
 }
