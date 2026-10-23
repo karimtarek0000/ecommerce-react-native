@@ -1,46 +1,53 @@
-import { TextInput } from '@/components/ui/input'
+import { Dropdown } from '@/components/ui/input'
 import { DismissKeyboard } from '@/components/ui/layout'
-import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
-import { useRef, useState } from 'react'
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { useState } from 'react'
+import { Button, StyleSheet, View } from 'react-native'
 
 export default function Index() {
-  const [value, setValue] = useState('')
-  const ref = useRef<BottomSheetRef>(null)
-  const { setTheme } = useUserPreferences()
+  const [country, setCountry] = useState('')
+  const { setTheme, setLanguage } = useUserPreferences()
 
   return (
     <DismissKeyboard style={styles.view}>
-      <TextInput
-        // type="password"
-        label="user name"
-        placeholder="Placeholder"
-        value={value}
-        onChange={text => setValue(text)}
-        onClearInput={() => setValue('')}
-        iconName="user"
+      <Dropdown
+        label="country"
+        options={[
+          { label: 'Argentina', value: 'argentina' },
+          { label: 'Australia', value: 'australia' },
+          { label: 'Brazil', value: 'brazil' },
+          { label: 'Canada', value: 'canada' },
+          { label: 'China', value: 'china' },
+          { label: 'Egypt', value: 'egypt' },
+          { label: 'France', value: 'france' },
+          { label: 'Germany', value: 'germany' },
+          { label: 'India', value: 'india' },
+          { label: 'Italy', value: 'italy' },
+          { label: 'Japan', value: 'japan' },
+          { label: 'Kenya', value: 'kenya' },
+          { label: 'Mexico', value: 'mexico' },
+          { label: 'Netherlands', value: 'netherlands' },
+          { label: 'New Zealand', value: 'new-zealand' },
+          { label: 'Nigeria', value: 'nigeria' },
+          { label: 'South Africa', value: 'south-africa' },
+          { label: 'Spain', value: 'spain' },
+          { label: 'United Kingdom', value: 'united-kingdom' },
+          { label: 'United States', value: 'united-states' },
+        ]}
+        value={country}
+        onSelect={text => setCountry(text)}
+        placeholder="Select Country"
+        iconName="home"
       />
 
       <View style={styles.sentinel} />
       <View style={styles.sentinel} />
       <View style={styles.sentinel} />
-      <Button title="Bottom Sheet" onPress={() => ref.current?.expand()} />
+
       <Button title="Dark Mode" onPress={() => setTheme('dark')} />
       <Button title="Light Mode" onPress={() => setTheme('light')} />
-
-      <BottomSheet
-        ref={ref}
-        headTitle=" Bottom Sheet Title"
-        description="Optional secondary description below the title"
-        bottomSheetProps={{
-          snapPoints: ['15%', '60%'],
-        }}
-      >
-        <BottomSheet.Content>
-          <Text>Testing</Text>
-        </BottomSheet.Content>
-      </BottomSheet>
+      <Button title="Arabic" onPress={() => setLanguage('ar')} />
+      <Button title="English" onPress={() => setLanguage('en')} />
     </DismissKeyboard>
   )
 }

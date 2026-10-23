@@ -19,7 +19,7 @@ const TextInputActions = ({
           <Icon
             name={isPasswordVisible ? 'eyeOff' : 'eye'}
             size={20}
-            color={styles.iconClose.color}
+            color={styles.iconAction.color}
           />
         </Pressable>
       )}
