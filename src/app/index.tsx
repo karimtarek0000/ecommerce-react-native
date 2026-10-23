@@ -5,23 +5,38 @@ import { useState } from 'react'
 import { Button, StyleSheet, View } from 'react-native'
 
 export default function Index() {
-  const [city, setCity] = useState('')
+  const [country, setCountry] = useState('')
   const { setTheme, setLanguage } = useUserPreferences()
 
   return (
     <DismissKeyboard style={styles.view}>
       <Dropdown
-        label="city"
+        label="country"
         options={[
-          { label: 'london', value: 'london' },
-          { label: 'paris', value: 'paris' },
-          { label: 'new york', value: 'new york' },
-          { label: 'tokyo', value: 'tokyo' },
-          { label: 'berlin', value: 'berlin' },
+          { label: 'Argentina', value: 'argentina' },
+          { label: 'Australia', value: 'australia' },
+          { label: 'Brazil', value: 'brazil' },
+          { label: 'Canada', value: 'canada' },
+          { label: 'China', value: 'china' },
+          { label: 'Egypt', value: 'egypt' },
+          { label: 'France', value: 'france' },
+          { label: 'Germany', value: 'germany' },
+          { label: 'India', value: 'india' },
+          { label: 'Italy', value: 'italy' },
+          { label: 'Japan', value: 'japan' },
+          { label: 'Kenya', value: 'kenya' },
+          { label: 'Mexico', value: 'mexico' },
+          { label: 'Netherlands', value: 'netherlands' },
+          { label: 'New Zealand', value: 'new-zealand' },
+          { label: 'Nigeria', value: 'nigeria' },
+          { label: 'South Africa', value: 'south-africa' },
+          { label: 'Spain', value: 'spain' },
+          { label: 'United Kingdom', value: 'united-kingdom' },
+          { label: 'United States', value: 'united-states' },
         ]}
-        value={city}
-        onSelect={text => setCity(text)}
-        placeholder="Select Type"
+        value={country}
+        onSelect={text => setCountry(text)}
+        placeholder="Select Country"
         iconName="home"
       />
 
