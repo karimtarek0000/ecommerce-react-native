@@ -2,7 +2,7 @@ import Icon from '@/components/icons/Icon'
 import { Typography } from '@/components/ui/display'
 import { BottomSheet, BottomSheetRef } from '@/components/ui/overlay'
 import { useRef, useState } from 'react'
-import { Pressable } from 'react-native'
+import { Keyboard, Pressable } from 'react-native'
 import FieldWrapper from '../shared/FieldWrapper'
 import { useSharedStyles } from '../shared/useSharedStyles'
 import { getCurrentStatusType } from '../shared/utils'
@@ -28,6 +28,7 @@ const Dropdown = ({
   const currentStatusInput = getCurrentStatusType(selectedOption ?? '', isOpen, errorMessage)
 
   const openBottomSheetHandler = () => {
+    Keyboard.dismiss()
     setIsOpen(true)
     bottomSheetRef.current?.expand()
   }
