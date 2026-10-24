@@ -10,27 +10,22 @@ const DropdownOptions = ({ options, value, onSelect }: DropdownOptionProps) => {
   return (
     <>
       {options.map(opt => {
+        const isSelected = opt.value === value
+
         return (
           <Pressable
             key={opt.value}
             onPress={() => onSelect(opt.value)}
-            style={[
-              styles.optionSelectItem,
-              opt.value === value && styles.optionSelectItemSelected,
-            ]}
+            style={[styles.optionSelectItem, isSelected && styles.optionSelectItemSelected]}
           >
             <Typography
               variant="normalBold"
-              color={
-                opt.value === value ? styles.optionTextSelected.color : styles.optionText.color
-              }
+              color={isSelected ? styles.optionTextSelected.color : styles.optionText.color}
             >
               {opt.label}
             </Typography>
 
-            {opt.value === value && (
-              <Icon name="check" size={20} color={styles.optionCheckIcon.color} />
-            )}
+            {isSelected && <Icon name="check" size={20} color={styles.optionCheckIcon.color} />}
           </Pressable>
         )
       })}
