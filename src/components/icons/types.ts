@@ -1,9 +1,9 @@
-import { StyleProp, ViewStyle } from 'react-native'
+import { ColorValue, StyleProp, ViewStyle } from 'react-native'
 import { iconMapper } from './components/iconMapper'
 
 export type IconProps = {
   size?: number
-  color?: string
+  color?: ColorValue
   style?: StyleProp<ViewStyle>
 }
 
