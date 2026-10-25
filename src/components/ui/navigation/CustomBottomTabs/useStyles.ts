@@ -1,3 +1,4 @@
+import { spacing } from '@/constants'
 import { useTheme } from '@/hooks'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
@@ -16,18 +17,21 @@ export const useStyles = (isFocused?: boolean) => {
       paddingBottom: VS(safeArea.bottom),
     },
     tabsWrapper: {
-      flexDirection: 'row',
-      alignSelf: 'stretch',
       height: VS(70),
+      flexDirection: 'row',
+      backgroundColor: colors.background.base,
       borderTopWidth: HS(1),
       borderTopColor: colors.border.default,
+      paddingHorizontal: spacing.space8.width,
     },
     tabItem: {
-      flex: 1,
+      flexGrow: 1,
     },
     tabContent: {
       justifyContent: 'center',
       alignItems: 'center',
+      paddingHorizontal: spacing.space20.width,
+      gap: spacing.space8.height,
     },
     tabColor: {
       color: colorsForFocused,

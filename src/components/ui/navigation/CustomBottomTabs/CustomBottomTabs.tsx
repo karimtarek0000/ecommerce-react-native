@@ -1,13 +1,12 @@
-import { TabListProps } from 'expo-router/ui'
-import { View } from 'react-native'
+import { View, ViewProps } from 'react-native'
 import { useStyles } from './useStyles'
 
-const CustomBottomTabs = ({ style, ...rest }: TabListProps) => {
+const CustomBottomTabs = ({ style, ...rest }: ViewProps) => {
   const styles = useStyles()
 
   return (
-    <View style={[styles.safeArea, style]} {...rest}>
-      <View style={styles.tabsWrapper}>{rest.children}</View>
+    <View style={styles.safeArea}>
+      <View style={[styles.tabsWrapper, style]} {...rest} />
     </View>
   )
 }

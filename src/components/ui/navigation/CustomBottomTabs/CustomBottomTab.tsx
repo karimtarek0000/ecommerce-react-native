@@ -1,16 +1,8 @@
 import Icon from '@/components/icons/Icon'
-import { IconName } from '@/components/icons/types'
-import { TabTriggerSlotProps } from 'expo-router/ui'
 import { Pressable, View } from 'react-native'
 import { Typography } from '../../display'
+import { CustomBottomTabProps } from './types'
 import { useStyles } from './useStyles'
-
-type CustomBottomTabProps = TabTriggerSlotProps & {
-  label: string
-  iconName: IconName
-  badge?: number
-  isFocused?: boolean
-}
 
 const CustomBottomTab = ({ label, iconName, badge, isFocused, ...rest }: CustomBottomTabProps) => {
   const styles = useStyles(isFocused)
@@ -26,11 +18,10 @@ const CustomBottomTab = ({ label, iconName, badge, isFocused, ...rest }: CustomB
       {...rest}
     >
       <View style={styles.tabContent}>
+        <Icon name={iconName} color={styles.tabColor.color} />
         <Typography variant="xsmallBold" color={styles.tabColor.color}>
           {label}
         </Typography>
-
-        <Icon name={iconName} color={styles.tabColor.color} />
       </View>
     </Pressable>
   )

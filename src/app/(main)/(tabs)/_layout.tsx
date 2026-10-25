@@ -1,6 +1,5 @@
 import { CustomBottomTab, CustomBottomTabs } from '@/components/ui/navigation'
-import { Tabs } from 'expo-router'
-import { TabList, TabSlot, TabTrigger } from 'expo-router/ui'
+import { TabList, Tabs, TabSlot, TabTrigger } from 'expo-router/ui'
 
 export default function TabLayout() {
   return (
