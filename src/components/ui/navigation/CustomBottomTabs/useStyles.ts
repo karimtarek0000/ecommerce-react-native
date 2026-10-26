@@ -1,4 +1,4 @@
-import { spacing } from '@/constants'
+import { radius, spacing } from '@/constants'
 import { useTheme } from '@/hooks'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
@@ -18,20 +18,36 @@ export const useStyles = (isFocused?: boolean) => {
     },
     tabsWrapper: {
       height: VS(70),
-      flexDirection: 'row',
-      backgroundColor: colors.background.base,
       borderTopWidth: HS(1),
       borderTopColor: colors.border.default,
-      paddingHorizontal: spacing.space8.width,
     },
-    tabItem: {
-      flexGrow: 1,
-    },
-    tabContent: {
+    tabButton: {
+      flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      paddingHorizontal: spacing.space20.width,
+    },
+    tabItem: {
+      justifyContent: 'center',
+      alignItems: 'center',
       gap: spacing.space8.height,
+      borderTopWidth: HS(2),
+      borderTopColor: isFocused ? colors.primary.base : 'transparent',
+      paddingVertical: spacing.space12.height,
+      width: '80%',
+    },
+    tabIcon: {
+      position: 'relative',
+    },
+    tabBadge: {
+      position: 'absolute',
+      width: HS(21),
+      height: VS(21),
+      justifyContent: 'center',
+      alignItems: 'center',
+      top: VS(-10),
+      right: HS(-13),
+      backgroundColor: colors.danger.base,
+      borderRadius: radius.full,
     },
     tabColor: {
       color: colorsForFocused,

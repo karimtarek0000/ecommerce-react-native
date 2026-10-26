@@ -14,7 +14,7 @@ export default function TabLayout() {
             <CustomBottomTab label="my order" iconName="truck" />
           </TabTrigger>
           <TabTrigger name="myCart" href="/myCart" asChild>
-            <CustomBottomTab label="my cart" iconName="shoppingCart" />
+            <CustomBottomTab label="my cart" iconName="shoppingCart" badge={2} />
           </TabTrigger>
           <TabTrigger name="account" href="/account" asChild>
             <CustomBottomTab label="account" iconName="user" />

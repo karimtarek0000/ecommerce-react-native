@@ -1,6 +1,6 @@
 import Icon from '@/components/icons/Icon'
+import { Typography } from '@/components/ui/display'
 import { Pressable, View } from 'react-native'
-import { Typography } from '../../display'
 import { CustomBottomTabProps } from './types'
 import { useStyles } from './useStyles'
 
@@ -11,14 +11,21 @@ const CustomBottomTab = ({ label, iconName, badge, isFocused, ...rest }: CustomB
 
   return (
     <Pressable
-      style={styles.tabItem}
+      {...rest}
+      style={styles.tabButton}
       role="tab"
       aria-selected={isFocused}
       accessibilityLabel={customLabel}
-      {...rest}
     >
-      <View style={styles.tabContent}>
-        <Icon name={iconName} color={styles.tabColor.color} />
+      <View style={styles.tabItem}>
+        <View style={styles.tabIcon}>
+          <Icon name={iconName} color={styles.tabColor.color} />
+          {!!badge && (
+            <View style={styles.tabBadge}>
+              <Typography variant="xsmallBold">1</Typography>
+            </View>
+          )}
+        </View>
         <Typography variant="xsmallBold" color={styles.tabColor.color}>
           {label}
         </Typography>
