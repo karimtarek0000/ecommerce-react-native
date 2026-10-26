@@ -9,7 +9,7 @@ const TopBar = ({ title, actionButton, style, goTo = 'none', toPage }: TopBarPro
   const styles = useStyles()
 
   return (
-    <View style={styles.safeArea}>
+    <View style={styles.safeAreaView}>
       <View style={[styles.wrapper, style]}>
         <GoToAction goTo={goTo} toPage={toPage} />
 

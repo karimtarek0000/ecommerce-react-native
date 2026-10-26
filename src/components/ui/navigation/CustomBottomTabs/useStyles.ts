@@ -12,7 +12,7 @@ export const useStyles = (isFocused?: boolean) => {
   const colorsForFocused = isFocused ? colors.primary.base : colors.forground.tertiary
 
   const styles = StyleSheet.create({
-    safeArea: {
+    safeAreaView: {
       backgroundColor: colors.background.base,
       paddingBottom: safeArea.bottom,
     },

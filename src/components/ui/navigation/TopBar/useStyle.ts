@@ -10,7 +10,7 @@ export const useStyles = () => {
   const safeArea = useSafeAreaInsets()
 
   const styles = StyleSheet.create({
-    safeArea: {
+    safeAreaView: {
       paddingTop: safeArea.top,
     },
     wrapper: {
