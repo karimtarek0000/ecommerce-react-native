@@ -7,13 +7,16 @@ export const useStyles = ({ typePaddingSides, hasTopBar }: UseStylesScreenLayout
   const safeArea = useSafeAreaInsets()
 
   const paddingTop = hasTopBar ? 0 : safeArea.top
+  const paddingBottom = hasTopBar ? 0 : safeArea.bottom
   const paddingSides = SIDE_PADDING[typePaddingSides]
 
   const styles = StyleSheet.create({
-    wrapper: {
+    viewWrapper: {
       paddingTop,
+      paddingBottom,
       ...paddingSides,
       gap: TOP_BAR_GAP,
+      flex: 1,
     },
   })
 
