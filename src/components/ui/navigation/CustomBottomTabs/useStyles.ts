@@ -14,7 +14,7 @@ export const useStyles = (isFocused?: boolean) => {
   const styles = StyleSheet.create({
     safeArea: {
       backgroundColor: colors.background.base,
-      paddingBottom: VS(safeArea.bottom),
+      paddingBottom: safeArea.bottom,
     },
     tabsWrapper: {
       height: VS(70),

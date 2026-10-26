@@ -9,14 +9,16 @@ const TopBar = ({ title, actionButton, style, goTo = 'none', toPage }: TopBarPro
   const styles = useStyles()
 
   return (
-    <View style={[styles.wrapper, style]}>
-      <GoToAction goTo={goTo} toPage={toPage} />
+    <View style={styles.safeArea}>
+      <View style={[styles.wrapper, style]}>
+        <GoToAction goTo={goTo} toPage={toPage} />
 
-      <Typography variant="normalBold" color={styles.title.color} textTransform="capitalize">
-        {title}
-      </Typography>
+        <Typography variant="normalBold" color={styles.title.color} textTransform="capitalize">
+          {title}
+        </Typography>
 
-      <ActionButton actionButton={{ ...(actionButton as ActionButtonProps) }} />
+        <ActionButton actionButton={{ ...(actionButton as ActionButtonProps) }} />
+      </View>
     </View>
   )
 }
