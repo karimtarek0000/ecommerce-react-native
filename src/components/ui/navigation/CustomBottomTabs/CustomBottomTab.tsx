@@ -22,7 +22,7 @@ const CustomBottomTab = ({ label, iconName, badge, isFocused, ...rest }: CustomB
           <Icon name={iconName} color={styles.tabColor.color} />
           {!!badge && (
             <View style={styles.tabBadge}>
-              <Typography variant="xsmallBold">1</Typography>
+              <Typography variant="xsmallBold">{badge}</Typography>
             </View>
           )}
         </View>
