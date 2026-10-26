@@ -2,12 +2,17 @@ import { spacing } from '@/constants'
 import { useTheme } from '@/hooks'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 const { VS } = scalingMethods
 
 export const useStyles = () => {
   const colors = useTheme()
+  const safeArea = useSafeAreaInsets()
 
   const styles = StyleSheet.create({
+    safeArea: {
+      paddingTop: safeArea.top,
+    },
     wrapper: {
       height: VS(50),
       flexDirection: 'row',

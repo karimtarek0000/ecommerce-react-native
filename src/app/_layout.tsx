@@ -1,13 +1,7 @@
-import { presistor, store } from '@/store'
-import { PortalProvider } from '@gorhom/portal'
+import AppBoostrap from '@/components/wrappers/AppBoostrap'
 import { useFonts } from 'expo-font'
-import { Stack } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import { useEffect } from 'react'
-import { StyleSheet } from 'react-native'
-import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import { Provider } from 'react-redux'
-import { PersistGate } from 'redux-persist/integration/react'
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
@@ -29,22 +23,5 @@ export default function RootLayout() {
     return null
   }
 
-  return (
-    <GestureHandlerRootView style={styles.container}>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={presistor}>
-          <PortalProvider>
-            <Stack />
-          </PortalProvider>
-        </PersistGate>
-      </Provider>
-    </GestureHandlerRootView>
-  )
+  return <AppBoostrap />
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-})
