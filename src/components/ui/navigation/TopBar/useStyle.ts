@@ -12,12 +12,12 @@ export const useStyles = () => {
   const styles = StyleSheet.create({
     safeAreaView: {
       paddingTop: safeArea.top,
+      alignSelf: 'stretch',
     },
     wrapper: {
       height: VS(50),
       flexDirection: 'row',
       alignItems: 'center',
-      alignSelf: 'stretch',
       justifyContent: 'space-between',
       backgroundColor: colors.background.base,
       paddingHorizontal: spacing.space16.width,

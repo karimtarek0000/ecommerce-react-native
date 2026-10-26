@@ -6,7 +6,7 @@ import { useStyles } from './useStyle'
 const ActionButton = ({ actionButton }: { actionButton: ActionButtonProps }) => {
   const styles = useStyles()
 
-  if (!actionButton) {
+  if (!actionButton.onPress) {
     return <View />
   }
 
