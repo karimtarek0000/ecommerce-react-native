@@ -19,14 +19,16 @@ const CustomBottomTab = ({ label, iconName, badge, isFocused, ...rest }: CustomB
     >
       <View style={styles.tabItem}>
         <View style={styles.tabIcon}>
-          <Icon name={iconName} color={styles.tabColor.color} />
+          <Icon name={iconName} color={styles.tabOtherColor.color} />
           {!!badge && (
             <View style={styles.tabBadge}>
-              <Typography variant="xsmallBold">{badge}</Typography>
+              <Typography variant="xsmallBold" color={styles.tabBadgeColor.color}>
+                {badge}
+              </Typography>
             </View>
           )}
         </View>
-        <Typography variant="xsmallBold" color={styles.tabColor.color}>
+        <Typography variant="xsmallBold" color={styles.tabOtherColor.color}>
           {label}
         </Typography>
       </View>

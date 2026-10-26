@@ -49,7 +49,11 @@ export const useStyles = (isFocused?: boolean) => {
       backgroundColor: colors.danger.base,
       borderRadius: radius.full,
     },
-    tabColor: {
+    //
+    tabBadgeColor: {
+      color: colors.forground.contrast,
+    },
+    tabOtherColor: {
       color: colorsForFocused,
     },
   })

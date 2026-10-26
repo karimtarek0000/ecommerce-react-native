@@ -4,7 +4,7 @@ import { TypographyProps } from './types'
 
 const Typography = ({
   variant,
-  color = 'white',
+  color,
   textTransform = 'capitalize',
   style,
   children,
