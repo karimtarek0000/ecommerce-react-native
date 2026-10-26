@@ -4,10 +4,19 @@ import { Pressable, View } from 'react-native'
 import { CustomBottomTabProps } from './types'
 import { useStyles } from './useStyles'
 
-const CustomBottomTab = ({ label, iconName, badge, isFocused, ...rest }: CustomBottomTabProps) => {
+const MAX_BADGE_COUNT = 9
+
+const CustomBottomTab = ({
+  label,
+  iconName,
+  badge = 0,
+  isFocused,
+  ...rest
+}: CustomBottomTabProps) => {
   const styles = useStyles(isFocused)
 
   const customLabel = badge ? `${label},(${badge})` : label
+  const badgeCount = badge > MAX_BADGE_COUNT ? `${MAX_BADGE_COUNT}+` : badge
 
   return (
     <Pressable
@@ -23,7 +32,7 @@ const CustomBottomTab = ({ label, iconName, badge, isFocused, ...rest }: CustomB
           {!!badge && (
             <View style={styles.tabBadge}>
               <Typography variant="xsmallBold" color={styles.tabBadgeColor.color}>
-                {badge}
+                {badgeCount}
               </Typography>
             </View>
           )}

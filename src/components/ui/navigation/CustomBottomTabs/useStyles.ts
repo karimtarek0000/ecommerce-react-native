@@ -45,7 +45,7 @@ export const useStyles = (isFocused?: boolean) => {
       justifyContent: 'center',
       alignItems: 'center',
       top: VS(-10),
-      right: HS(-13),
+      end: HS(-13),
       backgroundColor: colors.danger.base,
       borderRadius: radius.full,
     },
