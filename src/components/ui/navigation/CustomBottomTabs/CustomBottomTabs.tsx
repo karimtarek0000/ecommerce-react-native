@@ -5,7 +5,7 @@ const CustomBottomTabs = ({ style, ...rest }: ViewProps) => {
   const styles = useStyles()
 
   return (
-    <View style={styles.safeArea}>
+    <View style={styles.safeAreaView}>
       <View style={[styles.tabsWrapper, style]} {...rest} />
     </View>
   )

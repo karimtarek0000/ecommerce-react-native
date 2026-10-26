@@ -1,6 +1,5 @@
 import { IconName } from '@/components/icons/types'
 import { Href } from 'expo-router'
-import { StyleProp, ViewStyle } from 'react-native'
 
 export type ActionButtonProps = { iconName: IconName; onPress: VoidFunction; flip?: boolean }
 
@@ -12,7 +11,6 @@ export type GoToActionProps = {
 export type TopBarBaseProps = {
   title: string
   actionButton?: ActionButtonProps
-  style?: StyleProp<ViewStyle>
 }
 
 export type TopBarProps = TopBarBaseProps &

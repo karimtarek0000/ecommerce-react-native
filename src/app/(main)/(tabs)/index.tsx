@@ -1,10 +1,12 @@
-import { Text, View } from 'react-native'
+import { ScreenLayout } from '@/components/ui/layout'
+import { TopBar } from '@/components/ui/navigation'
+import { Text } from 'react-native'
 
 const HomePage = () => {
   return (
-    <View>
+    <ScreenLayout renderTopBar={() => <TopBar title="Home" />}>
       <Text>HomePage as Main</Text>
-    </View>
+    </ScreenLayout>
   )
 }
 

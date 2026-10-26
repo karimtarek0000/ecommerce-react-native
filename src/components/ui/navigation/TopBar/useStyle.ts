@@ -10,14 +10,14 @@ export const useStyles = () => {
   const safeArea = useSafeAreaInsets()
 
   const styles = StyleSheet.create({
-    safeArea: {
+    safeAreaView: {
       paddingTop: safeArea.top,
+      alignSelf: 'stretch',
     },
     wrapper: {
       height: VS(50),
       flexDirection: 'row',
       alignItems: 'center',
-      alignSelf: 'stretch',
       justifyContent: 'space-between',
       backgroundColor: colors.background.base,
       paddingHorizontal: spacing.space16.width,
