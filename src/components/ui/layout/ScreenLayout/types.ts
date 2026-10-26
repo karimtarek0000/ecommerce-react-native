@@ -1,4 +1,4 @@
-export type PaddingSidesTypes = 'none' | 'both' | 'start' | 'end'
+export type PaddingSidesTypes = 'both' | 'start' | 'end' | 'none'
 
 export type ScreenLayoutProps = {
   typePaddingSides?: PaddingSidesTypes
