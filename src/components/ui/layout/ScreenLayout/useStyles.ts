@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import { SIDE_PADDING, TOP_BAR_GAP } from './constant'
+import { CONTENT_BOTTOM_GAP, SIDE_PADDING, TOP_BAR_GAP } from './constant'
 import { UseStylesScreenLayoutProps } from './types'
 
 export const useStyles = ({ typePaddingSides, hasTopBar }: UseStylesScreenLayoutProps) => {
@@ -13,10 +13,13 @@ export const useStyles = ({ typePaddingSides, hasTopBar }: UseStylesScreenLayout
   const styles = StyleSheet.create({
     viewWrapper: {
       paddingTop,
-      paddingBottom,
+      paddingBottom: paddingBottom + CONTENT_BOTTOM_GAP,
       ...paddingSides,
       gap: TOP_BAR_GAP,
       flex: 1,
+    },
+    scrollViewWrapper: {
+      paddingBottom,
     },
   })
 

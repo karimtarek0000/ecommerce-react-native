@@ -7,10 +7,11 @@ const Typography = ({
   color,
   textTransform = 'capitalize',
   style,
+  switchLanguage,
   children,
   ...props
 }: TypographyProps) => {
-  const typographyStyles = useFontStyle()
+  const typographyStyles = useFontStyle(switchLanguage)
 
   return (
     <Text style={[typographyStyles[variant], { color, textTransform }, style]} {...props}>

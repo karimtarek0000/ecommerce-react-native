@@ -1,7 +1,9 @@
-import AppBoostrap from '@/components/wrappers/AppBoostrap'
+import { AppProviders } from '@/components/wrappers'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 import { useEffect } from 'react'
+
+SplashScreen.preventAutoHideAsync()
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
@@ -23,5 +25,5 @@ export default function RootLayout() {
     return null
   }
 
-  return <AppBoostrap />
+  return <AppProviders />
 }

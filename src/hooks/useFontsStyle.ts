@@ -201,10 +201,10 @@ const fontStyles: Record<Languages, TypographyStyles> = {
   },
 } as const
 
-const useFontStyle = () => {
+const useFontStyle = (switchLanguage?: Languages) => {
   const { currentLanguage } = useTranslations()
 
-  return fontStyles[currentLanguage]
+  return fontStyles[switchLanguage ?? currentLanguage]
 }
 
 export default useFontStyle

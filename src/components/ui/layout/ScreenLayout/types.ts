@@ -13,12 +13,10 @@ export type ScreenLayoutProps = ScreenLayoutBaseProps &
     | {
         scrollable?: false
         scrollProps?: never
-        dismissKeyboardOnTap?: boolean
       }
     | {
         scrollable: true
         scrollProps?: ScrollViewProps
-        dismissKeyboardOnTap?: never
       }
   )
 
