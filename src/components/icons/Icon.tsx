@@ -7,7 +7,7 @@ const Icon = ({ name, size, color, style, flip }: IconRenderProps) => {
   const { isRTL } = useTranslations()
   const RenderIconComponent = iconMapper[name]
 
-  const reverse = flip && isRTL
+  const reverse = flip || isRTL
 
   if (!RenderIconComponent) {
     return (

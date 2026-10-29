@@ -14,5 +14,5 @@ export type RowNavBaseProps = {
 export type RowNavProps = RowNavBaseProps &
   (
     | { trilingType: 'chevronWithValue'; trilingText: string }
-    | { trilingType: 'chevron' | 'noChevron'; trilingText?: never }
+    | { trilingType?: 'chevron' | 'noChevron'; trilingText?: never }
   )

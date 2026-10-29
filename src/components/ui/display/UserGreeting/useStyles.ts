@@ -22,12 +22,11 @@ export const useStyles = (size: Sizes) => {
     wrapper: {
       flexDirection: 'row',
       alignItems: 'center',
-      justifyContent: 'center',
       alignSelf: 'stretch',
       gap: HS(12),
     },
     body: {
-      alignSelf: 'flex-start',
+      // alignSelf: 'flex-start',
     },
     //
     userName: {

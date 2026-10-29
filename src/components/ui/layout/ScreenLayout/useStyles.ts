@@ -21,6 +21,9 @@ export const useStyles = ({ typePaddingSides, hasTopBar }: UseStylesScreenLayout
     scrollViewWrapper: {
       paddingBottom,
     },
+    container: {
+      flex: 1,
+    },
   })
 
   return styles

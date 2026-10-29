@@ -1,10 +1,12 @@
-import { Text, View } from 'react-native'
+import { ScreenLayout } from '@/components/ui/layout'
+import { TopBar } from '@/components/ui/navigation'
+import HomeScreen from '@/features/account/screens/AccountScreen/AccountScreen'
 
 const AccountPage = () => {
   return (
-    <View>
-      <Text>AccountPage</Text>
-    </View>
+    <ScreenLayout scrollable renderTopBar={() => <TopBar title="account" />}>
+      <HomeScreen />
+    </ScreenLayout>
   )
 }
 
