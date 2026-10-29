@@ -1,15 +1,15 @@
 import { Typography } from '@/components/ui/display'
 import { RowNav } from '@/components/ui/navigation'
 import { View } from 'react-native'
-import { HomeScreenSectionsProps } from '../types'
-import { useStyles } from '../useStyles'
+import { NavigationListProps } from '../../types'
+import { useStyles } from '../../useStyles'
 
-const HomeScreenSections = ({ renderSectionsHomeScreen }: HomeScreenSectionsProps) => {
+const NavigationList = ({ renderNavigationList }: NavigationListProps) => {
   const styles = useStyles()
 
   return (
     <View>
-      {renderSectionsHomeScreen.map(({ title, rows }) => {
+      {renderNavigationList.map(({ title, rows }) => {
         return (
           <View key={title}>
             <Typography variant="mediumBold" style={styles.headerTitle}>
@@ -28,4 +28,4 @@ const HomeScreenSections = ({ renderSectionsHomeScreen }: HomeScreenSectionsProp
   )
 }
 
-export default HomeScreenSections
+export default NavigationList

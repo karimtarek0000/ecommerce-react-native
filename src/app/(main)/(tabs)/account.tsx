@@ -1,6 +1,6 @@
 import { ScreenLayout } from '@/components/ui/layout'
 import { TopBar } from '@/components/ui/navigation'
-import HomeScreen from '@/features/account/screens/HomeScreen/HomeScreen'
+import HomeScreen from '@/features/account/screens/AccountScreen/AccountScreen'
 
 const AccountPage = () => {
   return (

@@ -7,6 +7,7 @@ export const useStyles = () => {
   const colors = useTheme()
 
   const styles = StyleSheet.create({
+    // Navigation List Component
     headerTitle: {
       marginTop: VS(24),
       marginBottom: VS(16),
@@ -15,6 +16,7 @@ export const useStyles = () => {
     rows: {
       gap: VS(16),
     },
+    //
   })
 
   return styles
