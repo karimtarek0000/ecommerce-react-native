@@ -22,8 +22,8 @@ export const useStyles = ({ variant, size = 'lg', block, disabled }: UseStyles) 
     },
     danger: {
       typography: colors.danger.base,
-      background: colors.danger.tint,
-      border: colors.danger.base,
+      background: colors.background.base,
+      border: colors.background.base,
     },
     ghost: {
       typography: colors.forground.primary,

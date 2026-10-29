@@ -1,27 +1,37 @@
+import { BottomSheetRef } from '@/components/ui/overlay'
+import useTranslations from '@/hooks/useTranslations'
+import { useRef, useState } from 'react'
 import { RenderNavigationList } from './types'
 
 export const useAccountScreen = () => {
+  const { t } = useTranslations()
+  const [visibleLogoutModal, setVisibleLogoutModal] = useState(false)
+  const bottomSheetLanguageRef = useRef<BottomSheetRef>(null)
+  const bottomSheetThemeRef = useRef<BottomSheetRef>(null)
+  const bottomSheetNotificationsRef = useRef<BottomSheetRef>(null)
+  const bottomSheetSecurityRef = useRef<BottomSheetRef>(null)
+
   const renderNavigationList: RenderNavigationList[] = [
     {
-      title: 'account',
+      title: t('common_bottomTabAccount'),
       rows: [
         {
-          title: 'edit profile',
+          title: t('account_profileTitle'),
           iconName: 'user',
           onPress: () => {},
         },
         {
-          title: 'change password',
+          title: t('account_rowChangePassword'),
           iconName: 'lock',
           onPress: () => {},
         },
       ],
     },
     {
-      title: 'shopping',
+      title: t('account_sectionShopping'),
       rows: [
         {
-          title: 'address',
+          title: t('account_rowAddress'),
           iconName: 'mapPin',
           onPress: () => {},
         },
@@ -36,19 +46,19 @@ export const useAccountScreen = () => {
           onPress: () => {},
         },
         {
-          title: 'my orders',
+          title: t('account_rowMyOrders'),
           iconName: 'truck',
           onPress: () => {},
         },
       ],
     },
     {
-      title: 'preferences',
+      title: t('account_sectionPreferences'),
       rows: [
         {
-          title: 'notifications',
+          title: t('account_rowNotifications'),
           iconName: 'bell',
-          onPress: () => {},
+          onPress: () => bottomSheetNotificationsRef.current?.expand(),
         },
         {
           title: 'security',
@@ -56,43 +66,52 @@ export const useAccountScreen = () => {
           onPress: () => {},
         },
         {
-          title: 'language',
+          title: t('account_rowLanguage'),
           iconName: 'world',
           trilingType: 'chevronWithValue',
           trilingText: 'english',
-          onPress: () => {},
+          onPress: () => bottomSheetLanguageRef.current?.expand(),
         },
         {
-          title: 'theme',
+          title: t('account_rowTheme'),
           iconName: 'palette',
           trilingType: 'chevronWithValue',
           trilingText: 'light',
-          onPress: () => {},
+          onPress: () => bottomSheetThemeRef.current?.expand(),
         },
       ],
     },
     {
-      title: 'support',
+      title: t('account_sectionSupport'),
       rows: [
         {
-          title: 'help & support',
+          title: t('account_helpSupportTitle'),
           iconName: 'help',
           onPress: () => {},
         },
         {
-          title: 'legal & policies',
+          title: t('account_legalTitle'),
           iconName: 'fileText',
           onPress: () => {},
         },
         {
           variant: 'danger',
-          title: 'logout',
+          title: t('account_logout'),
           iconName: 'logout',
-          onPress: () => {},
+          onPress: () => setVisibleLogoutModal(true),
         },
       ],
     },
   ] as const
 
-  return { renderNavigationList }
+  return {
+    t,
+    renderNavigationList,
+    visibleLogoutModal,
+    setVisibleLogoutModal,
+    bottomSheetLanguageRef,
+    bottomSheetThemeRef,
+    bottomSheetNotificationsRef,
+    bottomSheetSecurityRef,
+  }
 }
