@@ -8,9 +8,9 @@ const RowNav = ({
   variant = 'default',
   title,
   iconName,
-  style,
   trilingType = 'chevron',
   trilingText,
+  style,
   onPress,
 }: RowNavProps) => {
   const { styles, variants } = useStyles()
