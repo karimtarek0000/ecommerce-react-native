@@ -1,4 +1,4 @@
-import { AppProviders } from '@/components/wrappers'
+import AppProviders from '@/components/Initial/AppProviders'
 import { useFonts } from 'expo-font'
 import * as SplashScreen from 'expo-splash-screen'
 import { useEffect } from 'react'
