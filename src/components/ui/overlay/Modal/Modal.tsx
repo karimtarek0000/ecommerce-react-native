@@ -4,7 +4,7 @@ import { Modal as ModalNative, Pressable, View } from 'react-native'
 import { ModalProps } from './types'
 import { useStyles } from './useStyles'
 
-const Modal = ({ headTitle, visible, description, modalBody, closeModal }: ModalProps) => {
+const Modal = ({ headTitle, visible, description, children, closeModal }: ModalProps) => {
   const styles = useStyles()
 
   return (
@@ -33,7 +33,7 @@ const Modal = ({ headTitle, visible, description, modalBody, closeModal }: Modal
             </Typography>
           </View>
 
-          <View>{modalBody()}</View>
+          <View>{children}</View>
         </View>
       </View>
     </ModalNative>
