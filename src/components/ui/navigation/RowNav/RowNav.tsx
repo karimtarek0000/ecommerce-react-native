@@ -9,7 +9,7 @@ const RowNav = ({
   title,
   iconName,
   style,
-  trilingType,
+  trilingType = 'chevron',
   trilingText,
   onPress,
 }: RowNavProps) => {
@@ -26,7 +26,7 @@ const RowNav = ({
       </View>
 
       <View style={[styles.trilingInfo]}>
-        {trilingType === 'chevronWithValue' && (
+        {trilingType === 'chevronWithValue' && trilingText && (
           <Typography variant="smallRegular" color={styles.trilingInfo.color}>
             {trilingText}
           </Typography>
