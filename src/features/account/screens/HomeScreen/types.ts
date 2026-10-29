@@ -4,3 +4,7 @@ export type RenderRowNavComponents = {
   title: string
   rows: RowNavProps[]
 }
+
+export type HomeScreenSectionsProps = {
+  renderSectionsHomeScreen: RenderRowNavComponents[]
+}

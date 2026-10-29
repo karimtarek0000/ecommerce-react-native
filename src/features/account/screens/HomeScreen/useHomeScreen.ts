@@ -1,7 +1,7 @@
 import { RenderRowNavComponents } from './types'
 
 export const useHomeScreen = () => {
-  const renderRowNavComponents: RenderRowNavComponents[] = [
+  const renderSectionsHomeScreen: RenderRowNavComponents[] = [
     {
       title: 'account',
       rows: [
@@ -94,5 +94,5 @@ export const useHomeScreen = () => {
     },
   ] as const
 
-  return { renderRowNavComponents }
+  return { renderSectionsHomeScreen }
 }

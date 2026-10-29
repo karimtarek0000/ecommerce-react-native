@@ -1,14 +1,13 @@
 import { personImage } from '@/assets/images'
-import { Typography, UserGreeting } from '@/components/ui/display'
-import { RowNav } from '@/components/ui/navigation'
-import { View } from 'react-native'
+import { UserGreeting } from '@/components/ui/display'
+import HomeScreenSections from './components/HomeScreenSections'
 import { useHomeScreen } from './useHomeScreen'
 
 const HomeScreen = () => {
-  const { renderRowNavComponents } = useHomeScreen()
+  const { renderSectionsHomeScreen } = useHomeScreen()
 
   return (
-    <View>
+    <>
       <UserGreeting
         userName="jonathan smith"
         imgSrc={personImage}
@@ -17,25 +16,8 @@ const HomeScreen = () => {
         meta="jonathan@kimzshop.com"
       />
 
-      {/* Content */}
-      {renderRowNavComponents.map(({ title, rows }) => {
-        return (
-          <View key={title}>
-            <Typography variant="mediumBold" color="red">
-              {title}
-            </Typography>
-
-            {rows.map(row => {
-              return (
-                <>
-                  <RowNav key={row.title} {...row} />
-                </>
-              )
-            })}
-          </View>
-        )
-      })}
-    </View>
+      <HomeScreenSections renderSectionsHomeScreen={renderSectionsHomeScreen} />
+    </>
   )
 }
 

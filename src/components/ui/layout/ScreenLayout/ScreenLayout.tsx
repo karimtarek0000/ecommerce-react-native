@@ -21,7 +21,7 @@ const ScreenLayout = ({
       <View style={[styles.viewWrapper, styles.scrollViewWrapper]}>
         {renderTopBar?.()}
 
-        <DismissKeyboard>
+        <DismissKeyboard style={styles.container}>
           <VerticalScrollView {...scrollProps}>{children}</VerticalScrollView>
         </DismissKeyboard>
       </View>
