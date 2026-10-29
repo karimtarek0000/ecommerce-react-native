@@ -33,7 +33,7 @@ const RowNav = ({
         )}
 
         {trilingType !== 'noChevron' && (
-          <Icon name="chevron" flip color={styles.trilingInfo.color} />
+          <Icon name="chevronRight" color={styles.trilingInfo.color} />
         )}
       </View>
     </Pressable>
