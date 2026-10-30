@@ -8,13 +8,13 @@ import { useAccountScreen } from './useAccountScreen'
 
 const AccountScreen = () => {
   const {
-    t,
     renderNavigationList,
     visibleLogoutModal,
-    setVisibleLogoutModal,
     bottomSheetLanguageRef,
     bottomSheetThemeRef,
     bottomSheetNotificationsRef,
+    t,
+    setVisibleLogoutModal,
   } = useAccountScreen()
 
   return (
