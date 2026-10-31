@@ -8,10 +8,12 @@ const Radio = ({ isSelected, onChange, label, style, disabled, ...rest }: RadioP
 
   return (
     <Pressable onPress={onChange} style={[styles.view, style]} disabled={disabled} {...rest}>
-      <View style={styles.wrapperIndicator}>
-        <View style={[styles.indicator]} />
+      <View style={styles.wrapper}>
+        <View style={styles.wrapperIndicator}>
+          <View style={[styles.indicator]} />
+        </View>
+        <Typography variant="xsmallBold">{label}</Typography>
       </View>
-      <Typography variant="xsmallBold">{label}</Typography>
     </Pressable>
   )
 }

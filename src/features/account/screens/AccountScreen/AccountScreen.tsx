@@ -1,6 +1,6 @@
 import { personImage } from '@/assets/images'
 import { UserGreeting } from '@/components/ui/display'
-import { Button } from '@/components/ui/input'
+import { Button, RadioGroup } from '@/components/ui/input'
 import { BottomSheet, Modal } from '@/components/ui/overlay'
 import { Text, View } from 'react-native'
 import NavigationList from './components/NavigationList/NavigationList'
@@ -13,8 +13,14 @@ const AccountScreen = () => {
     bottomSheetLanguageRef,
     bottomSheetThemeRef,
     bottomSheetNotificationsRef,
+    languageOptions,
+    themeOptions,
+    selectedLanguage,
+    selectedTheme,
     t,
     setVisibleLogoutModal,
+    setLanguageHandler,
+    setThemeHandler,
   } = useAccountScreen()
 
   return (
@@ -45,12 +51,14 @@ const AccountScreen = () => {
       <BottomSheet
         ref={bottomSheetLanguageRef}
         headTitle={t('account_rowLanguage')}
-        bottomSheetProps={{
-          snapPoints: ['25%'],
-        }}
+        bottomSheetProps={{ snapPoints: ['25%'] }}
       >
         <BottomSheet.Content>
-          <Text>language</Text>
+          <RadioGroup
+            options={languageOptions}
+            selectedValue={selectedLanguage}
+            onValueChange={setLanguageHandler}
+          />
         </BottomSheet.Content>
       </BottomSheet>
 
@@ -63,7 +71,11 @@ const AccountScreen = () => {
         }}
       >
         <BottomSheet.Content>
-          <Text>theme</Text>
+          <RadioGroup
+            options={themeOptions}
+            selectedValue={selectedTheme}
+            onValueChange={setThemeHandler}
+          />
         </BottomSheet.Content>
       </BottomSheet>
 

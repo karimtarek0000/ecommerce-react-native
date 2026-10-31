@@ -1,16 +1,64 @@
+import { RadioGroupOptions } from '@/components/ui/input/RadioGroup/types'
 import { BottomSheetRef } from '@/components/ui/overlay'
+import { useUserPreferences } from '@/hooks'
 import useTranslations from '@/hooks/useTranslations'
+import { Languages, Theme } from '@/types'
 import { useRef, useState } from 'react'
 import { RenderNavigationList } from './types'
 
 export const useAccountScreen = () => {
   const { t } = useTranslations()
+  const {
+    language: selectedLanguage,
+    theme: selectedTheme,
+    setLanguage,
+    setTheme,
+  } = useUserPreferences()
+
   const [visibleLogoutModal, setVisibleLogoutModal] = useState(false)
   const bottomSheetLanguageRef = useRef<BottomSheetRef>(null)
   const bottomSheetThemeRef = useRef<BottomSheetRef>(null)
   const bottomSheetNotificationsRef = useRef<BottomSheetRef>(null)
   const bottomSheetSecurityRef = useRef<BottomSheetRef>(null)
 
+  // For Languages
+  const languageOptions: RadioGroupOptions[] = [
+    {
+      label: 'العربية',
+      value: 'ar',
+    },
+    {
+      label: 'English',
+      value: 'en',
+    },
+  ] as const
+
+  const trilingTextLanguage = languageOptions.find(
+    option => option.value === selectedLanguage,
+  )?.label
+
+  const setLanguageHandler = (value: string) => {
+    setLanguage(value as Languages)
+    bottomSheetLanguageRef.current?.close()
+  }
+
+  // For Theme
+  const themeOptions: RadioGroupOptions[] = [
+    {
+      label: 'light',
+      value: 'light',
+    },
+    {
+      label: 'dark',
+      value: 'dark',
+    },
+  ] as const
+
+  const setThemeHandler = (value: string) => {
+    setTheme(value as Theme)
+  }
+
+  // Render Navigation List
   const renderNavigationList: RenderNavigationList[] = [
     {
       title: t('common_bottomTabAccount'),
@@ -69,7 +117,7 @@ export const useAccountScreen = () => {
           title: t('account_rowLanguage'),
           iconName: 'world',
           trilingType: 'chevronWithValue',
-          trilingText: 'english',
+          trilingText: trilingTextLanguage || '',
           onPress: () => bottomSheetLanguageRef.current?.expand(),
         },
         {
@@ -105,13 +153,19 @@ export const useAccountScreen = () => {
   ] as const
 
   return {
-    t,
     renderNavigationList,
     visibleLogoutModal,
-    setVisibleLogoutModal,
+    selectedLanguage,
+    selectedTheme,
     bottomSheetLanguageRef,
     bottomSheetThemeRef,
     bottomSheetNotificationsRef,
     bottomSheetSecurityRef,
+    languageOptions,
+    themeOptions,
+    t,
+    setVisibleLogoutModal,
+    setLanguageHandler,
+    setThemeHandler,
   }
 }

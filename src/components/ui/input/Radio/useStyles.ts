@@ -10,14 +10,14 @@ export const useStyles = ({ isSelected, disabled }: UseStylesProps) => {
 
   const styles = StyleSheet.create({
     view: {
-      flexDirection: 'row',
-      gap: 4,
-      justifyContent: 'flex-start',
-      alignItems: 'center',
-      alignSelf: 'stretch',
       paddingHorizontal: HS(2),
-      paddingVertical: VS(2),
+      paddingVertical: VS(5),
       opacity: disabled ? opacity.disabled : opacity.full,
+    },
+    wrapper: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: HS(12),
     },
     wrapperIndicator: {
       width: HS(20),

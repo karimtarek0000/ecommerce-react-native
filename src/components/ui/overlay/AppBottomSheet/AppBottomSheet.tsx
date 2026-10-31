@@ -91,6 +91,7 @@ const AppBottomSheet = ({
               </Typography>
             )}
           </View>
+
           {children}
         </View>
       </BottomSheet>
