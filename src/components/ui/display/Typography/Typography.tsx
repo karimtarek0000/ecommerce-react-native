@@ -6,6 +6,7 @@ const Typography = ({
   variant,
   color,
   textTransform = 'capitalize',
+  textAlign = 'left',
   style,
   switchLanguage,
   children,
@@ -14,7 +15,10 @@ const Typography = ({
   const typographyStyles = useFontStyle(switchLanguage)
 
   return (
-    <Text style={[typographyStyles[variant], { color, textTransform }, style]} {...props}>
+    <Text
+      style={[typographyStyles[variant], { color, textTransform, textAlign }, style]}
+      {...props}
+    >
       {children}
     </Text>
   )
