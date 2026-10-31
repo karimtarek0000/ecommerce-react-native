@@ -5,28 +5,28 @@ import { StyleSheet } from 'react-native'
 import { UseStylesProps } from './types'
 const { HS, VS } = scalingMethods
 
-export const useStyles = ({ isSelected, disbaled }: UseStylesProps) => {
+export const useStyles = ({ isSelected, disabled }: UseStylesProps) => {
   const colors = useTheme()
 
   const styles = StyleSheet.create({
     view: {
-      flexDirection: 'row-reverse',
+      flexDirection: 'row',
       gap: 4,
-      justifyContent: 'center',
+      justifyContent: 'flex-start',
       alignItems: 'center',
+      alignSelf: 'stretch',
       paddingHorizontal: HS(2),
       paddingVertical: VS(2),
+      opacity: disabled ? opacity.disabled : opacity.full,
     },
-    wrapper: {
+    wrapperIndicator: {
       width: HS(20),
       height: VS(20),
-      flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
       borderWidth: HS(1),
       borderColor: colors.primary.base,
       borderRadius: radius.full,
-      opacity: disbaled ? opacity.disabled : opacity.full,
     },
     indicator: {
       width: HS(10),

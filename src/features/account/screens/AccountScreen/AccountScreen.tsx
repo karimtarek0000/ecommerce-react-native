@@ -49,7 +49,9 @@ const AccountScreen = () => {
           snapPoints: ['25%'],
         }}
       >
-        <Text>language</Text>
+        <BottomSheet.Content>
+          <Text>language</Text>
+        </BottomSheet.Content>
       </BottomSheet>
 
       {/* Bottom sheet for Theme */}
@@ -60,7 +62,9 @@ const AccountScreen = () => {
           snapPoints: ['45%'],
         }}
       >
-        <Text>theme</Text>
+        <BottomSheet.Content>
+          <Text>theme</Text>
+        </BottomSheet.Content>
       </BottomSheet>
 
       {/* Bottom sheet for Notifications */}
@@ -71,7 +75,9 @@ const AccountScreen = () => {
           snapPoints: ['20%'],
         }}
       >
-        <Text>notifications</Text>
+        <BottomSheet.Content>
+          <Text>notifications</Text>
+        </BottomSheet.Content>
       </BottomSheet>
     </>
   )
