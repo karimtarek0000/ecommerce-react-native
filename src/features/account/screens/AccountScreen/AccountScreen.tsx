@@ -1,8 +1,8 @@
 import { personImage } from '@/assets/images'
 import { UserGreeting } from '@/components/ui/display'
-import { Button, RadioGroup } from '@/components/ui/input'
+import { Button, RadioGroup, SwitchGroup } from '@/components/ui/input'
 import { BottomSheet, Modal } from '@/components/ui/overlay'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import NavigationList from './components/NavigationList/NavigationList'
 import { useAccountScreen } from './useAccountScreen'
 
@@ -15,12 +15,14 @@ const AccountScreen = () => {
     bottomSheetNotificationsRef,
     languageOptions,
     themeOptions,
+    notificationsOptions,
     selectedLanguage,
     selectedTheme,
     t,
     setVisibleLogoutModal,
     setLanguageHandler,
     setThemeHandler,
+    setPushNotificationsHandler,
   } = useAccountScreen()
 
   return (
@@ -88,7 +90,7 @@ const AccountScreen = () => {
         }}
       >
         <BottomSheet.Content>
-          <Text>notifications</Text>
+          <SwitchGroup options={notificationsOptions} onValueChange={setPushNotificationsHandler} />
         </BottomSheet.Content>
       </BottomSheet>
     </>

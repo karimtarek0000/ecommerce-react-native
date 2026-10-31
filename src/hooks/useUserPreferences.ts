@@ -1,6 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@/store/hook'
 import {
   setLangauge,
+  setNotifications,
   setTheme,
   userPerferencesSelector,
 } from '@/store/userPreferences/userPreferencesSlice'
@@ -14,6 +15,7 @@ const useUserPreferences = () => {
     ...perferences,
     setTheme: (theme: Theme) => dispatch(setTheme(theme)),
     setLanguage: (language: Languages) => dispatch(setLangauge(language)),
+    setPushNotifications: () => dispatch(setNotifications()),
   }
 }
 

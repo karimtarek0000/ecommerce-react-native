@@ -1,4 +1,5 @@
 import { RadioGroupOptions } from '@/components/ui/input/RadioGroup/types'
+import { SwitchGroupOptions } from '@/components/ui/input/SwitchGroup/types'
 import { BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
 import useTranslations from '@/hooks/useTranslations'
@@ -11,8 +12,10 @@ export const useAccountScreen = () => {
   const {
     language: selectedLanguage,
     theme: selectedTheme,
+    pushNotifications,
     setLanguage,
     setTheme,
+    setPushNotifications,
   } = useUserPreferences()
 
   const [visibleLogoutModal, setVisibleLogoutModal] = useState(false)
@@ -56,6 +59,20 @@ export const useAccountScreen = () => {
 
   const setThemeHandler = (value: string) => {
     setTheme(value as Theme)
+  }
+
+  // For notifications
+  const notificationsOptions: SwitchGroupOptions[] = [
+    {
+      label: 'push notifications',
+      value: 'pushNotifications',
+      isSelected: pushNotifications,
+    },
+  ] as const
+
+  const setPushNotificationsHandler = () => {
+    setPushNotifications()
+    // bottomSheetNotificationsRef.current?.close()
   }
 
   // Render Navigation List
@@ -163,9 +180,11 @@ export const useAccountScreen = () => {
     bottomSheetSecurityRef,
     languageOptions,
     themeOptions,
+    notificationsOptions,
     t,
     setVisibleLogoutModal,
     setLanguageHandler,
     setThemeHandler,
+    setPushNotificationsHandler,
   }
 }
