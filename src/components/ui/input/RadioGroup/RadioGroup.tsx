@@ -1,25 +1,37 @@
 import { View } from 'react-native'
 import Radio from '../Radio/Radio'
 import { RadioGroupProps } from './types'
+import { useStyles } from './useStyles'
 
-const RadioGroup = ({ options, selectedValue, onValueChange, style }: RadioGroupProps) => {
+const RadioGroup = ({
+  options,
+  selectedValue,
+  onValueChange,
+  children,
+  direction = 'column',
+  style,
+}: RadioGroupProps) => {
+  const styles = useStyles(direction)
+
   return (
-    <View>
-      {options.map(({ label, value, disabled }) => {
-        const isSelected = selectedValue === value
+    <View style={styles.wrapper}>
+      {options.map(option => {
+        const isSelected = selectedValue === option.value
 
         return (
           <Radio
-            key={label}
+            key={option.label}
             isSelected={isSelected}
-            label={label}
-            disabled={disabled}
-            onChange={() => onValueChange(value)}
+            label={option.label}
+            disabled={option.disabled}
+            onChange={() => onValueChange(option.value)}
             style={style}
             accessibilityRole="radio"
-            accessibilityLabel={label}
-            accessibilityState={{ selected: isSelected, disabled }}
-          />
+            accessibilityLabel={option.label}
+            accessibilityState={{ selected: isSelected, disabled: option.disabled }}
+          >
+            {children?.(option)}
+          </Radio>
         )
       })}
     </View>

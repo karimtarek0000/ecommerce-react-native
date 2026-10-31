@@ -4,6 +4,7 @@ import { Button, RadioGroup, SwitchGroup } from '@/components/ui/input'
 import { BottomSheet, Modal } from '@/components/ui/overlay'
 import { View } from 'react-native'
 import NavigationList from './components/NavigationList/NavigationList'
+import ThemeRadioGroup from './components/ThemeRadioGroup/ThemeRadioGroup'
 import { useAccountScreen } from './useAccountScreen'
 
 const AccountScreen = () => {
@@ -69,11 +70,11 @@ const AccountScreen = () => {
         ref={bottomSheetThemeRef}
         headTitle={t('account_rowTheme')}
         bottomSheetProps={{
-          snapPoints: ['45%'],
+          snapPoints: ['40%'],
         }}
       >
         <BottomSheet.Content>
-          <RadioGroup
+          <ThemeRadioGroup
             options={themeOptions}
             selectedValue={selectedTheme}
             onValueChange={setThemeHandler}

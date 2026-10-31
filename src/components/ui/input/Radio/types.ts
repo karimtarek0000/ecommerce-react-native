@@ -9,4 +9,5 @@ export type RadioProps = UseStylesProps & {
   label: string
   onChange: VoidFunction
   style?: StyleProp<ViewStyle>
+  children?: React.ReactNode
 } & Omit<PressableProps, 'onPress'>

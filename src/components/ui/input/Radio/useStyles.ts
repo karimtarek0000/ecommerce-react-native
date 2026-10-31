@@ -12,11 +12,15 @@ export const useStyles = ({ isSelected, disabled }: UseStylesProps) => {
     view: {
       paddingHorizontal: HS(2),
       paddingVertical: VS(5),
+      flexGrow: 1,
+      alignItems: 'flex-start',
       opacity: disabled ? opacity.disabled : opacity.full,
+      gap: VS(12),
     },
     wrapper: {
       flexDirection: 'row',
       alignItems: 'center',
+      justifyContent: 'center',
       gap: HS(12),
     },
     wrapperIndicator: {
@@ -33,6 +37,9 @@ export const useStyles = ({ isSelected, disabled }: UseStylesProps) => {
       height: VS(10),
       borderRadius: radius.full,
       backgroundColor: isSelected ? colors.primary.base : colors.background.base,
+    },
+    label: {
+      color: colors.forground.primary,
     },
   })
 

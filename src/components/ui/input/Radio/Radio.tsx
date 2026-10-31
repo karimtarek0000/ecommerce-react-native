@@ -3,16 +3,19 @@ import { Pressable, View } from 'react-native'
 import { RadioProps } from './types'
 import { useStyles } from './useStyles'
 
-const Radio = ({ isSelected, onChange, label, style, disabled, ...rest }: RadioProps) => {
+const Radio = ({ isSelected, onChange, label, style, disabled, children, ...rest }: RadioProps) => {
   const styles = useStyles({ isSelected, disabled })
 
   return (
     <Pressable onPress={onChange} style={[styles.view, style]} disabled={disabled} {...rest}>
+      {children}
       <View style={styles.wrapper}>
         <View style={styles.wrapperIndicator}>
           <View style={[styles.indicator]} />
         </View>
-        <Typography variant="normalBold">{label}</Typography>
+        <Typography variant="normalBold" style={styles.label}>
+          {label}
+        </Typography>
       </View>
     </Pressable>
   )

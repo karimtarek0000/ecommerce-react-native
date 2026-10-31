@@ -1,3 +1,4 @@
+import { themeDark, themeLight, themeSystem } from '@/assets/images'
 import { RadioGroupOptions } from '@/components/ui/input/RadioGroup/types'
 import { SwitchGroupOptions } from '@/components/ui/input/SwitchGroup/types'
 import { BottomSheetRef } from '@/components/ui/overlay'
@@ -48,12 +49,19 @@ export const useAccountScreen = () => {
   // For Theme
   const themeOptions: RadioGroupOptions[] = [
     {
-      label: 'light',
+      label: t('account_settingThemeLight'),
       value: 'light',
+      img: themeLight,
     },
     {
-      label: 'dark',
+      label: t('account_settingThemeDark'),
       value: 'dark',
+      img: themeDark,
+    },
+    {
+      label: t('account_settingThemeSystem'),
+      value: 'system',
+      img: themeSystem,
     },
   ] as const
 
