@@ -1,8 +1,8 @@
 import { Typography } from '@/components/ui/display'
 import { RowNav } from '@/components/ui/navigation'
 import { View } from 'react-native'
-import { NavigationListProps } from '../../types'
-import { useStyles } from '../../useStyles'
+import { NavigationListProps } from './types'
+import { useStyles } from './useStyles'
 
 const NavigationList = ({ renderNavigationList }: NavigationListProps) => {
   const styles = useStyles()

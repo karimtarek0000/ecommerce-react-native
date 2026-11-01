@@ -6,7 +6,7 @@ import { useUserPreferences } from '@/hooks'
 import useTranslations from '@/hooks/useTranslations'
 import { Languages, Theme } from '@/types'
 import { useRef, useState } from 'react'
-import { RenderNavigationList } from './types'
+import { RenderNavigationList } from './components/NavigationList/types'
 
 export const useAccountScreen = () => {
   const { t } = useTranslations()
