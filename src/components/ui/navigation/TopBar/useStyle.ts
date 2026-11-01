@@ -1,9 +1,8 @@
-import { spacing } from '@/constants'
 import { useTheme } from '@/hooks'
 import { scalingMethods } from '@/utils'
 import { StyleSheet } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-const { VS } = scalingMethods
+const { HS, VS } = scalingMethods
 
 export const useStyles = () => {
   const colors = useTheme()
@@ -20,13 +19,15 @@ export const useStyles = () => {
       alignItems: 'center',
       justifyContent: 'space-between',
       backgroundColor: colors.background.base,
-      paddingHorizontal: spacing.space16.width,
     },
     title: {
       color: colors.forground.primary,
     },
     icon: {
       color: colors.forground.primary,
+    },
+    emptySpace: {
+      width: HS(24),
     },
   })
 

@@ -9,17 +9,17 @@ const GoToAction = ({ goTo, toPage }: GoToActionProps) => {
   const router = useRouter()
 
   const handleNavigate = () => {
-    if (goTo === 'back') {
+    if (goTo === 'back' && router.canGoBack()) {
       router.back()
     }
 
-    if (goTo === 'specific' && toPage && router.canGoBack()) {
+    if (goTo === 'specific' && toPage) {
       router.push(toPage)
     }
   }
 
   if (goTo === 'none') {
-    return <View />
+    return <View style={styles.emptySpace} />
   }
 
   return (

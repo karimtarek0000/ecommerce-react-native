@@ -7,7 +7,7 @@ const ActionButton = ({ actionButton }: { actionButton: ActionButtonProps }) => 
   const styles = useStyles()
 
   if (!actionButton.onPress) {
-    return <View />
+    return <View style={styles.emptySpace} />
   }
 
   return (

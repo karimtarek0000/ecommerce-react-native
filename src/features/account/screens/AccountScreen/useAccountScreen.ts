@@ -5,11 +5,13 @@ import { BottomSheetRef } from '@/components/ui/overlay'
 import { useUserPreferences } from '@/hooks'
 import useTranslations from '@/hooks/useTranslations'
 import { Languages, Theme } from '@/types'
+import { useRouter } from 'expo-router'
 import { useRef, useState } from 'react'
 import { RenderNavigationList } from './components/NavigationList/types'
 
 export const useAccountScreen = () => {
   const { t } = useTranslations()
+  const router = useRouter()
   const {
     language: selectedLanguage,
     theme: selectedTheme,
@@ -93,7 +95,7 @@ export const useAccountScreen = () => {
         {
           title: t('account_profileTitle'),
           iconName: 'user',
-          onPress: () => {},
+          onPress: () => router.push('/account/editProfile'),
         },
         {
           title: t('account_rowChangePassword'),
