@@ -1,6 +1,22 @@
 import { DismissKeyboard } from '@/components/ui/layout'
+import { Accordion } from '@/components/ui/overlay'
 import { useRouter } from 'expo-router'
 import { Pressable, StyleSheet, Text } from 'react-native'
+
+const items = [
+  {
+    id: 1,
+    title: 'Lorem ipsum dolor sit amet',
+    textBody:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget ornare quam vel facilisis feugiat amet sagittis arcu, tortor. Sapien, consequat ultrices morbi orci semper sit nulla. Leo auctor ut etiam est, amet aliquet ut vivamus. Odio vulputate est id tincidunt fames.',
+  },
+  {
+    id: 2,
+    title: 'Lorem ipsum dolor sit amet',
+    textBody:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget ornare quam vel facilisis feugiat amet sagittis arcu, tortor. Sapien, consequat ultrices morbi orci semper sit nulla. Leo auctor ut etiam est, amet aliquet ut vivamus. Odio vulputate est id tincidunt fames.',
+  },
+]
 
 export default function Index() {
   const router = useRouter()
@@ -11,11 +27,7 @@ export default function Index() {
         <Text>Go to main</Text>
       </Pressable>
 
-      {/* <RadioGroup
-        options={options}
-        selectedValue={selectedValue}
-        onValueChange={value => setSelectedValue(value)}
-      /> */}
+      <Accordion items={items} />
     </DismissKeyboard>
   )
 }
