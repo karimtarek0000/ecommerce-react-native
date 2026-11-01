@@ -1,6 +1,8 @@
 import { personImage } from '@/assets/images'
 import { UserGreeting } from '@/components/ui/display'
 import { Button, RadioGroup, SwitchGroup } from '@/components/ui/input'
+import { ScreenLayout } from '@/components/ui/layout'
+import { TopBar } from '@/components/ui/navigation'
 import { BottomSheet, Modal } from '@/components/ui/overlay'
 import { View } from 'react-native'
 import NavigationList from './components/NavigationList/NavigationList'
@@ -27,7 +29,7 @@ const AccountScreen = () => {
   } = useAccountScreen()
 
   return (
-    <>
+    <ScreenLayout scrollable renderTopBar={() => <TopBar title="account" />}>
       <UserGreeting
         userName="jonathan smith"
         imgSrc={personImage}
@@ -94,7 +96,7 @@ const AccountScreen = () => {
           <SwitchGroup options={notificationsOptions} onValueChange={setPushNotificationsHandler} />
         </BottomSheet.Content>
       </BottomSheet>
-    </>
+    </ScreenLayout>
   )
 }
 

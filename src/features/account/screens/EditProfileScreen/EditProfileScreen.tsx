@@ -1,6 +1,8 @@
 import { personImage } from '@/assets/images'
 import { Avatar } from '@/components/ui/display'
 import { Button, TextInput } from '@/components/ui/input'
+import { ScreenLayout } from '@/components/ui/layout'
+import { TopBar } from '@/components/ui/navigation'
 import useTranslations from '@/hooks/useTranslations'
 import { View } from 'react-native'
 import { useStyles } from './useStyles'
@@ -10,7 +12,7 @@ const EditProfile = () => {
   const styles = useStyles()
 
   return (
-    <>
+    <ScreenLayout renderTopBar={() => <TopBar title={t('account_profileTitle')} goTo="back" />}>
       <Avatar imgSrc={personImage} enableUploader size="lg" />
 
       {/* Form */}
@@ -44,8 +46,9 @@ const EditProfile = () => {
           onChange={() => {}}
         />
       </View>
+
       <Button title="save changes" onPress={() => {}} style={styles.submitBTN} />
-    </>
+    </ScreenLayout>
   )
 }
 
