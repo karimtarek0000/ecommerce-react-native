@@ -8,10 +8,6 @@ export const useStyles = () => {
   const colors = useTheme()
 
   const styles = StyleSheet.create({
-    item: {
-      alignSelf: 'stretch',
-    },
-    wrapper: {},
     head: {
       flexDirection: 'row',
       justifyContent: 'space-between',
