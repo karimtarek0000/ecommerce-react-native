@@ -1,5 +1,4 @@
 import { ScrollView, StyleSheet } from 'react-native'
-import { CONTENT_BOTTOM_GAP } from '../ScreenLayout/constant'
 import { VerticalScrollViewProps } from './type'
 
 const VerticalScrollView = ({ children, ...props }: VerticalScrollViewProps) => {
@@ -19,7 +18,6 @@ const VerticalScrollView = ({ children, ...props }: VerticalScrollViewProps) => 
 const styles = StyleSheet.create({
   contentContainer: {
     flexGrow: 1,
-    paddingBottom: CONTENT_BOTTOM_GAP,
   },
 })
 

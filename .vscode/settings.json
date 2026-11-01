@@ -4,6 +4,7 @@
     "source.organizeImports": "explicit",
     "source.sortMembers": "explicit"
   },
-  "workbench.experimental.modernUI": false,
-  "materialTheme.accent": "Blue"
+  "workbench.experimental.modernUI": true,
+  "materialTheme.accent": "Blue",
+  "workbench.experimental.modernUIUppercaseViewHeaders": false
 }

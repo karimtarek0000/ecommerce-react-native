@@ -52,7 +52,7 @@ export const useStyles = () => {
     },
     //
     content: {
-      flex: 1,
+      // flex: 1,
       marginBottom: VS(20),
     },
   })

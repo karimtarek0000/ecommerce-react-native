@@ -10,10 +10,10 @@ export const useStyles = ({ isSelected, disbaled }: UseStylesProps) => {
 
   const styles = StyleSheet.create({
     view: {
-      flexDirection: 'row-reverse',
-      gap: 4,
-      justifyContent: 'center',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
       alignItems: 'center',
+      gap: HS(12),
       paddingHorizontal: HS(2),
       paddingVertical: VS(2),
     },

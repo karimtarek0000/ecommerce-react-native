@@ -1,13 +1,7 @@
-import { ScreenLayout } from '@/components/ui/layout'
-import { TopBar } from '@/components/ui/navigation'
-import HomeScreen from '@/features/account/screens/AccountScreen/AccountScreen'
+import { AccountScreen } from '@/features'
 
 const AccountPage = () => {
-  return (
-    <ScreenLayout scrollable renderTopBar={() => <TopBar title="account" />}>
-      <HomeScreen />
-    </ScreenLayout>
-  )
+  return <AccountScreen />
 }
 
 export default AccountPage

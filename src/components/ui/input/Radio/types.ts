@@ -1,12 +1,13 @@
-import { StyleProp, ViewStyle } from 'react-native'
+import { PressableProps, StyleProp, ViewStyle } from 'react-native'
 
 export type UseStylesProps = {
   isSelected: boolean
-  disbaled?: boolean
+  disabled?: boolean
 }
 
 export type RadioProps = UseStylesProps & {
   label: string
-  onChange: () => void
+  onChange: VoidFunction
   style?: StyleProp<ViewStyle>
-}
+  children?: React.ReactNode
+} & Omit<PressableProps, 'onPress'>

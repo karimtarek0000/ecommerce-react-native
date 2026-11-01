@@ -10,9 +10,10 @@ const Button = ({
   size = 'lg',
   block,
   disabled,
-  onPress,
   iconName,
   loading,
+  style,
+  onPress,
 }: ButtonProps) => {
   const isDisabled = loading?.indicator || disabled
   const { styles, fontSize, typographyColor } = useStyles({
@@ -23,7 +24,7 @@ const Button = ({
   })
 
   return (
-    <Pressable onPress={onPress} style={styles.button} disabled={isDisabled}>
+    <Pressable onPress={onPress} style={[styles.button, style]} disabled={isDisabled}>
       {!loading?.indicator && iconName && <Icon name={iconName} color={typographyColor} />}
 
       {loading?.indicator && <ActivityIndicator color={typographyColor} size="small" />}

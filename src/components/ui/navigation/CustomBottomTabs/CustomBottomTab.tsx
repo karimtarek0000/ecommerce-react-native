@@ -29,6 +29,7 @@ const CustomBottomTab = ({
       <View style={styles.tabItem}>
         <View style={styles.tabIcon}>
           <Icon name={iconName} color={styles.tabOtherColor.color} />
+
           {!!badge && (
             <View style={styles.tabBadge}>
               <Typography variant="xsmallBold" color={styles.tabBadgeColor.color}>
@@ -37,6 +38,7 @@ const CustomBottomTab = ({
             </View>
           )}
         </View>
+
         <Typography variant="xsmallBold" color={styles.tabOtherColor.color}>
           {label}
         </Typography>

@@ -9,5 +9,6 @@ export type TypographyProps = {
   switchLanguage?: Languages
   color?: string
   textTransform?: 'capitalize' | 'uppercase' | 'lowercase'
+  textAlign?: 'left' | 'right'
   style?: StyleProp<TextStyle>
 } & Omit<TextProps, 'children'>

@@ -13,7 +13,7 @@ const TopBar = ({ title, actionButton, goTo = 'none', toPage }: TopBarProps) => 
       <View style={styles.wrapper}>
         <GoToAction goTo={goTo} toPage={toPage} />
 
-        <Typography variant="normalBold" color={styles.title.color} textTransform="capitalize">
+        <Typography variant="normalBold" color={styles.title.color}>
           {title}
         </Typography>
 

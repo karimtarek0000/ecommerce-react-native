@@ -1,2 +1,5 @@
 export const personImage = require('./person-test-image.webp')
 export const avatarIcon = require('./avatar-placeholder.svg')
+export const themeDark = require('./theme-dark.svg')
+export const themeLight = require('./theme-light.svg')
+export const themeSystem = require('./theme-system.svg')

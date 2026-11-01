@@ -1,7 +1,7 @@
 export type ModalProps = {
   visible: boolean
   headTitle: string
-  description: string
-  modalBody: () => React.ReactNode
-  closeModal: VoidFunction
+  description?: string
+  children: React.ReactNode
+  closeModal?: VoidFunction
 }

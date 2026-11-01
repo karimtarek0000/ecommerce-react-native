@@ -1,4 +1,4 @@
-import { StyleProp, ViewStyle } from 'react-native'
+import { PressableProps, StyleProp, ViewStyle } from 'react-native'
 
 export type UseStylesProps = {
   isSelected: boolean
@@ -7,6 +7,6 @@ export type UseStylesProps = {
 
 export type SwicthProps = UseStylesProps & {
   label: string
-  onChange: () => void
+  onChange: VoidFunction
   style?: StyleProp<ViewStyle>
-}
+} & Omit<PressableProps, 'onPress'>

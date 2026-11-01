@@ -67,9 +67,9 @@ const AppBottomSheet = ({
         enableDynamicSizing={false}
         enablePanDownToClose={true}
         backdropComponent={RenderBackdrop}
-        handleIndicatorStyle={styles.indicator}
-        handleStyle={styles.bottomSheetHead}
         backgroundStyle={styles.bottomSheet}
+        handleStyle={styles.bottomSheetHead}
+        handleIndicatorStyle={styles.indicator}
         {...bottomSheetProps}
       >
         <View style={styles.wrapper}>
@@ -91,6 +91,7 @@ const AppBottomSheet = ({
               </Typography>
             )}
           </View>
+
           {children}
         </View>
       </BottomSheet>
