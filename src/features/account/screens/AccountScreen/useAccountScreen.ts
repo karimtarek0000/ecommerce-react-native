@@ -65,6 +65,8 @@ export const useAccountScreen = () => {
     },
   ] as const
 
+  const trilingTextTheme = themeOptions.find(option => option.value === selectedTheme)?.label
+
   const setThemeHandler = (value: string) => {
     setTheme(value as Theme)
   }
@@ -149,7 +151,7 @@ export const useAccountScreen = () => {
           title: t('account_rowTheme'),
           iconName: 'palette',
           trilingType: 'chevronWithValue',
-          trilingText: 'light',
+          trilingText: trilingTextTheme || '',
           onPress: () => bottomSheetThemeRef.current?.expand(),
         },
       ],
