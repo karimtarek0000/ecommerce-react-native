@@ -26,6 +26,7 @@ export const useStyles = (size: Sizes) => {
   const styles = StyleSheet.create({
     wrapper: {
       position: 'relative',
+      alignSelf: 'center',
     },
     image: {
       width: sizes[size].width,
