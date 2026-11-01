@@ -32,7 +32,7 @@ export const useSharedStyles = (currentStatusInput?: StatusTypes) => {
     },
     label: {
       color: colors.forground.primary,
-      marginBottom: spacing.space4.height,
+      marginBottom: spacing.space8.height,
     },
     fieldWrapper: {
       height: VS(52),

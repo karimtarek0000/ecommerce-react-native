@@ -5,7 +5,7 @@ export type Sizes = 'sm' | 'md' | 'lg'
 
 type AvatarBaseProps = {
   imgSrc: string
-  imageOptions?: ImageProps
+  imageOptions?: Omit<ImageProps, 'source' | 'style'>
   style?: StyleProp<ViewProps>
 }
 

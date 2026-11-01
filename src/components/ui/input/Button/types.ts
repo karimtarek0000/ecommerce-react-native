@@ -1,4 +1,5 @@
 import { IconName } from '@/components/icons/types'
+import { StyleProp, ViewStyle } from 'react-native'
 
 export type VariantType = 'primary' | 'link' | 'chip' | 'ghost' | 'danger'
 export type VariantSize = 'sm' | 'lg'
@@ -12,6 +13,7 @@ export type ButtonProps = {
   loading?: { indicator?: boolean; text: string }
   block?: boolean
   disabled?: boolean
+  style?: StyleProp<ViewStyle>
 }
 
 export type UseStyles = {

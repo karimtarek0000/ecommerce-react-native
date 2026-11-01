@@ -18,7 +18,7 @@ const ScreenLayout = ({
 
   if (scrollable) {
     return (
-      <View style={[styles.viewWrapper, styles.scrollViewWrapper]}>
+      <View style={styles.viewWrapper}>
         {renderTopBar?.()}
 
         <DismissKeyboard style={styles.container}>
@@ -32,7 +32,7 @@ const ScreenLayout = ({
     <View style={styles.viewWrapper}>
       {renderTopBar?.()}
 
-      <DismissKeyboard>{children}</DismissKeyboard>
+      <DismissKeyboard style={styles.container}>{children}</DismissKeyboard>
     </View>
   )
 }
