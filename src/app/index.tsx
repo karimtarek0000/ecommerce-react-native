@@ -10,12 +10,6 @@ export default function Index() {
       <Pressable onPress={() => router.push('/(main)/(tabs)')}>
         <Text>Go to main</Text>
       </Pressable>
-
-      {/* <RadioGroup
-        options={options}
-        selectedValue={selectedValue}
-        onValueChange={value => setSelectedValue(value)}
-      /> */}
     </DismissKeyboard>
   )
 }
